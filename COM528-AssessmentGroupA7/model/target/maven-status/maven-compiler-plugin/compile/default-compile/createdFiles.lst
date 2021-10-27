@@ -1,0 +1,12 @@
+org\solent\com504\oodd\bank\model\dto\CreditCard.class
+org\solent\com504\oodd\bank\model\dto\User.class
+org\solent\com504\oodd\bank\model\dto\TransactionReplyMessage.class
+org\solent\com504\oodd\cart\model\service\ShoppingCart.class
+org\solent\com504\oodd\cart\model\service\ShoppingService.class
+org\solent\com504\oodd\bank\model\dto\BankTransaction.class
+org\solent\com504\oodd\bank\model\dto\BankTransactionStatus.class
+org\solent\com504\oodd\password\PasswordUtils.class
+org\solent\com504\oodd\cart\groupa1\model\dto\ShoppingItem.class
+org\solent\com504\oodd\bank\model\dto\TransactionRequestMessage.class
+org\solent\com504\oodd\bank\model\dto\BankAccount.class
+org\solent\com504\oodd\bank\model\client\BankRestClient.class
