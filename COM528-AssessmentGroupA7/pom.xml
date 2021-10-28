@@ -29,6 +29,7 @@
     <modules>
         <module>model</module>
 	<module>client</module>
+	<module>doa</module>
         <module>service</module>
         <module>web</module>
     </modules>
