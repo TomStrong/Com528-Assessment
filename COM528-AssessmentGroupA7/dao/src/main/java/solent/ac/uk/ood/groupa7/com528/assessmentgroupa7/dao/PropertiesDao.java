@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package solent.ac.uk.ood.groupa7.com528.assessmentgroupa7.doa;
+package solent.ac.uk.ood.groupa7.com528.assessmentgroupa7.dao;
 
 import java.io.File;
 import java.io.FileInputStream;

@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package solent.ac.uk.ood.groupa7.com528.assessmentgroupa7.doa.test;
+package solent.ac.uk.ood.groupa7.com528.assessmentgroupa7.dao.test;
 
 import java.io.File;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
-import solent.ac.uk.ood.groupa7.com528.assessmentgroupa7.doa.PropertiesDao;
+import solent.ac.uk.ood.groupa7.com528.assessmentgroupa7.dao.PropertiesDao;
 
 /**
  *
