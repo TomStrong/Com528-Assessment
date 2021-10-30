@@ -6,10 +6,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
-<%@ page import="org.solent.com504.oodd.cart.model.service.ShoppingService" %>
-<%@ page import="org.solent.com504.oodd.cart.model.service.ShoppingCart" %>
-<%@ page import="org.solent.com504.oodd.cart.model.dto.ShoppingItem" %>
-<%@ page import="org.solent.com504.oodd.cart.web.WebObjectFactory"%>
+<%@ page import="org.solent.com528.oodd.groupa7.cart.model.service.ShoppingService" %>
+<%@ page import="org.solent.com528.oodd.groupa7.cart.model.service.ShoppingCart" %>
+<%@ page import="org.solent.com528.oodd.groupa7.cart.model.dto.ShoppingItem" %>
+<%@ page import="org.solent.com528.oodd.groupa7.cart.web.WebObjectFactory"%>
 <%
 
     String message="";
