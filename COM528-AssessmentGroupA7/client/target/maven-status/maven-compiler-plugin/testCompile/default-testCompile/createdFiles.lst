@@ -1,1 +1,3 @@
-org\solent\com528\oodd\groupa7\client\test\manual\BankClientTest.class
+org\solent\com504\oodd\bank\model\dto\test\JsonDtoTests.class
+org\solent\com504\oodd\bank\client\test\manual\BankClientTest.class
+org\solent\com504\oodd\password\test\PasswordUtilsTest.class
