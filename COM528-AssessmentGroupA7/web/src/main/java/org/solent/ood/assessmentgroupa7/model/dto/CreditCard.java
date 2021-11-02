@@ -16,8 +16,8 @@ public class CreditCard {
     private String name="";
     private String endDate="";
     private String cardnumber="";
-    private String cvv="111";
-    private String issueNumber="01";
+    private String cvv="";
+    private String issueNumber="";
 
     public String getName() {
         return name;
@@ -57,5 +57,10 @@ public class CreditCard {
 
     public void setIssueNumber(String issueNumber) {
         this.issueNumber = issueNumber;
+    }
+    
+    @Override
+    public String toString() {
+        return "CreditCard{" + "name=" + name + ", endDate=" + endDate + ", cardnumber=" + cardnumber + ", cvv=NOT PRINTED" +  ", issueNumber=" + issueNumber + '}';
     }
 }
