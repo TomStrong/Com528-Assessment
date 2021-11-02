@@ -6,6 +6,11 @@
 
 
 var entry = "";
+var chars = false;
+var charTimer;
+var charSet = "";
+var curButton = null;
+var letterIndex = 0;
 
 function ready() {
     // sets click function for all character buttons
@@ -13,8 +18,31 @@ function ready() {
 
     charBtns.forEach(function(btn) {
         btn.addEventListener("click", function() {
-            entry += btn.innerHTML;
-            document.getElementById("screen").innerHTML = entry;
+            if (!chars) {
+                // gets number from button text and adds to entry
+                entry += btn.getElementsByTagName("strong")[0].innerHTML;
+                document.getElementById("screen").innerHTML = entry;
+            } else {
+                if (btn.id != "") {
+                    clearTimeout(charTimer);
+                    charTimer = setTimeout(() => {resetLetterInputVars();}, 1000);
+                    // if button is already selected AND letterIndex isn't the last then next letter
+                    if (curButton == btn.id) {
+                        if (letterIndex != btn.getElementsByTagName("p")[0].innerHTML.length - 1) {
+                            letterIndex += 1;
+                        } else {
+                            letterIndex = 0;
+                        }
+                        entry = entry.replace(/.$/,btn.getElementsByTagName("p")[0].innerHTML.charAt(letterIndex));
+                    // if button isn't selected
+                    } else {
+                        curButton = btn.id;
+                        letterIndex = 0;
+                        entry += btn.getElementsByTagName("p")[0].innerHTML.charAt(letterIndex);
+                    }
+                    document.getElementById("screen").innerHTML = entry;
+                }
+            }
         });
     });
 
@@ -35,6 +63,20 @@ function ready() {
         console.log("Cancel transaction");
         let response = await fetch("/cancel", {method: "POST"});
     });
+}
+
+function changeInput() {
+    if (chars) {
+        chars = false;
+    } else {
+        chars = true;
+    }
+}
+
+function resetLetterInputVars() {
+    charTimer = null;
+    curButton = null;
+    letterIndex = 0;
 }
 
 document.addEventListener("DOMContentLoaded", ready);

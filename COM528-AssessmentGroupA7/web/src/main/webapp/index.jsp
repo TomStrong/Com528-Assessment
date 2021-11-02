@@ -19,6 +19,7 @@
     </head>
     <body>
         <div class="container">
+            <button type="button" onclick="changeInput()">Change input type</button>
             <div class="interface">
                 <div id="screen">
 
@@ -26,27 +27,27 @@
 
                 <div class="keypad">
                     <div class="keypadrow">
-                        <button type="button" class="btn btn-secondary char">1</button>
-                        <button type="button" class="btn btn-secondary char">2</button>
-                        <button type="button" class="btn btn-secondary char">3</button>
+                        <button type="button" class="btn btn-secondary char" id="btn1"><strong>1</strong><br><p>abc</p></button>
+                        <button type="button" class="btn btn-secondary char" id="btn2"><strong>2</strong><br><p>def</p></button>
+                        <button type="button" class="btn btn-secondary char" id="btn3"><strong>3</strong><br><p>ghi</p></button>
                     </div>
 
                     <div class="keypadrow">
-                        <button type="button" class="btn btn-secondary char">4</button>
-                        <button type="button" class="btn btn-secondary char">5</button>
-                        <button type="button" class="btn btn-secondary char">6</button>
+                        <button type="button" class="btn btn-secondary char" id="btn4"><strong>4</strong><br><p>jkl</p></button>
+                        <button type="button" class="btn btn-secondary char" id="btn5"><strong>5</strong><br><p>mno</p></button>
+                        <button type="button" class="btn btn-secondary char" id="btn6"><strong>6</strong><br><p>pqr</p></button>
                     </div>
 
                     <div class="keypadrow">
-                        <button type="button" class="btn btn-secondary char">7</button>
-                        <button type="button" class="btn btn-secondary char">8</button>
-                        <button type="button" class="btn btn-secondary char">9</button>
+                        <button type="button" class="btn btn-secondary char" id="btn7"><strong>7</strong><br><p>stu</p></button>
+                        <button type="button" class="btn btn-secondary char" id="btn8"><strong>8</strong><br><p>vwx</p></button>
+                        <button type="button" class="btn btn-secondary char" id="btn9"><strong>9</strong><br><p>yz</p></button>
                     </div>
 
                     <div class="keypadrow">
-                        <button type="button" class="btn btn-secondary char">*</button>
-                        <button type="button" class="btn btn-secondary char">0</button>
-                        <button type="button" class="btn btn-secondary char">#</button>
+                        <button type="button" class="btn btn-secondary char"><strong>*</strong></button>
+                        <button type="button" class="btn btn-secondary char"><strong>0</strong></button>
+                        <button type="button" class="btn btn-secondary char"><strong>#</strong></button>
                     </div>
 
                     <div class="keypadrow">
