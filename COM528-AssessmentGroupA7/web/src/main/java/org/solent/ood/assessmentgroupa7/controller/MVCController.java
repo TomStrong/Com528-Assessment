@@ -25,6 +25,16 @@ import org.springframework.web.bind.annotation.RequestParam;
  *
  * @author jrandall
  */
+@Controller
+@RequestMapping("/")
 public class MVCController {
+    @RequestMapping(value="/", method={RequestMethod.GET})
+    public String index(Model model) {
+        return "index";
+    }
     
+    @RequestMapping(value="/admin", method={RequestMethod.GET})
+    public String admin(Model model) {
+        return "admin";
+    }
 }

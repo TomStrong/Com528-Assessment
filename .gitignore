@@ -30,3 +30,7 @@ target/
 /target/**
 /target/
 */target/**
+.classpath
+.factorypath
+.project
+.settings/
