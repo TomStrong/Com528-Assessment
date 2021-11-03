@@ -25,6 +25,7 @@
         <!-- needed by Hibernate for java 11 -->
         <javassist.version>3.27.0-GA</javassist.version>
         <cglib-nodep.version>3.2.12</cglib-nodep.version>
+         <spring-boot.version>2.4.4</spring-boot.version>
     </properties>
     
     <modules>
@@ -34,11 +35,21 @@
     
     <dependencyManagement>
         <dependencies>
+            
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>servlet-api</artifactId>
                 <version>${servlet-api.version}</version> 
             </dependency>
+            
             <dependency>
                 <groupId>javax.servlet.jsp</groupId>
                 <artifactId>jsp-api</artifactId>

@@ -1,0 +1,6 @@
+org\solent\ood\assessmentgroupa7\service\AdminService.class
+org\solent\ood\assessmentgroupa7\dao\WebObjectFactory.class
+org\solent\ood\assessmentgroupa7\model\dto\CreditCard.class
+org\solent\ood\assessmentgroupa7\controller\SpringBootJspApplication.class
+org\solent\ood\assessmentgroupa7\dao\PropertiesDao.class
+org\solent\ood\assessmentgroupa7\controller\MVCController.class

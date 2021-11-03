@@ -4,12 +4,19 @@
     Created on : 30 Oct 2021, 15:22:20
     Author     : Tom
 --%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+=======
+    Created on : 02 Nov 2021, 09:52:11
+    Author     : jrandall
+--%>
+
 
 <%@page import="org.solent.ood.assessmentgroupa7.dao.WebObjectFactory"%>
 <%@page import="org.solent.ood.assessmentgroupa7.dao.PropertiesDao"%>
-<%@page import="org.solent.ood.assessmentgroupa7.service.AdminService"%>
 
+<%@page import="org.solent.ood.assessmentgroupa7.service.AdminService"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
     
@@ -40,16 +47,17 @@
     }
 
 %>
-
+>>>>>>> 8e7627f400f02133f831e1688058349b7f46f7f8
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<<<<<<< HEAD
         <title>Admin</title>
     </head>
     <body>
         <h1>Hello World!</h1>
+=======
         <title>PoS Configuration</title>
     </head>
     <body>
@@ -65,5 +73,6 @@
 
             <button class="btn" type="submit" >Update Properties</button>
         </form> 
+>>>>>>> 8e7627f400f02133f831e1688058349b7f46f7f8
     </body>
 </html>
