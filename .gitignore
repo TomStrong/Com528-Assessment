@@ -25,3 +25,8 @@ hs_err_pid*
 # Build files
 /target
 target/
+*/target/*
+**/target/*
+/target/**
+/target/
+*/target/**
