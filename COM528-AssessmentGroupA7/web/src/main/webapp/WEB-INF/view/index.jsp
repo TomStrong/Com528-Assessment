@@ -17,19 +17,34 @@
         <title>COM528 Assessment Group A7</title>
     </head>
     <body>
-        <h1>COM528 Object Oriented Design & Development</h1>
-        <h2>Assessment AE1 - Group A7</h2>
-        <br/>
-        <p>by Jo Randall, Jake Roblett, Merlin Smith and Tom Strong </p>
-        <br/>
-        <div id="frontpageButtons">
-            <div style="display: flex; flex-direction: row; justify-content: space-around"> 
-                <a href="./admin" target="_blank" >
-                    <button class="btn">Administrator</button>
-                </a>
-                <a href="./pos" target="_blank" >
-                    <button class="btn">PoS User</button>
-                </a>
+        <div class="container">
+            <h1>COM528 Object Oriented Design & Development</h1>
+            <h2>Assessment AE1 - Group A7</h2>
+            <br/>
+            <p>by </p>
+            <div style="display: flex; flex-direction: row; justify-content: space-around;">
+                <table class="table">
+                    <tr>
+                        <td>Jo Randall<br/>ID 15191117</td>
+                        <td>Jake Roblett<br/>ID</td>
+                    </tr>
+                    <tr>
+                        <td>Merlin Smith<br/>ID 14803194</td>
+                        <td>Tom Strong<br/>ID 15071278</td>
+                    </tr>
+                </table>
+            </div>
+
+            <br/>
+            <div id="frontpageButtons">
+                <div style="display: flex; flex-direction: row; justify-content: space-around"> 
+                    <a href="./admin" target="_blank" >
+                        <button class="btn">Administrator</button>
+                    </a>
+                    <a href="./pos" target="_blank" >
+                        <button class="btn">PoS User</button>
+                    </a>
+                </div>
             </div>
         </div>
     </body>

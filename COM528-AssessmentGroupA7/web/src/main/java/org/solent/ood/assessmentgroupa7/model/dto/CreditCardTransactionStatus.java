@@ -8,6 +8,8 @@ package org.solent.ood.assessmentgroupa7.model.dto;
 /**
  *
  * @author jorandall
+ * 
+ * Provides transaction status, either approved or declined.
  */
 public enum CreditCardTransactionStatus {
     
