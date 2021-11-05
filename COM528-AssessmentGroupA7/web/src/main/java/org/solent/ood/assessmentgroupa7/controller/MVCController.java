@@ -33,13 +33,8 @@ import org.solent.ood.assessmentgroupa7.dao.WebObjectFactory;
 public class MVCController {
     @RequestMapping(value="/", method={RequestMethod.GET})
     public String index(Model model) {
-        return "redirect:/index.html";
+        return "index";
     }
-    
-//    @RequestMapping(value="/admin", method={RequestMethod.GET})
-//    public String admin(Model model) {
-//        return "admin";
-//    }
     
     @RequestMapping(value="/pos", method={RequestMethod.GET})
     public String pos(Model model) {

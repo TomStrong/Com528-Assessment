@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : 5 Nov 2021, 11:53:47
+    Author     : Tom
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
