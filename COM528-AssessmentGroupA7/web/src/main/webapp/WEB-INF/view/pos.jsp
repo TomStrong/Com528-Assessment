@@ -58,5 +58,9 @@
                 </div>
             </div>
         </div>
+        <form action="./rest/api-v1/test" method="GET">
+            <input type="text" name="testInput">
+            <button type="submit">Submit</button>
+        </form>
     </body>
 </html>

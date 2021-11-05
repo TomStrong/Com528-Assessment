@@ -36,6 +36,14 @@ public class MVCController {
         return "index";
     }
     
+    
+    @RequestMapping(value="/test", method={RequestMethod.GET})
+    public String test(Model model) {
+        return "testjsp";
+    }
+    
+    
+    
     @RequestMapping(value="/pos", method={RequestMethod.GET})
     public String pos(Model model) {
         return "pos";
