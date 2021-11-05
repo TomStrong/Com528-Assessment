@@ -20,21 +20,29 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.solent.ood.assessmentgroupa7.dao.PropertiesDao;
+import org.solent.ood.assessmentgroupa7.dao.WebObjectFactory;
 
 /**
  *
- * @author jrandall
+ * @author jrandall, tstrong
  */
+
 @Controller
 @RequestMapping("/")
 public class MVCController {
     @RequestMapping(value="/", method={RequestMethod.GET})
     public String index(Model model) {
-        return "index";
+        return "redirect:/index.html";
     }
     
     @RequestMapping(value="/admin", method={RequestMethod.GET})
     public String admin(Model model) {
         return "admin";
+    }
+    
+    @RequestMapping(value="/pos", method={RequestMethod.GET})
+    public String pos(Model model) {
+        return "pos";
     }
 }
