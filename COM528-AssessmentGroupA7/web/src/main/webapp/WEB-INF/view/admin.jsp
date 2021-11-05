@@ -26,8 +26,8 @@
     </head>
     <body>
         <br/>
-
-            <form action="./propertylist" method="POST">
+        <p>${message}</p>
+            <form action="./admin" method="POST">
                 <div id="admin">
                     <table style="width:100%;" >
                         <tr>
@@ -43,7 +43,7 @@
                                 Credit Card End Date 
                             </td>
                             <td>
-                                <input type="text" name="enddate" value="${endDate}">
+                                <input type="text" name="endDate" value="${endDate}">
                             </td>
                         </tr>
                         <tr>
@@ -51,7 +51,7 @@
                                 Credit Card Number
                             </td>
                             <td>
-                                <input type="text" name="cardno" value="${cardNumber}">
+                                <input type="text" name="cardNumber" value="${cardNumber}">
                             </td>
                         </tr>
                         <tr>
@@ -67,7 +67,7 @@
                                 Issue Number
                             </td>
                             <td>
-                                <input type="text" name="issueno" value="${issueNumber}">
+                                <input type="text" name="issueNumber" value="${issueNumber}">
                             </td>
                         </tr>
                     </table>
