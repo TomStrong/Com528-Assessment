@@ -36,13 +36,36 @@ public class MVCController {
         return "redirect:/index.html";
     }
     
-    @RequestMapping(value="/admin", method={RequestMethod.GET})
-    public String admin(Model model) {
-        return "admin";
-    }
+//    @RequestMapping(value="/admin", method={RequestMethod.GET})
+//    public String admin(Model model) {
+//        return "admin";
+//    }
     
     @RequestMapping(value="/pos", method={RequestMethod.GET})
     public String pos(Model model) {
         return "pos";
+    }
+    
+    @RequestMapping(value = "/admin", method = {RequestMethod.GET})
+    public String admin(
+            Model model,
+            HttpSession session) {
+        
+        PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
+    
+        String name = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.name");
+        String endDate = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.enddate");
+        String cardNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cardno");
+        String cvv = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cvv");
+        String issueNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.issueno");
+
+        
+        model.addAttribute("name", name);
+        model.addAttribute("endDate", endDate);
+        model.addAttribute("cardNumber", cardNumber);
+        model.addAttribute("cvv", cvv);
+        model.addAttribute("issueNumber", issueNumber);
+        
+        return "admin";
     }
 }

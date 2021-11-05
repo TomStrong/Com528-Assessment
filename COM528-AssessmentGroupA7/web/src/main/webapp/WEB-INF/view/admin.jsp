@@ -5,41 +5,10 @@
     Author     : Tom
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <%@page import="org.solent.ood.assessmentgroupa7.dao.WebObjectFactory"%>
 <%@page import="org.solent.ood.assessmentgroupa7.dao.PropertiesDao"%>
-<%@page import="org.solent.ood.assessmentgroupa7.service.AdminService"%>
-
-<%
-    PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
-    
-    // To be deleted once ReST implemented - see service/AdminService.java
-    String name = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.name");
-    String endDate = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.enddate");
-    String cardNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cardno");
-    String cvv = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cvv");
-    String issueNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.issueno");
-    String message = "";
-    
-    String action = (String) request.getParameter("action");
-    if ("updateProperties".equals(action)) {
-        // To be changed once ReST implemented - see service/AdminService.java
-        message = "updating properties";
-        name = (String) request.getParameter("name");
-        endDate = (String) request.getParameter("enddate");
-        cardNumber = (String) request.getParameter("cardno");
-        cvv = (String) request.getParameter("cvv");
-        issueNumber = (String) request.getParameter("issueno");
-        
-        // To be deleted once ReST implemented - see service/AdminService.java
-        propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
-        propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
-        propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
-        propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
-        propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
-    }
-
-%>
 
 <!DOCTYPE html>
 <html>
@@ -57,9 +26,8 @@
     </head>
     <body>
         <br/>
-        <p><%=message %></p>
-        
-            <form action="./admin.jsp" method="POST">
+
+            <form action="./propertylist" method="POST">
                 <div id="admin">
                     <table style="width:100%;" >
                         <tr>
@@ -67,7 +35,7 @@
                                 Name on Credit Card
                             </td>
                             <td>
-                                <input type="text" name="name" value="<%=name%>">
+                                <input type="text" name="name" value="${name}">
                             </td>
                         </tr>
                         <tr>
@@ -75,7 +43,7 @@
                                 Credit Card End Date 
                             </td>
                             <td>
-                                <input type="text" name="enddate" value="<%=endDate%>">
+                                <input type="text" name="enddate" value="${endDate}">
                             </td>
                         </tr>
                         <tr>
@@ -83,7 +51,7 @@
                                 Credit Card Number
                             </td>
                             <td>
-                                <input type="text" name="cardno" value="<%=cardNumber%>">
+                                <input type="text" name="cardno" value="${cardNumber}">
                             </td>
                         </tr>
                         <tr>
@@ -91,7 +59,7 @@
                                 CVV Number
                             </td>
                             <td>
-                                <input type="text" name="cvv" value="<%=cvv%>">
+                                <input type="text" name="cvv" value="${cvv}">
                             </td>
                         </tr>
                         <tr>
@@ -99,7 +67,7 @@
                                 Issue Number
                             </td>
                             <td>
-                                <input type="text" name="issueno" value="<%=issueNumber%>">
+                                <input type="text" name="issueno" value="${issueNumber}">
                             </td>
                         </tr>
                     </table>
