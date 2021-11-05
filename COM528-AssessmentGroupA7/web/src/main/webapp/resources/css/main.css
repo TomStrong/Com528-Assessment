@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 November 2021 10:48
+    Author     : jrandall
+*/
+
+body{
+    margin: auto;
+    padding: 5vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: 15px;
+}
+
+#frontpageButtons{
+    margin: auto;
+    width: 300px;
+    padding: 10px;
+}
+
+#admin{
+    margin: auto;
+    padding: 10px;
+    width: 40%;
+    border: 1px solid black;
+    border-radius: 20px;
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn{
+    background-color: #0d6efd;
+    color: white;
+}
+
+.btn:hover{
+    background-color: #06357a;
+    color: white;
+}

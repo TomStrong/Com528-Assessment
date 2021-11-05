@@ -45,25 +45,70 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-        <title>Admin</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-        <title>PoS Configuration</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="./resources/css/main.css">
+        <title>Administrator</title>
     </head>
     <body>
         <h1>PoS Configuration</h1>
+    </head>
+    <body>
+        <br/>
         <p><%=message %></p>
-        <form action="./admin.jsp" method="POST">
-            <p>Name on Credit Card <input type="text" name="name" value="<%=name%>"></p>
-            <p>Credit Card End Date <input type="text" name="enddate" value="<%=endDate%>"></p>
-            <p>Credit Card Number <input type="text" name="cardno" value="<%=cardNumber%>"></p>
-            <p>CVV Number <input type="text" name="cvv" value="<%=cvv%>"></p>
-            <p>Issue Number <input type="text" name="issueno" value="<%=issueNumber%>"></p>
-            <input type="hidden" name="action" value="updateProperties">
-
-            <button class="btn" type="submit" >Update Properties</button>
-        </form> 
+        
+            <form action="./admin.jsp" method="POST">
+                <div id="admin">
+                    <table style="width:100%;" >
+                        <tr>
+                            <td>
+                                Name on Credit Card
+                            </td>
+                            <td>
+                                <input type="text" name="name" value="<%=name%>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Credit Card End Date 
+                            </td>
+                            <td>
+                                <input type="text" name="enddate" value="<%=endDate%>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Credit Card Number
+                            </td>
+                            <td>
+                                <input type="text" name="cardno" value="<%=cardNumber%>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                CVV Number
+                            </td>
+                            <td>
+                                <input type="text" name="cvv" value="<%=cvv%>">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Issue Number
+                            </td>
+                            <td>
+                                <input type="text" name="issueno" value="<%=issueNumber%>">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <br/>
+                <input type="hidden" name="action" value="updateProperties">
+                <button class="btn" type="submit">Update Properties</button>
+            </form> 
+        
     </body>
 </html>
