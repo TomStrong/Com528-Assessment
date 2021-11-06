@@ -16,10 +16,13 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
+import javax.ws.rs.FormParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.solent.ood.assessmentgroupa7.dao.PropertiesDao;
+import org.solent.ood.assessmentgroupa7.dao.WebObjectFactory;
 import org.solent.ood.assessmentgroupa7.model.dto.CreditCard;
 //import org.solent.ood.assessmentgroupa7.model.dto.ReplyMessage;
 //import solent.ac.uk.ood.examples.cardcheck.CardValidationResult;
@@ -68,26 +71,6 @@ public class RestService {
         } catch (Exception ex) {
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
         }
-//        try {
-//            LOG.debug("GET /validateCard called cardNo:" + cardNo);
-//            ReplyMessage replyMessage = new ReplyMessage();
-//            CardValidationResult result = RegexCardValidator.isValid(cardNo);
-//            replyMessage.setCardValidationResult(result);
-//            if (result.isValid()) {
-//                replyMessage.setCode(Response.Status.OK.getStatusCode());
-//                return Response.status(Response.Status.OK).entity(replyMessage).build();
-//            } else {
-//                replyMessage.setCode(Response.Status.BAD_REQUEST.getStatusCode());
-//                return Response.status(Response.Status.BAD_REQUEST).entity(replyMessage).build();
-//            }
-//
-//        } catch (Exception ex) {
-//            LOG.error("error calling GET /validateCard ", ex);
-//            ReplyMessage replyMessage = new ReplyMessage();
-//            replyMessage.setCode(Response.Status.INTERNAL_SERVER_ERROR.getStatusCode());
-//            replyMessage.setMessage("error calling GET /validateCard " + ex.getMessage());
-//            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(replyMessage).build();
-//        }
     }
 
     /**
@@ -96,10 +79,32 @@ public class RestService {
      * "5133880000000012", "cvv" : "123", "issueNumber" : "01" }
      */
     @POST
-    @Path("/validateCard")
+    @Path("/configurePoS")
     @Produces({MediaType.APPLICATION_JSON})
-    @Consumes(MediaType.APPLICATION_JSON)
-    public Response postValidateFullCard(CreditCard creditCard) {
+    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    public Response postValidateFullCard(
+            @FormParam("name") String name,
+            @FormParam("endDate") String endDate,
+            @FormParam("cardNumber") String cardNumber,
+            @FormParam("cvv") String cvv,
+            @FormParam("issueNumber") String issueNumber) {
+        String message;
+        
+        try {
+            PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
+
+            message = "PoS now configured";
+            return Response.status(Response.Status.OK).entity(message).build();
+            
+        } catch (Exception e) {
+            message = "Please complete all fields before updating properties";
+            return Response.status(Response.Status.NOT_ACCEPTABLE).entity(message).build();
+        } 
 //        try {
 //            LOG.debug("/validateCard called creditCArd:" + creditCard);
 //
@@ -123,7 +128,6 @@ public class RestService {
 //            replyMessage.setMessage("error calling POST /validateCard " + ex.getMessage());
 //            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(replyMessage).build();
 //        }
-        return Response.status(Response.Status.INTERNAL_SERVER_ERROR).build();
     }
 
 }

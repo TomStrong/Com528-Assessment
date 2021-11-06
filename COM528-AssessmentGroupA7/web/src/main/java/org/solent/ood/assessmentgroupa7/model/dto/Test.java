@@ -11,10 +11,14 @@ package org.solent.ood.assessmentgroupa7.model.dto;
  */
 public class Test {
     private String message = "This is a test";
-    private String input = "";
+    private String input;
     
     public String getMessage() {
         return message;
+    }
+    
+    public String getInput() {
+        return input;
     }
     
     public void setInput(String input) {

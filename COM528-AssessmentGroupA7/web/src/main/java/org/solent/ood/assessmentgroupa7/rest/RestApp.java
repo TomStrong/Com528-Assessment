@@ -12,6 +12,6 @@ import org.glassfish.jersey.server.ResourceConfig;
 @ApplicationPath("/rest")
 public class RestApp extends ResourceConfig {
     public RestApp() {
-        packages("org.solent.ood.creditcardchecker.rest");
+        packages("org.solent.ood.assessmentgroup7a.rest");
     }
 }
