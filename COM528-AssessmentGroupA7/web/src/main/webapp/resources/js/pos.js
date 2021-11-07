@@ -126,7 +126,7 @@ function ready() {
                     cvv: cvv,
                     issueNumber: issueNo
                 };
-                var response = await fetch("/Com528-Assessment/transaction", {method: "POST", body: JSON.stringify(data)});
+                var response = await fetch("/Com528-Assessment/transaction?" + new URLSearchParams(data), {method: "POST", body: JSON.stringify(data)});
                 return;
         }
     });
