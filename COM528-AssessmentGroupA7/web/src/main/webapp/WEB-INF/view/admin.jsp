@@ -24,14 +24,17 @@
         <h1>PoS Configuration</h1>
     </head>
     <body>
-        
+        <br/>
+        <p class="required">* = required fields </p>
+        <br/>
+        <p>${message}</p>
         <br/>
             <form action="./admin" method="POST">
                 <div id="admin">
                     <table style="width:100%;" >
                         <tr>
                             <td>
-                                Bank URL
+                                Bank URL<scope class="required">*</scope>
                             </td>
                             <td>
                                 <input type="text" name="url" value="${url}">
@@ -39,7 +42,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Username
+                                Username<scope class="required">*</scope>
                             </td>
                             <td>
                                 <input type="text" name="username" value="${username}">
@@ -47,7 +50,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Password
+                                Password<scope class="required">*</scope>
                             </td>
                             <td>
                                 <input type="text" name="password" value="${password}">
@@ -55,7 +58,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Name on Credit Card
+                                Name on Credit Card<scope class="required">*</scope>
                             </td>
                             <td>
                                 <input type="text" name="name" value="${name}">
@@ -63,7 +66,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Credit Card End Date 
+                                Credit Card End Date<scope class="required">*</scope>
                             </td>
                             <td>
                                 <input type="text" name="endDate" value="${endDate}">
@@ -71,7 +74,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Credit Card Number
+                                Credit Card Number<scope class="required">*</scope>
                             </td>
                             <td>
                                 <input type="text" name="cardNumber" value="${cardNumber}">
@@ -79,7 +82,7 @@
                         </tr>
                         <tr>
                             <td>
-                                CVV Number
+                                CVV Number<scope class="required">*</scope>
                             </td>
                             <td>
                                 <input type="text" name="cvv" value="${cvv}">

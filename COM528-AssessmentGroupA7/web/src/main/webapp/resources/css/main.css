@@ -42,3 +42,7 @@ body{
     background-color: #06357a;
     color: white;
 }
+
+.required{
+    color: red;
+}

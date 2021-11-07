@@ -113,6 +113,14 @@ public class MVCController {
 
         } 
         
+        model.addAttribute("url", url);
+        model.addAttribute("username", username);
+        model.addAttribute("password", password);
+        model.addAttribute("name", name);
+        model.addAttribute("endDate", endDate);
+        model.addAttribute("cardNumber", cardNumber);
+        model.addAttribute("cvv", cvv);
+        model.addAttribute("issueNumber", issueNumber);
         model.addAttribute("message", message);
         
         return "admin";
