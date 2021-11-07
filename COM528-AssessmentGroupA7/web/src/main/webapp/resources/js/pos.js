@@ -31,7 +31,10 @@ function ready() {
                 document.getElementById("entry").innerHTML = entry;
             } else {
                 if (btn.id != "") {
-                    clearTimeout(charTimer);
+                    if (btn.id == "btn0") {
+                        entry += " ";
+                    } else {
+                        clearTimeout(charTimer);
                     charTimer = setTimeout(() => {resetLetterInputVars();}, 1000);
                     // if button is already selected AND letterIndex isn't the last then next letter
                     if (curButton == btn.id) {
@@ -48,6 +51,7 @@ function ready() {
                         entry += btn.getElementsByTagName("p")[0].innerHTML.charAt(letterIndex);
                     }
                     document.getElementById("entry").innerHTML = entry;
+                    }
                 }
             }
         });
@@ -64,6 +68,7 @@ function ready() {
     document.getElementById("cancel").addEventListener("click", async function() {
         transactionType = null;
         inputStage = 1;
+        emptyEntry();
         getTransactionType();
     });
     
@@ -110,6 +115,18 @@ function ready() {
                 issueNo = entry;
                 emptyEntry();
                 displayEnteredDetails();
+                return;
+            case 8:
+                var data = {
+                    transactionType: transactionType,
+                    amount: amount,
+                    name: name,
+                    endDate: expiryDate,
+                    cardNumber: cardNo,
+                    cvv: cvv,
+                    issueNumber: issueNo
+                };
+                var response = await fetch("/Com528-Assessment/transaction", {method: "POST", body: JSON.stringify(data)});
                 return;
         }
     });
@@ -178,8 +195,9 @@ function getIssueNo() {
 }
 
 function displayEnteredDetails() {
-    message = "Amount: " + amount + "<br>Name: " + name + "<br>Card Number: " + cardNo + "<br>Expiry Date: " + expiryDate + "<br>CVV: " + cvv + "<br>Issue Number: " + issueNo;
+    message = "Amount: " + amount + "<br>Name: " + name + "<br>Card Number: " + cardNo + "<br>Expiry Date: " + expiryDate + "<br>CVV: " + cvv + "<br>Issue Number: " + issueNo + "<br>Confirm details...";
     document.getElementById("prompt").innerHTML = message;
+    inputStage += 1;
 }
 
 document.addEventListener("DOMContentLoaded", ready);

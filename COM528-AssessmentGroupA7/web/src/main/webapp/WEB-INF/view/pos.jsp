@@ -64,9 +64,9 @@
                     </div>
 
                     <div class="keypadrow">
-                        <button type="button" class="btn btn-secondary char"><strong>*</strong></button>
-                        <button type="button" class="btn btn-secondary char"><strong>0</strong></button>
-                        <button type="button" class="btn btn-secondary char"><strong>#</strong></button>
+                        <button type="button" class="btn btn-secondary char"><strong>.</strong></button>
+                        <button type="button" class="btn btn-secondary char" id="btn0"><strong>0</strong><br><p>&#9251;</p></button>
+                        <button type="button" class="btn btn-secondary char"><strong>/</strong></button>
                     </div>
 
                     <div class="keypadrow">
