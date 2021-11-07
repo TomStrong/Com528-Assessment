@@ -22,6 +22,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.solent.ood.assessmentgroupa7.dao.PropertiesDao;
 import org.solent.ood.assessmentgroupa7.dao.WebObjectFactory;
+import org.solent.com504.oodd.bank.model.dto.CreditCard;
+import org.solent.com504.oodd.bank.client.impl.BankRestClientImpl;
 
 /**
  *
@@ -31,30 +33,26 @@ import org.solent.ood.assessmentgroupa7.dao.WebObjectFactory;
 @Controller
 @RequestMapping("/")
 public class MVCController {
+    
+    private final PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
+    
     @RequestMapping(value="/", method={RequestMethod.GET})
     public String index(Model model) {
         return "index";
     }
-    
-    
-    @RequestMapping(value="/test", method={RequestMethod.GET})
-    public String test(Model model) {
-        return "testjsp";
-    }
-    
-    
     
     @RequestMapping(value="/pos", method={RequestMethod.GET})
     public String pos(Model model) {
         return "pos";
     }
     
+    /*
+    Gets values from default.properties and populates form on JSP.
+    */
     @RequestMapping(value = "/admin", method = {RequestMethod.GET})
     public String admin(
             Model model,
             HttpSession session) {
-        
-        PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
         
         String url = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
         String username = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.username");
@@ -76,7 +74,10 @@ public class MVCController {
         
         return "admin";
     }
-
+    
+    /*
+    Reads in user input and posts to application.properties file.
+    */
     @RequestMapping(value = "/admin", method = {RequestMethod.POST})
     public String admin(
             @RequestParam(name = "url", required = true) String url,
@@ -92,14 +93,13 @@ public class MVCController {
         
         String message;
         
- /*
-        Check all required parameters are present for updating application.properties. If not, display error message and do not update.
+        /*
+        Checks all required parameters are present for updating application.properties. If not, display error message and do not update.
         If all are present, display confirmation and update accordingly.
         */
         if (url.isEmpty() || username.isEmpty() || password.isEmpty() || name.isEmpty() || endDate.isEmpty() || cardNumber.isEmpty() || cvv.isEmpty()) {
             message = "Please complete all fields before updating properties";
         } else {
-            PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.url", url);
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.username", username);
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.password", password);
@@ -110,7 +110,6 @@ public class MVCController {
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
 
             message = "PoS now configured";
-
         } 
         
         model.addAttribute("url", url);
@@ -125,4 +124,70 @@ public class MVCController {
         
         return "admin";
     }
+    
+    /*
+    Checks user input for transaction type.
+    If payment (1), assigns input to CreditCard fromCard and PoS details to CreditCard toCard.
+    If refund (2), assigns input to CreditCard toCard and PoS details to CreditCard fromCard.
+    */
+    @RequestMapping(value = "/transaction", method = {RequestMethod.POST})
+    public String transaction(
+            @RequestParam(name = "transactionType", required = true) Integer transactionType,
+            @RequestParam(name = "amount", required = true) Double amount,
+            @RequestParam(name = "name", required = true) String inputName,
+            @RequestParam(name = "endDate", required = true) String inputEndDate,
+            @RequestParam(name = "cardNumber", required = true) String inputCardNumber,
+            @RequestParam(name = "cvv", required = true) String inputCvv,
+            @RequestParam(name = "issueNumber", required = false) String inputIssueNumber,
+            Model model,
+            HttpSession session) {
+        
+        String posName = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.name");
+        String posEndDate = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.enddate");
+        String posCardNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cardno");
+        String posCvv = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cvv");
+        String posIssueNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.issueno");
+        
+        CreditCard toCard = new CreditCard();
+        CreditCard fromCard = new CreditCard();
+        
+        if (transactionType == 1)
+        {
+            toCard.setName(posName);
+            toCard.setEndDate(posEndDate);
+            toCard.setCardnumber(posCardNumber);
+            toCard.setCvv(posCvv);
+            toCard.setIssueNumber(posIssueNumber);
+
+            fromCard.setName(inputName);
+            fromCard.setEndDate(inputEndDate);
+            fromCard.setCardnumber(inputCardNumber);
+            fromCard.setCvv(inputCvv);
+            fromCard.setIssueNumber(inputIssueNumber);
+        } 
+        else if (transactionType == 2)
+        {
+            toCard.setName(inputName);
+            toCard.setEndDate(inputEndDate);
+            toCard.setCardnumber(inputCardNumber);
+            toCard.setCvv(inputCvv);
+            toCard.setIssueNumber(inputIssueNumber);
+
+            fromCard.setName(posName);
+            fromCard.setEndDate(posEndDate);
+            fromCard.setCardnumber(posCardNumber);
+            fromCard.setCvv(posCvv);
+            fromCard.setIssueNumber(posIssueNumber);
+        }
+        
+        String bankUrl = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
+        
+        BankRestClientImpl transaction = new BankRestClientImpl(bankUrl);
+        transaction.transferMoney(fromCard, toCard, amount);
+        
+        model.addAttribute("transaction", transaction);
+
+        return "pos";
+    }
+    
 }
