@@ -36,10 +36,12 @@
     </head>
     <body>
         <div class="container">
-            <button type="button" onclick="changeInput()">Change input type</button>
             <div class="interface">
                 <div id="screen">
-
+                    <p id="status"></p>
+                    <p id="prompt"></p>
+                    <br>
+                    <p id="entry"></p>
                 </div>
 
                 <div class="keypad">
@@ -75,9 +77,5 @@
                 </div>
             </div>
         </div>
-        <form action="./rest/api-v1/test" method="GET">
-            <input type="text" name="testInput">
-            <button type="submit">Submit</button>
-        </form>
     </body>
 </html>
