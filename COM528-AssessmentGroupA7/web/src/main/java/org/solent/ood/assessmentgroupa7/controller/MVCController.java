@@ -55,14 +55,19 @@ public class MVCController {
             HttpSession session) {
         
         PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
-    
+        
+        String url = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
+        String username = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.username");
+        String password = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.password");
         String name = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.name");
         String endDate = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.enddate");
         String cardNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cardno");
         String cvv = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cvv");
         String issueNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.issueno");
 
-        
+        model.addAttribute("url", url);
+        model.addAttribute("username", username);
+        model.addAttribute("password", password);
         model.addAttribute("name", name);
         model.addAttribute("endDate", endDate);
         model.addAttribute("cardNumber", cardNumber);
@@ -72,35 +77,41 @@ public class MVCController {
         return "admin";
     }
 
-    // TO DO - add lunn check
-    @RequestMapping(value = "/admin", method = {RequestMethod.POST})
-    public String admin(
-            @RequestParam(name = "name", required = true) String name,
-            @RequestParam(name = "endDate", required = true) String endDate,
-            @RequestParam(name = "cardNumber", required = true) String cardNumber,
-            @RequestParam(name = "cvv", required = true) String cvv,
-            @RequestParam(name = "issueNumber", required = true) String issueNumber,
-            Model model,
-            HttpSession session) {
-        
-        String message;
-        
-        try {
-            PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
-
-            message = "PoS now configured";
-            
-        } catch (Exception e) {
-            message = "Please complete all fields before updating properties";
-        } 
-        
-        model.addAttribute("message", message);
-        
-        return "admin";
-    }
+//    This method is now being handled by ReST Service
+//    @RequestMapping(value = "/admin", method = {RequestMethod.POST})
+//    public String admin(
+//            @RequestParam(name = "url", required = true) String url,
+//            @RequestParam(name = "username", required = true) String username,
+//            @RequestParam(name = "password", required = true) String password,
+//            @RequestParam(name = "name", required = true) String name,
+//            @RequestParam(name = "endDate", required = true) String endDate,
+//            @RequestParam(name = "cardNumber", required = true) String cardNumber,
+//            @RequestParam(name = "cvv", required = true) String cvv,
+//            @RequestParam(name = "issueNumber", required = false) String issueNumber,
+//            Model model,
+//            HttpSession session) {
+//        
+//        String message;
+//        
+//        try {
+//            PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
+//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.url", url);
+//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.username", username);
+//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.password", password);
+//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
+//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
+//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
+//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
+//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
+//
+//            message = "PoS now configured";
+//            
+//        } catch (Exception e) {
+//            message = "Please complete all fields before updating properties";
+//        } 
+//        
+//        model.addAttribute("message", message);
+//        
+//        return "admin";
+//    }
 }

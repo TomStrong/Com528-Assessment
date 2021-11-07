@@ -33,6 +33,30 @@
                     <table style="width:100%;" >
                         <tr>
                             <td>
+                                Bank URL
+                            </td>
+                            <td>
+                                <input type="text" name="url" value="${url}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Username
+                            </td>
+                            <td>
+                                <input type="text" name="username" value="${username}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                Password
+                            </td>
+                            <td>
+                                <input type="text" name="password" value="${password}">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
                                 Name on Credit Card
                             </td>
                             <td>
@@ -76,7 +100,7 @@
                 
                 <br/>
                 <input type="hidden" name="action" value="updateProperties">
-                <button class="btn" type="submit">Update Properties</button>
+                <button class="btn" type="submit">Submit Configuration</button>
             </form> 
         
     </body>

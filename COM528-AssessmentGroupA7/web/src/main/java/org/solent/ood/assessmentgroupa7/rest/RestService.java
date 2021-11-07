@@ -74,7 +74,7 @@ public class RestService {
     }
 
     /**
-     * POST http://localhost:8080/creditcardchecker-web/rest/api-v1/validateCard payload 
+     * POST application.properties payload 
      * { "name" : "test user1", "endDate" : "11/21", "cardnumber" :
      * "5133880000000012", "cvv" : "123", "issueNumber" : "01" }
      */
@@ -82,16 +82,29 @@ public class RestService {
     @Path("/configurePoS")
     @Produces({MediaType.APPLICATION_JSON})
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-    public Response postValidateFullCard(
+    public Response postConfigurePos(
+            @FormParam("url") String url,
+            @FormParam("username") String username,
+            @FormParam("password") String password,
             @FormParam("name") String name,
             @FormParam("endDate") String endDate,
             @FormParam("cardNumber") String cardNumber,
             @FormParam("cvv") String cvv,
             @FormParam("issueNumber") String issueNumber) {
         String message;
-        
-        try {
+      
+        /*
+        Check all required parameters are present for updating application.properties. If not, display error message and do not update.
+        If all are present, display confirmation and update accordingly.
+        */
+        if (url.isEmpty() || username.isEmpty() || password.isEmpty() || name.isEmpty() || endDate.isEmpty() || cardNumber.isEmpty() || cvv.isEmpty()) {
+            message = "Please complete all fields before updating properties";
+            return Response.status(Response.Status.NOT_ACCEPTABLE).entity(message).build();
+        } else {
             PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.url", url);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.username", username);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.password", password);
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
@@ -100,10 +113,6 @@ public class RestService {
 
             message = "PoS now configured";
             return Response.status(Response.Status.OK).entity(message).build();
-            
-        } catch (Exception e) {
-            message = "Please complete all fields before updating properties";
-            return Response.status(Response.Status.NOT_ACCEPTABLE).entity(message).build();
         } 
 //        try {
 //            LOG.debug("/validateCard called creditCArd:" + creditCard);
