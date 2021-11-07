@@ -7,8 +7,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<%@page import="org.solent.ood.assessmentgroupa7.dao.WebObjectFactory"%>
-<%@page import="org.solent.ood.assessmentgroupa7.dao.PropertiesDao"%>
 
 <!DOCTYPE html>
 <html>
@@ -99,7 +97,6 @@
                 </div>
                 
                 <br/>
-                <input type="hidden" name="action" value="updateProperties">
                 <button class="btn" type="submit">Submit Configuration</button>
             </form> 
         
