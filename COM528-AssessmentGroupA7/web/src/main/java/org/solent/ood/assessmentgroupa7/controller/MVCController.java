@@ -77,41 +77,44 @@ public class MVCController {
         return "admin";
     }
 
-//    This method is now being handled by ReST Service
-//    @RequestMapping(value = "/admin", method = {RequestMethod.POST})
-//    public String admin(
-//            @RequestParam(name = "url", required = true) String url,
-//            @RequestParam(name = "username", required = true) String username,
-//            @RequestParam(name = "password", required = true) String password,
-//            @RequestParam(name = "name", required = true) String name,
-//            @RequestParam(name = "endDate", required = true) String endDate,
-//            @RequestParam(name = "cardNumber", required = true) String cardNumber,
-//            @RequestParam(name = "cvv", required = true) String cvv,
-//            @RequestParam(name = "issueNumber", required = false) String issueNumber,
-//            Model model,
-//            HttpSession session) {
-//        
-//        String message;
-//        
-//        try {
-//            PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
-//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.url", url);
-//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.username", username);
-//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.password", password);
-//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
-//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
-//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
-//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
-//            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
-//
-//            message = "PoS now configured";
-//            
-//        } catch (Exception e) {
-//            message = "Please complete all fields before updating properties";
-//        } 
-//        
-//        model.addAttribute("message", message);
-//        
-//        return "admin";
-//    }
+    @RequestMapping(value = "/admin", method = {RequestMethod.POST})
+    public String admin(
+            @RequestParam(name = "url", required = true) String url,
+            @RequestParam(name = "username", required = true) String username,
+            @RequestParam(name = "password", required = true) String password,
+            @RequestParam(name = "name", required = true) String name,
+            @RequestParam(name = "endDate", required = true) String endDate,
+            @RequestParam(name = "cardNumber", required = true) String cardNumber,
+            @RequestParam(name = "cvv", required = true) String cvv,
+            @RequestParam(name = "issueNumber", required = false) String issueNumber,
+            Model model,
+            HttpSession session) {
+        
+        String message;
+        
+ /*
+        Check all required parameters are present for updating application.properties. If not, display error message and do not update.
+        If all are present, display confirmation and update accordingly.
+        */
+        if (url.isEmpty() || username.isEmpty() || password.isEmpty() || name.isEmpty() || endDate.isEmpty() || cardNumber.isEmpty() || cvv.isEmpty()) {
+            message = "Please complete all fields before updating properties";
+        } else {
+            PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.url", url);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.username", username);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.password", password);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
+            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
+
+            message = "PoS now configured";
+
+        } 
+        
+        model.addAttribute("message", message);
+        
+        return "admin";
+    }
 }

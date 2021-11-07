@@ -5,12 +5,29 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="org.solent.ood.assessmentgroupa7.dao.WebObjectFactory"%>
+<%@page import="org.solent.ood.assessmentgroupa7.dao.PropertiesDao"%>
+<%@page import="org.solent.com504.oodd.bank.model.dto.CreditCard"%>
+
+<% 
+    PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
+    
+    String url = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
+    
+    String cardNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cardno");
+    
+
+    CreditCard toCard = new CreditCard();
+    toCard.setCardnumber(cardNumber);
+    
+%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta http-equiv="X-UA-Compatible">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <link rel="stylesheet" href="./resources/css/pos.css">

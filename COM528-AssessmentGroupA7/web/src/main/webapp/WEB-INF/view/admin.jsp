@@ -24,9 +24,9 @@
         <h1>PoS Configuration</h1>
     </head>
     <body>
+        
         <br/>
-        <p>${message}</p>
-            <form action="./rest/api-v1/configurePoS" method="POST">
+            <form action="./admin" method="POST">
                 <div id="admin">
                     <table style="width:100%;" >
                         <tr>
