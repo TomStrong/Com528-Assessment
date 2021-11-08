@@ -9,6 +9,8 @@ import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.List;
 import java.util.ArrayList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import org.apache.logging.log4j.LogManager;
@@ -34,6 +36,8 @@ import org.solent.com504.oodd.bank.client.impl.BankRestClientImpl;
 @RequestMapping("/")
 public class MVCController {
     
+    private static final Logger LOG = LogManager.getLogger(MVCController.class);
+    
     private final PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
     
     @RequestMapping(value="/", method={RequestMethod.GET})
@@ -46,9 +50,7 @@ public class MVCController {
         return "pos";
     }
     
-    /*
-    Gets values from default.properties and populates form on JSP.
-    */
+
     @RequestMapping(value = "/admin", method = {RequestMethod.GET})
     public String admin(
             Model model,
@@ -75,9 +77,7 @@ public class MVCController {
         return "admin";
     }
     
-    /*
-    Reads in user input and posts to application.properties file.
-    */
+
     @RequestMapping(value = "/admin", method = {RequestMethod.POST})
     public String admin(
             @RequestParam(name = "url", required = true) String url,
@@ -93,10 +93,7 @@ public class MVCController {
         
         String message;
         
-        /*
-        Checks all required parameters are present for updating application.properties. If not, display error message and do not update.
-        If all are present, display confirmation and update accordingly.
-        */
+
         if (url.isEmpty() || username.isEmpty() || password.isEmpty() || name.isEmpty() || endDate.isEmpty() || cardNumber.isEmpty() || cvv.isEmpty()) {
             message = "Please complete all fields before updating properties";
         } else {
@@ -125,11 +122,7 @@ public class MVCController {
         return "admin";
     }
     
-    /*
-    Checks user input for transaction type.
-    If payment (1), assigns input to CreditCard fromCard and PoS details to CreditCard toCard.
-    If refund (2), assigns input to CreditCard toCard and PoS details to CreditCard fromCard.
-    */
+    
     @RequestMapping(value = "/transaction", method = {RequestMethod.POST})
     public String transaction(
             @RequestParam(name = "transactionType", required = true) String transactionType,
@@ -183,7 +176,11 @@ public class MVCController {
         String bankUrl = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
         Double dAmount = Double.parseDouble(amount);
         BankRestClientImpl transaction = new BankRestClientImpl(bankUrl);
-        transaction.transferMoney(fromCard, toCard, dAmount);
+        try {
+            transaction.transferMoney(fromCard, toCard, dAmount);
+        } catch (Exception e) {
+            LOG.debug(transaction);
+        } 
         
         model.addAttribute("transaction", transaction);
 
