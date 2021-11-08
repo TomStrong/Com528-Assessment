@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.solent.ood.assessmentgroupa7.controller;
+package org.solent.ood.assessmentgroupa7.spring.web;
 
 /**
  *
@@ -15,7 +15,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-@SpringBootApplication(scanBasePackages = "org.solent.ood.assessmentgroupa7.controller")
+@SpringBootApplication(scanBasePackages = "org.solent.ood.assessmentgroupa7.spring.web")
 public class SpringBootJspApplication extends SpringBootServletInitializer {
 
     @Override

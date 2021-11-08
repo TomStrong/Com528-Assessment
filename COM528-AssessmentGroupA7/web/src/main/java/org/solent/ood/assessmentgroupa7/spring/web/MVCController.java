@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.solent.ood.assessmentgroupa7.controller;
+package org.solent.ood.assessmentgroupa7.spring.web;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
@@ -27,7 +27,6 @@ import org.solent.ood.assessmentgroupa7.dao.WebObjectFactory;
 import org.solent.com504.oodd.bank.model.dto.CreditCard;
 import org.solent.com504.oodd.bank.client.impl.BankRestClientImpl;
 import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
-import org.solent.com504.oodd.bank.model.dto.BankTransactionStatus;
 
 /**
  *
@@ -179,25 +178,21 @@ public class MVCController {
         Double dAmount = Double.parseDouble(amount);
         BankRestClientImpl client = new BankRestClientImpl(bankUrl);
         TransactionReplyMessage reply = new TransactionReplyMessage();
-        Integer result = null;
+        String result = null;
         
         try {
-            reply = client.transferMoney(fromCard, toCard, dAmount);
-            
-            if(reply.getStatus() == BankTransactionStatus.SUCCESS){
-                result = 1;
-            } else if (reply.getStatus() == BankTransactionStatus.FAIL){
-                result = 2;
-
-            }
-            
+            reply = client.transferMoney(fromCard, toCard, dAmount);         
+            if(reply.getCode() == 200){
+                result = "Approved";
+            } else if (reply.getCode() == 400){
+                result = "Declined<br>" + reply.getMessage();
+            } 
         } catch (Exception e) {
-            LOG.debug(reply.getCode());
-            result = 3;
- 
+
+            result = "Error. Please try again.";
         } 
         
-        model.addAttribute("result", reply);
+        model.addAttribute("result", result);
         
         return "pos";
     }
