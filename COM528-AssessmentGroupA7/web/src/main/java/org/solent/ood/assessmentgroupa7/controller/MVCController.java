@@ -132,8 +132,8 @@ public class MVCController {
     */
     @RequestMapping(value = "/transaction", method = {RequestMethod.POST})
     public String transaction(
-            @RequestParam(name = "transactionType", required = true) Integer transactionType,
-            @RequestParam(name = "amount", required = true) Double amount,
+            @RequestParam(name = "transactionType", required = true) String transactionType,
+            @RequestParam(name = "amount", required = true) String amount,
             @RequestParam(name = "name", required = true) String inputName,
             @RequestParam(name = "endDate", required = true) String inputEndDate,
             @RequestParam(name = "cardNumber", required = true) String inputCardNumber,
@@ -151,7 +151,7 @@ public class MVCController {
         CreditCard toCard = new CreditCard();
         CreditCard fromCard = new CreditCard();
         
-        if (transactionType == 1)
+        if (transactionType.equals("1"))
         {
             toCard.setName(posName);
             toCard.setEndDate(posEndDate);
@@ -165,7 +165,7 @@ public class MVCController {
             fromCard.setCvv(inputCvv);
             fromCard.setIssueNumber(inputIssueNumber);
         } 
-        else if (transactionType == 2)
+        else if (transactionType.equals("2"))
         {
             toCard.setName(inputName);
             toCard.setEndDate(inputEndDate);
@@ -181,9 +181,9 @@ public class MVCController {
         }
         
         String bankUrl = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
-        
+        Double dAmount = Double.parseDouble(amount);
         BankRestClientImpl transaction = new BankRestClientImpl(bankUrl);
-        transaction.transferMoney(fromCard, toCard, amount);
+        transaction.transferMoney(fromCard, toCard, dAmount);
         
         model.addAttribute("transaction", transaction);
 
