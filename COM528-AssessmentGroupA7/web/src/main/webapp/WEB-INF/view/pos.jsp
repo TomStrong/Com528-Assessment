@@ -22,7 +22,20 @@
     <body>
         <div class="container">
             <div id="hiddenAttributes">
-                <input type="hidden" id="resultCode" name="resultCode" value="${result}">
+                <div id="retrieved">
+                    <input type="hidden" id="resultCode" name="resultCode" value="${result}">
+                </div>
+                <div id="sending">
+                    <form id="transactionForm" action="./transaction" method="POST">
+                        <input type="hidden" name="transactionType">
+                        <input type="hidden" name="amount">
+                        <input type="hidden" name="name">
+                        <input type="hidden" name="endDate">
+                        <input type="hidden" name="cardNumber">
+                        <input type="hidden" name="cvv">
+                        <input type="hidden" name="issueNumber">
+                    </form>
+                </div>
             </div>
             <div class="interface">
                 <div id="screen">

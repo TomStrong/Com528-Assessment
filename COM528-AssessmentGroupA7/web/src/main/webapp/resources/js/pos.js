@@ -143,16 +143,15 @@ function ready() {
                 displayEnteredDetails();
                 return;
             case 8:
-                var data = {
-                    transactionType: transactionType,
-                    amount: amount,
-                    name: name,
-                    endDate: expiryDate,
-                    cardNumber: cardNo,
-                    cvv: cvv,
-                    issueNumber: issueNo
-                };
-                var response = await fetch("/Com528-Assessment/transaction?" + new URLSearchParams(data), {method: "POST", body: JSON.stringify(data)});
+                var form = document.querySelector("#transactionForm");
+                form.querySelector('input[name="transactionType"]').value = transactionType;
+                form.querySelector('input[name="amount"]').value = amount;
+                form.querySelector('input[name="name"]').value = name;
+                form.querySelector('input[name="endDate"]').value = expiryDate;
+                form.querySelector('input[name="cardNumber"]').value = cardNo;
+                form.querySelector('input[name="cvv"]').value = cvv;
+                form.querySelector('input[name="issueNumber"]').value = issueNo;
+                form.submit();
                 return;
         }
     });
