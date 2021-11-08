@@ -26,6 +26,8 @@ import org.solent.ood.assessmentgroupa7.dao.PropertiesDao;
 import org.solent.ood.assessmentgroupa7.dao.WebObjectFactory;
 import org.solent.com504.oodd.bank.model.dto.CreditCard;
 import org.solent.com504.oodd.bank.client.impl.BankRestClientImpl;
+import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
+import org.solent.com504.oodd.bank.model.dto.BankTransactionStatus;
 
 /**
  *
@@ -175,16 +177,31 @@ public class MVCController {
         
         String bankUrl = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
         Double dAmount = Double.parseDouble(amount);
-        BankRestClientImpl transaction = new BankRestClientImpl(bankUrl);
+        BankRestClientImpl client = new BankRestClientImpl(bankUrl);
+        TransactionReplyMessage reply = new TransactionReplyMessage();
+        Integer result = null;
+        
         try {
-            transaction.transferMoney(fromCard, toCard, dAmount);
+            reply = client.transferMoney(fromCard, toCard, dAmount);
+            
+            if(reply.getStatus() == BankTransactionStatus.SUCCESS){
+                result = 1;
+            } else if (reply.getStatus() == BankTransactionStatus.FAIL){
+                result = 2;
+
+            }
+            
         } catch (Exception e) {
-            LOG.debug(transaction);
+            LOG.debug(reply.getCode());
+            result = 3;
+ 
         } 
         
-        model.addAttribute("transaction", transaction);
-
+        model.addAttribute("result", result);
+        
         return "pos";
     }
+    
+   
     
 }

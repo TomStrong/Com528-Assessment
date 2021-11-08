@@ -21,6 +21,9 @@
     </head>
     <body>
         <div class="container">
+            <div id="hiddenAttributes">
+                <input type="hidden" id="resultCode" name="resultCode" value="${result}">
+            </div>
             <div class="interface">
                 <div id="screen">
                     <p id="status"></p>

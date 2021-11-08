@@ -87,29 +87,55 @@ function ready() {
                 }
                 return;
             case 2:
-                amount = entry;
-                emptyEntry();
-                getName();
+                if (entry.length == 0){
+                    document.getElementById("status").innerHTML = "Required";
+                } else {
+                    amount = entry;
+                    emptyEntry();
+                    getName();
+                }
                 return;
             case 3:
-                name = entry;
-                emptyEntry();
-                getCardNo();
+                if (entry.length == 0){
+                    document.getElementById("status").innerHTML = "Required";
+                } else {
+                    name = entry;
+                    emptyEntry();
+                    getCardNo();
+                }
                 return;
             case 4:
+                if (entry.length == 0){
+                    document.getElementById("status").innerHTML = "Required";
+                } else if (entry.length !== 16) {
+                    document.getElementById("status").innerHTML = "Card numbers must be 16 digits";
+                } else {
                 cardNo = entry;
                 emptyEntry();
                 getExpiryDate();
+                }
                 return;
             case 5:
-                expiryDate = entry;
-                emptyEntry();
-                getCVV();
+                if (entry.length == 0){
+                    document.getElementById("status").innerHTML = "Required";
+                } else if (entry.length !== 5 || entry.charAt(2) !== "/") {
+                    document.getElementById("status").innerHTML = "Date must be formatted as **/**";
+                } else {
+                    expiryDate = entry;
+                    emptyEntry();
+                    getCVV();
+                }
                 return;
             case 6:
-                cvv = entry;
-                emptyEntry();
-                getIssueNo();
+                if (entry.length == 0){
+                    document.getElementById("status").innerHTML = "Required";
+                } else if (entry.length == 3 || entry.length == 4){
+                    cvv = entry;
+                    emptyEntry();
+                    getIssueNo();
+                } else {
+                    document.getElementById("status").innerHTML = "Required";
+                }
                 return;
             case 7:
                 issueNo = entry;
@@ -134,7 +160,12 @@ function ready() {
     // ----------
     // Starts transaction input cycle
     // ----------
-    getTransactionType();
+    
+    if (document.getElementById("resultCode").value != "") {
+        document.getElementById("status").innerHTML = document.getElementById("resultCode").value;
+    } else {
+        getTransactionType();
+    }
 }
 
 function changeInput() {
