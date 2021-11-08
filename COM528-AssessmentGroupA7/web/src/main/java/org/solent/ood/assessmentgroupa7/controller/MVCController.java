@@ -197,7 +197,7 @@ public class MVCController {
  
         } 
         
-        model.addAttribute("result", result);
+        model.addAttribute("result", reply);
         
         return "pos";
     }
