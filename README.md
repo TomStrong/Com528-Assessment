@@ -14,7 +14,7 @@ The students who developed this project (in alphabetical order) are:
 For design documentation, click [here](https://github.com/TomStrong/Com528-Assessment/blob/main/docs/documentation.md).
 
 ## Point of Sale Application
-___
+
 This project is simple a Point of Sale web application, which allows configuration of the device via the administrator, and also allows the user to enter a payment or refund via the PoS interface. The transaction is then posted to the following bank client:
 
 [Simple Bank Simulator](http://com528bank.ukwest.cloudapp.azure.com:8080/home)
@@ -24,19 +24,19 @@ The application then logs the response and displays on the PoS device whether th
 The application uses Enterprise Java Technologies with Spring MVC framework and Java Server Page for the front-end. Javascript has been used to generate the UI and validate user inputs. 
 
 ## System Requirements
-___
+
 This application has been designed and tested on the following, therefore it is recommended that these are used as a minimum:
 
 - Windows 10 
 - Java JDK v8
 - Apache Maven 3.8
 - Apache Tomcat 9.0
-- Web browsers: Google Chrome
+- Web browsers: Google Chrome, Mozilla Firefox, Microsoft Edge, Opera
 
 Please note, Internet Explorer is not supported.
 
 ## User Instructions
-___
+
 Before the application is run, ensure the following command is run in the folder **Com528-AssessmentGroupA7**:
 
 ```
@@ -49,14 +49,13 @@ The application can now be opened in Netbeans. Once the web module has been run 
 The web app will open on the home page, where the user can navigate between Administrator and PoS device. If either button is clicked, a new web page will be opened.
 
 ### Administrator
-___
 
 The first time the application is launched, the form within the administrator page will auto populate with the data from [default.properties](https://github.com/TomStrong/Com528-Assessment/blob/main/COM528-AssessmentGroupA7/web/src/main/resources/default.properties). This can be configured to update the PoS with the current user's details.
 
 All fields are required, except for the issue number, and the form will not submit without these. If this is attempted, an error message will be displayed.
 
 ### PoS
-___
+
 The PoS device prompts the user to select either a payment or refund. Each step thereafter is the same, with the device prompting the user for input along the way.
 
 The buttons on the device are updated depending on the field to input. For example, the amount, credit card number, cvv and issue number will only offer the user integer input, whereas the name will only offer characters. This has been automated in the Javascript and cannot be overridden.
