@@ -179,13 +179,16 @@ public class MVCController {
         BankRestClientImpl client = new BankRestClientImpl(bankUrl);
         TransactionReplyMessage reply = new TransactionReplyMessage();
         String result = null;
+        String transactionReply = null;
         
         try {
             reply = client.transferMoney(fromCard, toCard, dAmount);         
             if(reply.getCode() == 200){
                 result = "Approved";
+                transactionReply = "Transaction complete";
             } else if (reply.getCode() == 400){
-                result = "Declined<br>" + reply.getMessage();
+                result = "Declined<br/><br/>" + reply.getMessage();
+                transactionReply =  "Transaction aborted";
             } 
         } catch (Exception e) {
 
@@ -193,6 +196,7 @@ public class MVCController {
         } 
         
         model.addAttribute("result", result);
+        model.addAttribute("transactionReply", transactionReply);
         
         return "pos";
     }

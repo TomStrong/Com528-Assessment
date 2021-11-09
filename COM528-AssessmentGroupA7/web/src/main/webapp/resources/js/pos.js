@@ -160,8 +160,11 @@ function ready() {
     // Starts transaction input cycle
     // ----------
     
-    if (document.getElementById("resultCode").value != "") {
-        document.getElementById("status").innerHTML = document.getElementById("resultCode").value;
+    if (document.getElementById("result").value != "") {
+        document.getElementById("status").innerHTML = document.getElementById("result").value;
+        if (document.getElementById("transactionReply").value != "") {
+            document.getElementById("prompt").innerHTML = document.getElementById("transactionReply").value;
+        }
     } else {
         getTransactionType();
     }

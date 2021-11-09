@@ -23,7 +23,8 @@
         <div class="container">
             <div id="hiddenAttributes">
                 <div id="retrieved">
-                    <input type="hidden" id="resultCode" name="resultCode" value="${result}">
+                    <input type="hidden" id="result" name="result" value="${result}">
+                    <input type="hidden" id="transactionReply" name="transactionReply" value="${transactionReply}">
                 </div>
                 <div id="sending">
                     <form id="transactionForm" action="./transaction" method="POST">
