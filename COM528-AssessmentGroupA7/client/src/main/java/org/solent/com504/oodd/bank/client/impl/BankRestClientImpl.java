@@ -33,6 +33,7 @@ import org.solent.com504.oodd.bank.model.dto.TransactionRequestMessage;
 public class BankRestClientImpl implements BankRestClient {
 
     final static Logger LOG = LogManager.getLogger(BankRestClientImpl.class);
+    final static Logger TRANSACTIONS_LOG = LogManager.getLogger("TRANSACTIONS_LOG");
 
     String urlStr;
 
@@ -66,6 +67,7 @@ public class BankRestClientImpl implements BankRestClient {
         TransactionReplyMessage transactionReplyMessage = response.readEntity(TransactionReplyMessage.class);
 
         LOG.debug("Response status=" + response.getStatus() + " ReplyMessage: " + transactionReplyMessage);
+        TRANSACTIONS_LOG.info(transactionReplyMessage);
 
         return transactionReplyMessage;
 
@@ -101,6 +103,7 @@ public class BankRestClientImpl implements BankRestClient {
         TransactionReplyMessage transactionReplyMessage = response.readEntity(TransactionReplyMessage.class);
 
         LOG.debug("Response status=" + response.getStatus() + " ReplyMessage: " + transactionReplyMessage);
+        TRANSACTIONS_LOG.info(transactionReplyMessage);
 
         return transactionReplyMessage;
 

@@ -37,8 +37,6 @@ import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
 @RequestMapping("/")
 public class MVCController {
     
-    private static final Logger LOG = LogManager.getLogger(MVCController.class);
-    
     private final PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
     
     @RequestMapping(value="/", method={RequestMethod.GET})
@@ -189,9 +187,8 @@ public class MVCController {
             } else if (reply.getCode() == 400){
                 result = "Declined<br/><br/>" + reply.getMessage();
                 transactionReply =  "Transaction aborted";
-            } 
+            }
         } catch (Exception e) {
-
             result = "Error. Please try again.";
         } 
         
