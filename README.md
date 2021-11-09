@@ -67,11 +67,12 @@ The action buttons on the device are as follows:
 
 | Button        | Action    | 
 | :------------- | :----------: | 
-| ![](images/acceptButton.png) | Accept current input | 
-| ![](images/backButton.png)   | Back (input only) |
-| ![](images/cancelButton.png)  | Cancel transaction |
+| ![](images/acceptButton.PNG) | Accept current input | 
+| ![](images/backButton.PNG)   | Back (input only) |
+| ![](images/cancelButton.PNG)  | Cancel transaction |
 
 All fields are required, except for Issue Number, and will display an appropriate error message if no or invalid entry is made. 
+
 
 
 
