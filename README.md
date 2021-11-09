@@ -15,7 +15,7 @@ For design documentation, click [here](https://github.com/TomStrong/Com528-Asses
 
 ## Point of Sale Application
 
-This project is simple a Point of Sale web application, which allows configuration of the device via the administrator, and also allows the user to enter a payment or refund via the PoS interface. The transaction is then posted to the following bank client:
+This project is a simple Point of Sale web application, which allows configuration of the device via the administrator, and also allows the user to enter a payment or refund via the PoS interface. The transaction is then posted to the following bank client:
 
 [Simple Bank Simulator](http://com528bank.ukwest.cloudapp.azure.com:8080/home)
 
