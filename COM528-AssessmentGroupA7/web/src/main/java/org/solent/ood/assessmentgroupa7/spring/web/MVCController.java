@@ -5,6 +5,7 @@
  */
 package org.solent.ood.assessmentgroupa7.spring.web;
 
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.List;
@@ -36,6 +37,8 @@ import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
 @Controller
 @RequestMapping("/")
 public class MVCController {
+    
+    final static Logger LOG = LogManager.getLogger(MVCController.class);
     
     private final PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
     
@@ -102,6 +105,7 @@ public class MVCController {
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
+            
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
             propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
 
@@ -120,7 +124,6 @@ public class MVCController {
         
         return "admin";
     }
-    
     
     @RequestMapping(value = "/transaction", method = {RequestMethod.POST})
     public String transaction(
@@ -172,15 +175,16 @@ public class MVCController {
             fromCard.setIssueNumber(posIssueNumber);
         }
         
-        String bankUrl = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
-        Double dAmount = Double.parseDouble(amount);
-        BankRestClientImpl client = new BankRestClientImpl(bankUrl);
-        TransactionReplyMessage reply = new TransactionReplyMessage();
         String result = null;
         String transactionReply = null;
         
         try {
-            reply = client.transferMoney(fromCard, toCard, dAmount);         
+            
+            String bankUrl = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
+            Double dAmount = Double.parseDouble(amount);
+            BankRestClientImpl client = new BankRestClientImpl(bankUrl);
+            TransactionReplyMessage reply = client.transferMoney(fromCard, toCard, dAmount);  
+            
             if(reply.getCode() == 200){
                 result = "Approved";
                 transactionReply = "Transaction complete";
@@ -188,7 +192,8 @@ public class MVCController {
                 result = "Declined<br/><br/>" + reply.getMessage();
                 transactionReply =  "Transaction aborted";
             }
-        } catch (Exception e) {
+        } catch (Exception ex) {
+            LOG.error("cannot complete transaction:", ex);
             result = "Error. Please try again.";
         } 
         

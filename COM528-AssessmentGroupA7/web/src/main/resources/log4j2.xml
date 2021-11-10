@@ -8,7 +8,7 @@
         <!-- %c{1.} abbraviates package name to sincle characters per segment -->
         <Property name="LOG_PATTERN">%d{HH:mm:ss.SSS} [%t] [%c{1.}] %-5level %logger{36} - %msg%n</Property>
         
-        <Property name="APP_LOG_ROOT" >${sys:catalina.base}/logs/app</Property> 
+        <Property name="TRANSACTION_LOG_ROOT" >${sys:catalina.base}/logs/app</Property> 
         
     </Properties>
     
@@ -18,8 +18,8 @@
             <PatternLayout pattern="${LOG_PATTERN}"/>
         </Console>
         
-        <RollingFile name="appLog" fileName="${APP_LOG_ROOT}/app-perf.log"
-                     filePattern="${APP_LOG_ROOT}/app-perf-%d{yyyy-MM-dd}-%i.log" >
+        <RollingFile name="transactionLog" fileName="${TRANSACTION_LOG_ROOT}/transactionLog.log"
+                     filePattern="${TRANSACTION_LOG_ROOT}/transactions-%d{yyyy-MM-dd}-%i.log" >
             <PatternLayout pattern="${LOG_PATTERN}"/>
             <Policies>
                 <SizeBasedTriggeringPolicy size="19500KB" />
@@ -31,20 +31,22 @@
     
     <Loggers>
         
+        <!-- Logs all transactions -->
+         <Logger name="TRANSACTIONS_LOG" level="INFO">
+            <AppenderRef ref="transactionLog"/>
+        </Logger>
+        
         <!-- The name org.solent specifies that log names beginning with this string are dealt with by the following appenders -->
         <!-- i.e. in our config, classes in package names beginnign org.solent -->
         <Logger name="org.solent"  additivity="false" level="DEBUG">
             <AppenderRef ref="Console"/>
-        </Logger>
-        
-        <!-- Logs all transactions -->
-         <Logger name="TRANSACTIONS_LOG"  additivity="false" level="DEBUG">
-            <AppenderRef ref="appLog"/>
         </Logger>
 
         <!-- this logs to  the Console (System.out) -->
         <Root level="DEBUG">
             <AppenderRef ref="Console"/>
         </Root>
+        
     </Loggers>
+    
 </Configuration>
