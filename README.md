@@ -74,7 +74,7 @@ All fields are required, except for Issue Number, and will display an appropriat
 
 All classes within this application have been documented using Javadocs, and have been written in accordance with Oracle guidelines. For further information, click [here](https://www.oracle.com/uk/technical-resources/articles/java/javadoc-tool.html).
 
-To view these, navigate to the **Com528-AssessmentGroupA7** folder and enter the following into command prompt:
+To generate these, navigate to the **Com528-AssessmentGroupA7** folder and enter the following into command prompt:
 
 ```
 mvn javadoc:javadoc
