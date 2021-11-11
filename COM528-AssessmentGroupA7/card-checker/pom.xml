@@ -8,7 +8,7 @@
     </parent> 
 
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>solent.ac.uk.ood.groupa7.card-checker</artifactId>
+    <artifactId>COM528-AssessmentGroupA7-card-checker</artifactId>
     <packaging>jar</packaging>
     <name>COM528-AssessmentGroupA7-card-checker</name>
 

@@ -27,8 +27,8 @@
     <dependencies>
 
 	<dependency>
-            <groupId>solent.ac.uk.ood.examples</groupId>
-            <artifactId>jpaSpringMvcBank-card-checker</artifactId>
+            <groupId>solent.ac.uk.ood.groupa7</groupId>
+            <artifactId>COM528-AssessmentGroupA7-card-checker</artifactId>
             <version>${project.version}</version>
         </dependency>
         
