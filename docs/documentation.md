@@ -16,7 +16,7 @@ In addition, the Point of Sale device needed to be configurable by an admin user
 - Users should be able to make a refund
 - The application should interact with the bank service using a ReST service
 - Money should be transferred between accounts correctly
-- Validation required throughout
+- Data input validation required throughout
 - Authentication required on administrator account
 - Authentication required on transaction request
 - All error messages should be user-friendly and informative
@@ -29,6 +29,8 @@ In addition, the Point of Sale device needed to be configurable by an admin user
 ## Project Plan and Task Assignment
 
 **To do**
+
+Please note, the index page is included for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
 
 ## Use Cases and Features
 
