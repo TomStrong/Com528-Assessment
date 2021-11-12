@@ -31,7 +31,7 @@ The full assessment requirements can be viewed [here](https://learn.solent.ac.uk
 
 ## Project Plan and Task Assignment
 
-We statrted planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on [Github Projects](https://github.com/TomStrong/Com528-Assessment/projects/1) and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
+We statrted planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on Github Projects and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
 
 We initially recorded these tasks as notes within the project, updating them to include the relevant name of the person doing the task when it was moved to *In Progress*. However, later we learned about creating Issues within Github so we converted all outstanding tasks to these.
 
@@ -44,48 +44,39 @@ We initially designed the project to be multi-module but, as the application onl
 
 We also decided to use MVC for the project structure, as this separated back-end functionality from the front-end, and would therefore make the code a lot more readable and easier to debug.
 
-Initial task assignment was as follows:
+We assigned the first tasks, such as setting up the project in NetBeans, creating the UIs, etc, but task assignment thereafter was managed dynamically, depending on what had already been implemented and who was currently available to work on the project, with regular meetings online and in-person to discuss. As each task was assigned, the ticket on Github Projects was updated accordingly.
 
-| Asignee   | Task    | Description    |
-| :-------------- | :-------------  |  :-------------  |  
-| Tom   | PoS device UI  | Design and implement a user-friendly UI that resembles a real PoS device, using JavaScript and CSS where appropriate.
-| Jo   | Administrator UI | Design and implement a basic administrator page that allows entry of the identity for the PoS device. 
-| Jo   | Administrator functionality | Implement functionality of the admin page, with data retrieved and updated in the .properties file. 
-| Jo   | Index page | Implement a basic index page which allows easy access to both admin and PoS pages.
-
->>**_NOTE:_**  
-We included an index page for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
-
-Task assignment thereafter was managed dynamically, depending on what had already been implemented and who was currently available to work on the project, with regular meetings online and in-person to discuss. As each task was assigned, the ticket on Github Projects was updated accordingly.
-
-Please see below for all tasks and asignees from the completed project:
+All the following tasks are also available on [Github Projects](https://github.com/TomStrong/Com528-Assessment/projects/1):
 
 | Assignee        | Task     | Description    |
 | :------------- | :----------: | :----------: | 
 | Jake / Jo | ![Task 1](images/tasks/task1.PNG) | Jake initially created a new project in NetBeans. This was then refactored by Jo to include all the client packages. |
 | Jo | ![Task 2](images/tasks/task2.PNG) | All imported client packages needed to refactored into our group name. |
 | Jo | ![Task 3](images/tasks/task3.PNG) | A standalone bank client module became available so project was started again without multi-modules. |
-| Tom | ![Task 4](images/tasks/task4.PNG) | As outlined previously. |
-| Jo | ![Task 5](images/tasks/task5.PNG) | As outlined previously. |
-| Jo | ![Task 6](images/tasks/task6.PNG) | As outlined previously. |
-| Jo | ![Task 7](images/tasks/task7.PNG) | As described. |
+| Tom | ![Task 4](images/tasks/task4.PNG) | Design and implement a user-friendly UI that resembles a real PoS device, using JavaScript and CSS where appropriate. |
+| Jo | ![Task 5](images/tasks/task5.PNG) | Design and implement a basic administrator page that allows entry of the identity for the PoS device.  |
+| Jo | ![Task 6](images/tasks/task6.PNG) | Implement a basic index page which allows easy access to both admin and PoS pages. |
+| Jo | ![Task 7](images/tasks/task7.PNG) | Create default.properties file and ensure data is valid. |
 | Jo | ![Task 8](images/tasks/task8.PNG) | Class creation. |
 | Tom / Jo | ![Task 9](images/tasks/task9.PNG) | Basic functionality implemented for existing pages. |
 | Merlin | ![Task 10](images/tasks/task10.PNG) | As described. |
-| Jo | ![Task 111](images/tasks/task11.PNG) | This included GET and POST requests for admin page, along with transaction POST request. |
-| Jo | ![Task 12](images/tasks/task12.PNG) | As described. |
+| Jo | ![Task 111](images/tasks/task11.PNG) | Implemented functionality of the admin page, with data retrieved and updated in the .properties file. Also implemented functionality for transactions, reading in PoS identity data and input data to make a ReST call to the bank service. |
+| Jo | ![Task 12](images/tasks/task12.PNG) | Create use case UML diagram. |
 | Tom | ![Task 13](images/tasks/task13.PNG) | Ensured all error messages are user-friendly and informative. |
 | Tom | ![Task 14](images/tasks/task14.PNG) | Updated formatting on PoS to be more user-friendly and readable. |
 | Jo / Jake | ![Task 15](images/tasks/task15.PNG) | Jo updated Log4J to include transaction logs. However, this would not work so Jake created a bespoke logging class. |
+
+>>**_NOTE:_**  
+We included an index page for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
 
 ## Use Cases and Features
 
 The following uses cases describe how users will use the application and outlines the system behaviour in response. 
 
-| Use Case ID   | Actor    | Action     | System Behaviour |
-| :-------------: | :-------------:  | :-------------: | :-------------:  | 
-| UC1   | Admin  |    |     | 
-| UC2   | Admin |    |     | 
+| ID   | Actor    | Action     | System Behaviour |
+| :-------------: | :-------------:  | :------------- | :-------------  | 
+| UC1   | Admin  | Admin configures the PoS device   | The identity of the device is updated locally. | 
+| UC2   | Admin |  Admin configures the PoS device but misses a field  | The identity of the device is not updated, and an error message is displayed on page.    | 
 | UC3   | User  |    |     | 
 | UC4   | User  |    |     | 
 
