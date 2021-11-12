@@ -26,6 +26,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.solent.ood.assessmentgroupa7.dao.PropertiesDao;
 import org.solent.ood.assessmentgroupa7.dao.WebObjectFactory;
 import org.solent.com504.oodd.bank.model.dto.CreditCard;
+import org.solent.com504.oodd.bank.model.client.BankRestClient;
 import org.solent.com504.oodd.bank.client.impl.BankRestClientImpl;
 import org.solent.ood.assessmentgroupa7.service.TransactionLogger;
 import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
@@ -184,7 +185,7 @@ public class MVCController {
             
             String bankUrl = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
             Double dAmount = Double.parseDouble(amount);
-            BankRestClientImpl client = new BankRestClientImpl(bankUrl);
+            BankRestClient client = new BankRestClientImpl(bankUrl);
             TransactionReplyMessage reply = client.transferMoney(fromCard, toCard, dAmount);  
             
             if(reply.getCode() == 200){
