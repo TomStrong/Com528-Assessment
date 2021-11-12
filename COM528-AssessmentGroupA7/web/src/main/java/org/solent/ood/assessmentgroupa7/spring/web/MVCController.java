@@ -194,7 +194,7 @@ public class MVCController {
                 result = "Declined<br/><br/>" + reply.getMessage();
                 transactionReply =  "Transaction aborted";
             }         
-            TRANSACTIONS_LOG.log(reply);    
+            TRANSACTIONS_LOG.log(reply.toString());
         } catch (Exception ex) {
             LOG.error("cannot complete transaction:", ex);
             result = "Error. Please try again.";

@@ -5,8 +5,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.text.DateFormat;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.solent.com504.oodd.bank.model.dto.BankTransaction;
 import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
+import org.solent.ood.assessmentgroupa7.spring.web.MVCController;
 
 /**
  * Handles logging of transactions as they happen to a file on the system.
@@ -15,25 +18,31 @@ import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
 public class TransactionLogger {
     
     public static final TransactionLogger INSTANCE = new TransactionLogger();
+    private final static Logger LOG = LogManager.getLogger(TransactionLogger.class);
     
     private final File outputFile;
     
     /**
      * 
      */
-    public TransactionLogger() {
+    private TransactionLogger() {
         String TEMP_DIR = System.getProperty("java.io.tmpdir");
         this.outputFile = new File(TEMP_DIR + "/transactions.txt");
+        
+        // TODO: Log4j logger is returned as null and throws NullPointerException
+        //       during tests. Sysout used for now as it works  -Jake
+        System.out.println("Transaction log path: " + outputFile.getAbsolutePath());
+//        LOG.info("Transaction log path: " + outputFile.getAbsolutePath());
     }
     
     /**
      * Logs a bank transaction to the log file.
-     * @param transaction Transaction to log
+     * @param message Transaction string to log
      * @throws IOException 
      */
-    public void log(TransactionReplyMessage transaction) throws IOException {
+    public void log(String message) throws IOException {
         if(!outputFile.exists()) {
-            if(!outputFile.getParentFile().mkdirs()) {
+            if(!outputFile.getParentFile().exists() && !outputFile.getParentFile().mkdirs()) {
                 throw new RuntimeException("Failed to create parent directories for log file");
             }
             
@@ -42,42 +51,9 @@ public class TransactionLogger {
             }
         }
         
-        StringBuilder output = new StringBuilder();
-        DateFormat dateFormat = DateFormat.getDateInstance();
-        
-        output.append("=== TRANSACTION ");
-        output.append(transaction.getTransactionId());
-        output.append(" ===\n");
-        
-        output.append("DATE: ");
-        output.append(dateFormat.format(transaction.getTransactionDate()));
-        output.append("\n");
-        
-        output.append("STATUS: ");
-        output.append(transaction.getStatus().toString());
-        output.append("\n");
-        
-        output.append("FROM: ");
-        output.append(transaction.getFromCardNo());
-        output.append("\n");
-        
-        output.append("TO: ");
-        output.append(transaction.getToCardNo());
-        output.append("\n");
-        
-        output.append("AMOUNT: ");
-        output.append(transaction.getAmount());
-        output.append("\n");
-        
-        output.append("MESSAGE: ");
-        output.append(transaction.getMessage());
-        output.append("\n");
-        
-        output.append("=== END OF TRANSACTION ===");
-        output.append("\n\n");
-        
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile, true));
-        writer.write(output.toString());
+        writer.write(message.strip());
+        writer.write("\n");
         writer.close();
     }
     
