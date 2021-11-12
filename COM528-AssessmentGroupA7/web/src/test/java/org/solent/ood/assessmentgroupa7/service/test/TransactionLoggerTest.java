@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.solent.ood.assessmentgroupa7.dao.test;
+package org.solent.ood.assessmentgroupa7.service.test;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,21 +14,20 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import org.solent.com504.oodd.bank.client.impl.BankRestClientImpl;
+import org.solent.ood.assessmentgroupa7.service.TransactionLogger;
 
 /**
  *
  * @author jofai
  */
-public class LogTransactionTest {
+public class TransactionLoggerTest {
     
-    final static Logger LOG = LogManager.getLogger(BankRestClientImpl.class);
-    final static Logger TRANSACTIONS_LOG = LogManager.getLogger("TRANSACTIONS_LOG");
+    final static TransactionLogger TRANSACTIONS_LOG = TransactionLogger.INSTANCE;
     
     @Test
     public void LogTransactionTest() {
         
-        LOG.debug("Test");
-        TRANSACTIONS_LOG.info("test");
+
     }
 
 }

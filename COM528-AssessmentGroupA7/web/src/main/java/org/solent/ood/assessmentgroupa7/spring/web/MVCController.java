@@ -27,6 +27,7 @@ import org.solent.ood.assessmentgroupa7.dao.PropertiesDao;
 import org.solent.ood.assessmentgroupa7.dao.WebObjectFactory;
 import org.solent.com504.oodd.bank.model.dto.CreditCard;
 import org.solent.com504.oodd.bank.client.impl.BankRestClientImpl;
+import org.solent.ood.assessmentgroupa7.service.TransactionLogger;
 import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
 
 /**
@@ -39,6 +40,7 @@ import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
 public class MVCController {
     
     final static Logger LOG = LogManager.getLogger(MVCController.class);
+    final static TransactionLogger TRANSACTIONS_LOG = TransactionLogger.INSTANCE;
     
     private final PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
     
@@ -191,7 +193,8 @@ public class MVCController {
             } else if (reply.getCode() == 400){
                 result = "Declined<br/><br/>" + reply.getMessage();
                 transactionReply =  "Transaction aborted";
-            }
+            }         
+            TRANSACTIONS_LOG.log(reply);    
         } catch (Exception ex) {
             LOG.error("cannot complete transaction:", ex);
             result = "Error. Please try again.";
