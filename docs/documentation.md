@@ -60,23 +60,23 @@ Task assignment thereafter was managed dynamically, depending on what had alread
 
 Please see below for all tasks and asignees from the completed project:
 
-| Assignee        | Task     | 
-| :------------- | :----------: | 
-| Jake / Jo | ![Task 1](images/tasks/task1.PNG) | 
-| Jo | ![Task 2](images/tasks/task2.PNG) | 
-| Jo | ![Task 3](images/tasks/task3.PNG) | 
-| Tom | ![Task 4](images/tasks/task4.PNG) | 
-| Jo | ![Task 5](images/tasks/task5.PNG) | 
-| Jo | ![Task 6](images/tasks/task6.PNG) | 
-| Jo | ![Task 7](images/tasks/task7.PNG) | 
-| Jo | ![Task 8](images/tasks/task8.PNG) | 
-| Tom / Jo | ![Task 9](images/tasks/task9.PNG) | 
-| Merlin | ![Task 10](images/tasks/task10.PNG) | 
-| Jo | ![Task 111](images/tasks/task11.PNG) | 
-| Jo | ![Task 12](images/tasks/task12.PNG) | 
-| Tom | ![Task 13](images/tasks/task13.PNG) |
-| Tom | ![Task 14](images/tasks/task14.PNG) |
-| Jo / Jake | ![Task 15](images/tasks/task15.PNG) | 
+| Assignee        | Task     | Description    |
+| :------------- | :----------: | :----------: | 
+| Jake / Jo | ![Task 1](images/tasks/task1.PNG) | Jake initially created a new project in NetBeans. This was then refactored by Jo to include all the client packages. |
+| Jo | ![Task 2](images/tasks/task2.PNG) | All imported client packages needed to refactored into our group name. |
+| Jo | ![Task 3](images/tasks/task3.PNG) | A standalone bank client module became available so project was started again without multi-modules. |
+| Tom | ![Task 4](images/tasks/task4.PNG) | As outlined previously. |
+| Jo | ![Task 5](images/tasks/task5.PNG) | As outlined previously. |
+| Jo | ![Task 6](images/tasks/task6.PNG) | As outlined previously. |
+| Jo | ![Task 7](images/tasks/task7.PNG) | As described. |
+| Jo | ![Task 8](images/tasks/task8.PNG) | Class creation. |
+| Tom / Jo | ![Task 9](images/tasks/task9.PNG) | Basic functionality implemented for existing pages. |
+| Merlin | ![Task 10](images/tasks/task10.PNG) | As described. |
+| Jo | ![Task 111](images/tasks/task11.PNG) | This included GET and POST requests for admin page, along with transaction POST request. |
+| Jo | ![Task 12](images/tasks/task12.PNG) | As described. |
+| Tom | ![Task 13](images/tasks/task13.PNG) | Ensured all error messages are user-friendly and informative. |
+| Tom | ![Task 14](images/tasks/task14.PNG) | Updated formatting on PoS to be more user-friendly and readable. |
+| Jo / Jake | ![Task 15](images/tasks/task15.PNG) | Jo updated Log4J to include transaction logs. However, this would not work so Jake created a bespoke logging class. |
 
 ## Use Cases and Features
 
