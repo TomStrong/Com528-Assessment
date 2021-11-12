@@ -1,11 +1,11 @@
-# Design Documentation
+#Design documentation
 
 ## Requirements
-For this project, we were required to develop a simple web-based Point of Sale application that allowed a user to enter their credit card details to make a transaction. The application would then need to communicate with the mock banking service using the ReST service supplied to either confirm or deny the transaction.
+For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale Application which allows the user to enter credit card details and a cash amount for a transaction. You should first present the user with a choice about what type of transaction they would like to make, either a payment or a refund option should be available. The user should then be asked to enter their account information.  The application should communicate using a ReST interface which will act as the banking service. The service will confirm or deny the transaction. A transaction will be unsuccessful if the Card number is entered incorrectly, In which case the user should be prompted to enter their card details correctly. The device should record all successful and unsuccessful transactions locally in a log file, codes must not be recorded.
+The Point of Sale should also allow an admin to log in and enter cardholder data which the transactions require to successfully transfer funds to or from the correct user account. Once a transaction has been completed the user data should be updated to show the new balance of their account. 
+When your program runs it should have a simple menu system that allows you to add a new cardholder which will prompt you to input the cardholder information and also list the existing accounts. The menu should also have the option to make a transaction which will open a device for the user to input their information in order to make the transaction.
 
-The Point of Sale device also needed to be configurable by an admin user as transactions would require the data associated with the PoS device to transfer funds to or from the correct user account.
-
-The full assessment requirements can be viewed [here](https://learn.solent.ac.uk/pluginfile.php/2938474/mod_resource/content/1/Assessment%20Brief%20-%20COM528-504%20-%20AE1%20-%20GROUP%20%282021-2022%29%201.0.pdf).
+The full application requirements can be viewed [here](https://learn.solent.ac.uk/pluginfile.php/2938474/mod_resource/content/1/Assessment%20Brief%20-%20COM528-504%20-%20AE1%20-%20GROUP%20%282021-2022%29%201.0.pdf).
 
 ## Goals and Non-Goals
 
