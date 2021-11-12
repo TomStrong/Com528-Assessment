@@ -29,7 +29,7 @@ In addition, the Point of Sale device needed to be configurable by an admin user
 
 ## Project Plan and Task Assignment
 
-We statrted planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on [Github Projects](https://github.com/TomStrong/Com528-Assessment/projects/1) and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
+We statrted planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on Github Projects and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
 
 We initially recorded these tasks as notes within the project, updating them to include the relevant name of the person doing the task when it was moved to *In Progress*. However, later we learned about creating Issues within Github so we converted all outstanding tasks to these.
 
@@ -40,17 +40,19 @@ We decided on a top-down approach to this project, as how data was handled in th
 
 Initial task assignment was as follows:
 
-| Asignee   | Task    |
-| :------------- | :-------------  |  
-| Tom Strong   | Develop and implement PoS device UI  | 
-| Jo Randall   | Develop and implement administrator UI | 
-| Jo Randall   | Implement administrator functionality using DAO |
-| Jo Randall   | Implement index page | 
+| Asignee   | Task    | Description    |
+| :-------------- | :-------------  |  :-------------  |  
+| Tom Strong   | PoS device UI  | Design and implement a user-friendly UI that resembles a real PoS device, using JavaScript and CSS where appropriate.
+| Jo Randall   | Administrator UI | Design and implement a basic administrator page that allows entry of the identity for the PoS device. 
+| Jo Randall   | Administrator functionality | Implement functionality of the admin page, with data retrieved and updated in the .properties file. 
+| Jo Randall   | Index page | Implement a basic index page which allows easy access to both admin and PoS pages.
 
->>**_NOTE_**  
+>>**_NOTE:_**  
 We included an index page for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
 
-Task assignment thereafter was managed dynamically, depending on what had already been implemented and who was currently available to work on the project, with regular meetings online and in-person to discuss.
+Task assignment thereafter was managed dynamically, depending on what had already been implemented and who was currently available to work on the project, with regular meetings online and in-person to discuss. As each task was assigned, the ticket on Github Projects was updated accordingly.
+
+For the full list of task assignments, please visit our [Github Projects](https://github.com/TomStrong/Com528-Assessment/projects/1).
 
 ## Use Cases and Features
 
