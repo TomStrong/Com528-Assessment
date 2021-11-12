@@ -1,4 +1,4 @@
-#Design documentation
+# Design documentation
 
 ## Requirements
 For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale Application which allows the user to enter credit card details and a cash amount for a transaction. You should first present the user with a choice about what type of transaction they would like to make, either a payment or a refund option should be available. The user should then be asked to enter their account information. 
