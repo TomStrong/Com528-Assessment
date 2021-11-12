@@ -83,12 +83,14 @@ function ready() {
                     emptyEntry();
                     getAmount();
                 } else {
-                    document.getElementById("status").innerHTML = "Not a valid entry";
+                    showStatus("Not a valid entry");
                 }
                 return;
             case 2:
                 if (entry.length == 0){
-                    document.getElementById("status").innerHTML = "Required";
+                    showStatus("Required");
+                } else if (isNaN(entry)) {
+                    showStatus("Please enter a number");
                 } else {
                     amount = entry;
                     emptyEntry();
@@ -97,7 +99,7 @@ function ready() {
                 return;
             case 3:
                 if (entry.length == 0){
-                    document.getElementById("status").innerHTML = "Required";
+                    showStatus("Required");
                 } else {
                     name = entry;
                     emptyEntry();
@@ -106,9 +108,9 @@ function ready() {
                 return;
             case 4:
                 if (entry.length == 0){
-                    document.getElementById("status").innerHTML = "Required";
+                    showStatus("Required");
                 } else if (entry.length !== 16) {
-                    document.getElementById("status").innerHTML = "Card numbers must be 16 digits";
+                    showStatus("Card numbers must be 16 digits");
                 } else {
                 cardNo = entry;
                 emptyEntry();
@@ -117,9 +119,9 @@ function ready() {
                 return;
             case 5:
                 if (entry.length == 0){
-                    document.getElementById("status").innerHTML = "Required";
-                } else if (entry.length !== 5 || entry.charAt(2) !== "/") {
-                    document.getElementById("status").innerHTML = "Date must be formatted as **/**";
+                    showStatus("Required");
+                } else if (!/^(0[1-9]|1[0-2])\/?([0-9]{2})$/.test(entry)) {
+                    showStatus("Date must be formatted as MM/YY");
                 } else {
                     expiryDate = entry;
                     emptyEntry();
@@ -128,13 +130,13 @@ function ready() {
                 return;
             case 6:
                 if (entry.length == 0){
-                    document.getElementById("status").innerHTML = "Required";
+                    showStatus("Required");
                 } else if (entry.length == 3 || entry.length == 4){
                     cvv = entry;
                     emptyEntry();
                     getIssueNo();
                 } else {
-                    document.getElementById("status").innerHTML = "Required";
+                    showStatus("Required");
                 }
                 return;
             case 7:
@@ -161,7 +163,7 @@ function ready() {
     // ----------
     
     if (document.getElementById("result").value != "") {
-        document.getElementById("status").innerHTML = document.getElementById("result").value;
+        showStatus(document.getElementById("result").value);
         if (document.getElementById("transactionReply").value != "") {
             document.getElementById("prompt").innerHTML = document.getElementById("transactionReply").value;
         }
@@ -188,6 +190,12 @@ function emptyEntry() {
     entry = "";
     document.getElementById("entry").innerHTML = "";
     document.getElementById("status").innerHTML = "";
+    document.getElementById("status").style.display = "none";
+}
+
+function showStatus(message) {
+    document.getElementById("status").innerHTML = message;
+    document.getElementById("status").style.display = "block";
 }
 
 function getTransactionType() {

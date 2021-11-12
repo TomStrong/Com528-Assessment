@@ -69,12 +69,12 @@ public class BankRestClientImpl implements BankRestClient {
 
         LOG.debug("Response status=" + response.getStatus() + " ReplyMessage: " + transactionReplyMessage);
         
-        try {
+        /*try {
             TRANSACTIONS_LOG.log(transactionReplyMessage);
         } catch(IOException e) {
             // TODO: Properly handle exception
             e.printStackTrace();
-        }
+        }*/
 
         return transactionReplyMessage;
 
@@ -111,12 +111,12 @@ public class BankRestClientImpl implements BankRestClient {
 
         LOG.debug("Response status=" + response.getStatus() + " ReplyMessage: " + transactionReplyMessage);
         
-        try {
+        /*try {
             TRANSACTIONS_LOG.log(transactionReplyMessage);
         } catch(IOException e) {
             // TODO: Properly handle exception
             e.printStackTrace();
-        }
+        }*/
 
         return transactionReplyMessage;
 
