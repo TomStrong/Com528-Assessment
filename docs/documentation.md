@@ -6,6 +6,7 @@ For this project, we were required to develop a simple web-based Point of Sale a
 In addition, the Point of Sale device needed to be configurable by an admin user as transactions would require the data associated with the PoS device to transfer funds to or from the correct user account.
 
 ## Goals and Non-Goals
+
 ### **Goals**
 
 - The UI should be a user-friendly web interface
@@ -28,9 +29,30 @@ In addition, the Point of Sale device needed to be configurable by an admin user
 
 ## Project Plan and Task Assignment
 
-**To do**
+We statrted planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on Github Projects and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
 
-Please note, the index page is included for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
+We initially recorded these tasks as notes within the project, updating them to include the relevant name of the person doing the task when it was moved to *In Progress*. However, later we learned about creating Issues within Github so we converted all outstanding tasks to these.
+
+![Github Project Screenshot](images/githubProject.PNG)
+>Screenshot of Github Project in progress
+
+We decided on a top-down approach to this project, as how data was handled in the front-end would directly affect how it needed to be handled in the back-end. We also decided to use MVC for the project structure, as this separated back-end functionality from the front-end, and would therefore make the code a lot more readable and easier to debug.
+
+Initial task assignment was as follows:
+
+| Asignee   | Task    | Description    |
+| :-------------- | :-------------  |  :-------------  |  
+| Tom Strong   | PoS device UI  | Design and implement a user-friendly UI that resembles a real PoS device, using JavaScript and CSS where appropriate.
+| Jo Randall   | Administrator UI | Design and implement a basic administrator page that allows entry of the identity for the PoS device. 
+| Jo Randall   | Administrator functionality | Implement functionality of the admin page, with data retrieved and updated in the .properties file. 
+| Jo Randall   | Index page | Implement a basic index page which allows easy access to both admin and PoS pages.
+
+>>**_NOTE:_**  
+We included an index page for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
+
+Task assignment thereafter was managed dynamically, depending on what had already been implemented and who was currently available to work on the project, with regular meetings online and in-person to discuss. As each task was assigned, the ticket on Github Projects was updated accordingly.
+
+For the full list of task assignments, please visit our [Github Projects](https://github.com/TomStrong/Com528-Assessment/projects/1).
 
 ## Use Cases and Features
 
@@ -38,8 +60,8 @@ The following uses cases describe how users will use the application and outline
 
 | Use Case ID   | Actor    | Action     | System Behaviour |
 | :-------------: | :-------------:  | :-------------: | :-------------:  | 
-| UC1   | Administrator  |    |     | 
-| UC2   | Administrator |    |     | 
+| UC1   | Admin  |    |     | 
+| UC2   | Admin |    |     | 
 | UC3   | User  |    |     | 
 | UC4   | User  |    |     | 
 
@@ -54,7 +76,7 @@ The following uses cases describe how users will use the application and outline
 **Use Case UML Diagram**
 
 
-![](UMLDiagrams/UseCaseDiagram.jpg)
+![Use Case UML Diagram](UMLDiagrams/UseCaseDiagram.jpg)
 
 
 **Robustness UML Diagram**
