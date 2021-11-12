@@ -58,15 +58,20 @@ The PoS device prompts the user to select either a payment or refund. Each step 
 
 The buttons on the device are updated depending on the field to input. For example, the amount, credit card number, cvv and issue number will only offer the user integer input, whereas the name will only offer characters. This has been automated in the Javascript and cannot be overridden.
 
-The date will need to be entered in the format of mm/yy, otherwise the user will receive an prompt and the entry will not be accepted.
+When prompted to enter a name, the keypad works similarly to a real-life keypad - using the below as an example, if the user wanted *b*, they would press the button twice in quick succession. If they then wanted *a*, they would wait for a couple of seconds before pressing the button again.
+
+![Keypad Example](docs/images/keypadExample.PNG)
+>Keypad example
+
+The date will need to be entered in the format of MM/YY, otherwise the user will receive an prompt and the entry will not be accepted.
 
 The action buttons on the device are as follows:
 
 | Button        | Action    | 
-| :------------- | :----------: | 
-| ![](images/acceptButton.PNG) | Accept current input | 
-| ![](images/backButton.PNG)   | Back (input only) |
-| ![](images/cancelButton.PNG)  | Cancel transaction |
+| :-------------: | :----------: | 
+| ![Accept Button](docs/images/acceptButton.PNG) | Accept current input | 
+| ![Back Button](docs/images/backButton.PNG)   | Back (input only) |
+| ![Cancel Button](docs/images/cancelButton.PNG)  | Cancel transaction |
 
 All fields are required, except for Issue Number, and will display an appropriate error message if no or invalid entry is made. 
 
