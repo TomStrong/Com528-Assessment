@@ -5,6 +5,8 @@
  */
 package org.solent.ood.assessmentgroupa7.service.test;
 
+import java.io.IOException;
+import java.util.logging.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.After;
@@ -25,9 +27,8 @@ public class TransactionLoggerTest {
     final static TransactionLogger TRANSACTIONS_LOG = TransactionLogger.INSTANCE;
     
     @Test
-    public void LogTransactionTest() {
-        
-
+    public void LogTransactionTest() throws IOException {
+        TRANSACTIONS_LOG.log("Test");
     }
 
 }
