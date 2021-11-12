@@ -36,7 +36,11 @@ We initially recorded these tasks as notes within the project, updating them to 
 ![Github Project Screenshot](images/githubProject.PNG)
 >Screenshot of Github Project in progress
 
-We decided on a top-down approach to this project, as how data was handled in the front-end would directly affect how it needed to be handled in the back-end. We also decided to use MVC for the project structure, as this separated back-end functionality from the front-end, and would therefore make the code a lot more readable and easier to debug.
+We decided on a top-down approach to this project, as how data was handled in the front-end would directly affect how it needed to be handled in the back-end. 
+
+We initially designed the project to be multi-module but, as the application only required simple functionality, we refactored this into a single WAR with packages for the layers instead.
+
+We also decided to use MVC for the project structure, as this separated back-end functionality from the front-end, and would therefore make the code a lot more readable and easier to debug.
 
 Initial task assignment was as follows:
 
