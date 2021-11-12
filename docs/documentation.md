@@ -1,9 +1,17 @@
 #Design documentation
 
 ## Requirements
-For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale Application which allows the user to enter credit card details and a cash amount for a transaction. You should first present the user with a choice about what type of transaction they would like to make, either a payment or a refund option should be available. The user should then be asked to enter their account information.  The application should communicate using a ReST interface which will act as the banking service. The service will confirm or deny the transaction. A transaction will be unsuccessful if the Card number is entered incorrectly, In which case the user should be prompted to enter their card details correctly. The device should record all successful and unsuccessful transactions locally in a log file, codes must not be recorded.
-The Point of Sale should also allow an admin to log in and enter cardholder data which the transactions require to successfully transfer funds to or from the correct user account. Once a transaction has been completed the user data should be updated to show the new balance of their account. 
-When your program runs it should have a simple menu system that allows you to add a new cardholder which will prompt you to input the cardholder information and also list the existing accounts. The menu should also have the option to make a transaction which will open a device for the user to input their information in order to make the transaction.
+For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale Application which allows the user to enter credit card details and a cash amount for a transaction. You should first present the user with a choice about what type of transaction they would like to make, either a payment or a refund option should be available. The user should then be asked to enter their account information. 
+
+The application should communicate using a ReST interface to a mock banking service. The service will confirm or deny the transaction. A transaction will be unsuccessful if the credit card number is entered incorrectly, in which case the user should be prompted to enter their card details correctly. 
+
+Once a transaction has been completed the user account should be updated to show the new balance of their account.
+
+The device should record all successful and unsuccessful transactions locally in a log file, cvv codes must not be recorded.
+
+The Point of Sale should also allow an admin to log in and configure the Point of Sale identity data, which the transactions require to successfully transfer funds to or from the correct account. 
+
+When your program runs it should have a simple menu system that allows you an administrator to configure the Point of Sale device. The menu should also have the option to use the Point of Sale device which will open the device interface for the user to input their information in order to make the transaction.
 
 The full application requirements can be viewed [here](https://learn.solent.ac.uk/pluginfile.php/2938474/mod_resource/content/1/Assessment%20Brief%20-%20COM528-504%20-%20AE1%20-%20GROUP%20%282021-2022%29%201.0.pdf).
 
@@ -31,7 +39,7 @@ The full application requirements can be viewed [here](https://learn.solent.ac.u
 
 ## Project Plan and Task Assignment
 
-We statrted planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on Github Projects and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
+We started planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on Github Projects and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
 
 We initially recorded these tasks as notes within the project, updating them to include the relevant name of the person doing the task when it was moved to *In Progress*. However, later we learned about creating Issues within Github so we converted all outstanding tasks to these.
 
