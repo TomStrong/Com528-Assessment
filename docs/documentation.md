@@ -3,7 +3,9 @@
 ## Requirements
 For this project, we were required to develop a simple web-based Point of Sale application that allowed a user to enter their credit card details to make a transaction. The application would then need to communicate with the mock banking service using the ReST service supplied to either confirm or deny the transaction.
 
-In addition, the Point of Sale device needed to be configurable by an admin user as transactions would require the data associated with the PoS device to transfer funds to or from the correct user account.
+The Point of Sale device also needed to be configurable by an admin user as transactions would require the data associated with the PoS device to transfer funds to or from the correct user account.
+
+The full assessment requirements can be viewed [here](https://learn.solent.ac.uk/pluginfile.php/2938474/mod_resource/content/1/Assessment%20Brief%20-%20COM528-504%20-%20AE1%20-%20GROUP%20%282021-2022%29%201.0.pdf).
 
 ## Goals and Non-Goals
 
@@ -29,7 +31,7 @@ In addition, the Point of Sale device needed to be configurable by an admin user
 
 ## Project Plan and Task Assignment
 
-We statrted planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on Github Projects and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
+We statrted planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on [Github Projects](https://github.com/TomStrong/Com528-Assessment/projects/1) and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
 
 We initially recorded these tasks as notes within the project, updating them to include the relevant name of the person doing the task when it was moved to *In Progress*. However, later we learned about creating Issues within Github so we converted all outstanding tasks to these.
 
@@ -56,7 +58,25 @@ We included an index page for ease of the assessor for this assessment only. In 
 
 Task assignment thereafter was managed dynamically, depending on what had already been implemented and who was currently available to work on the project, with regular meetings online and in-person to discuss. As each task was assigned, the ticket on Github Projects was updated accordingly.
 
-For the full list of task assignments, please visit our [Github Projects](https://github.com/TomStrong/Com528-Assessment/projects/1).
+Please see below for all tasks and asignees from the completed project:
+
+| Assignee        | Task     | 
+| :------------- | :----------: | 
+| Jake / Jo | ![Task 1](images/tasks/task1.PNG) | 
+| Jo | ![Task 2](images/tasks/task2.PNG) | 
+| Jo | ![Task 3](images/tasks/task3.PNG) | 
+| Tom | ![Task 4](images/tasks/task4.PNG) | 
+| Jo | ![Task 5](images/tasks/task5.PNG) | 
+| Jo | ![Task 6](images/tasks/task6.PNG) | 
+| Jo | ![Task 7](images/tasks/task7.PNG) | 
+| Jo | ![Task 8](images/tasks/task8.PNG) | 
+| Tom / Jo | ![Task 9](images/tasks/task9.PNG) | 
+| Merlin | ![Task 10](images/tasks/task10.PNG) | 
+| Jo | ![Task 111](images/tasks/task11.PNG) | 
+| Jo | ![Task 12](images/tasks/task12.PNG) | 
+| Tom | ![Task 13](images/tasks/task13.PNG) |
+| Tom | ![Task 14](images/tasks/task14.PNG) |
+| Jo / Jake | ![Task 15](images/tasks/task15.PNG) | 
 
 ## Use Cases and Features
 
