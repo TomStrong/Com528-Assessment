@@ -59,9 +59,9 @@ All the following tasks are also available on [Github Projects](https://github.c
 | Jo | ![Task 7](images/tasks/task7.PNG) | Create default.properties file and ensure data is valid. |
 | Jo | ![Task 8](images/tasks/task8.PNG) | Class creation. |
 | Tom / Jo | ![Task 9](images/tasks/task9.PNG) | Basic functionality implemented for existing pages. |
-| Merlin | ![Task 10](images/tasks/task10.PNG) | As described. |
+| Merlin | ![Task 10](images/tasks/task10.PNG) | Created use case UML diagram. |
 | Jo | ![Task 111](images/tasks/task11.PNG) | Implemented functionality of the admin page, with data retrieved and updated in the .properties file. Also implemented functionality for transactions, reading in PoS identity data and input data to make a ReST call to the bank service. |
-| Jo | ![Task 12](images/tasks/task12.PNG) | Create use case UML diagram. |
+| Jo | ![Task 12](images/tasks/task12.PNG) | Implemented workflow through Github actions so all code is tested as soon as pushed to repo. |
 | Tom | ![Task 13](images/tasks/task13.PNG) | Ensured all error messages are user-friendly and informative. |
 | Tom | ![Task 14](images/tasks/task14.PNG) | Updated formatting on PoS to be more user-friendly and readable. |
 | Jo / Jake | ![Task 15](images/tasks/task15.PNG) | Jo updated Log4J to include transaction logs. However, this would not work so Jake created a bespoke logging class. |
