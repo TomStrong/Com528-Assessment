@@ -89,7 +89,7 @@ function ready() {
             case 2:
                 if (entry.length == 0){
                     showStatus("Required");
-                } else if (isNaN(entry)) {
+                } else if (isNaN(entry) || entry.includes(".")) {
                     showStatus("Please enter a number");
                 } else {
                     amount = entry;
@@ -109,6 +109,8 @@ function ready() {
             case 4:
                 if (entry.length == 0){
                     showStatus("Required");
+                } else if (isNaN(entry) || entry.includes(".")) {
+                    showStatus("Please enter a number");
                 } else if (entry.length !== 16) {
                     showStatus("Card numbers must be 16 digits");
                 } else {
@@ -131,18 +133,26 @@ function ready() {
             case 6:
                 if (entry.length == 0){
                     showStatus("Required");
-                } else if (entry.length == 3 || entry.length == 4){
+                } else if (isNaN(entry) || entry.includes(".")) {
+                    showStatus("Please enter a number");
+                } else if (entry.length != 3 && entry.length != 4){
+                    showStatus("CVV should be 3 or 4 digits");
+                } else {
                     cvv = entry;
                     emptyEntry();
                     getIssueNo();
-                } else {
-                    showStatus("Required");
                 }
                 return;
             case 7:
-                issueNo = entry;
-                emptyEntry();
-                displayEnteredDetails();
+                if (entry != "" && (isNaN(entry) || entry.includes("."))) {
+                    showStatus("Please enter a number or nothing");
+                } else if (entry != "" && (entry.length != 3 && entry.length != 4)){
+                    showStatus("Issue Number should be 3 or 4 digits");
+                } else {
+                    issueNo = entry;
+                    emptyEntry();
+                    displayEnteredDetails();
+                }
                 return;
             case 8:
                 var form = document.querySelector("#transactionForm");
@@ -163,7 +173,12 @@ function ready() {
     // ----------
     
     if (document.getElementById("result").value != "") {
-        showStatus(document.getElementById("result").value);
+        if (document.getElementById("result").value.includes("Approved")) {
+            showStatus(document.getElementById("result").value, "success");
+        } else {
+            showStatus(document.getElementById("result").value);
+        }
+        
         if (document.getElementById("transactionReply").value != "") {
             document.getElementById("prompt").innerHTML = document.getElementById("transactionReply").value;
         }
@@ -193,8 +208,13 @@ function emptyEntry() {
     document.getElementById("status").style.display = "none";
 }
 
-function showStatus(message) {
+function showStatus(message, type="error") {
     document.getElementById("status").innerHTML = message;
+    if (type == "error") {
+        document.getElementById("status").style.color = "red";
+    } else if (type == "success") {
+        document.getElementById("status").style.color = "green";
+    }
     document.getElementById("status").style.display = "block";
 }
 
