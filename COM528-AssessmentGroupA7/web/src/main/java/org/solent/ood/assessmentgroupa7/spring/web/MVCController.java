@@ -100,12 +100,12 @@ public class MVCController {
         
         String message;
         
-        CardValidationResult result = RegexCardValidator.isValid(cardNumber);
+        CardValidationResult luhnCheck = RegexCardValidator.isValid(cardNumber);
         
         if (url.isEmpty() || username.isEmpty() || password.isEmpty() || name.isEmpty() || endDate.isEmpty() || cardNumber.isEmpty() || cvv.isEmpty()) {
             message = "Please complete all fields before updating properties";
         } else {
-            if(result.isValid()) {
+            if(luhnCheck.isValid()) {
                 propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.url", url);
                 propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.username", username);
                 propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.password", password);
@@ -153,60 +153,68 @@ public class MVCController {
         String posCvv = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cvv");
         String posIssueNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.issueno");
         
-        CreditCard toCard = new CreditCard();
-        CreditCard fromCard = new CreditCard();
-        
-        if (transactionType.equals("1"))
-        {
-            toCard.setName(posName);
-            toCard.setEndDate(posEndDate);
-            toCard.setCardnumber(posCardNumber);
-            toCard.setCvv(posCvv);
-            toCard.setIssueNumber(posIssueNumber);
-
-            fromCard.setName(inputName);
-            fromCard.setEndDate(inputEndDate);
-            fromCard.setCardnumber(inputCardNumber);
-            fromCard.setCvv(inputCvv);
-            fromCard.setIssueNumber(inputIssueNumber);
-        } 
-        else if (transactionType.equals("2"))
-        {
-            toCard.setName(inputName);
-            toCard.setEndDate(inputEndDate);
-            toCard.setCardnumber(inputCardNumber);
-            toCard.setCvv(inputCvv);
-            toCard.setIssueNumber(inputIssueNumber);
-
-            fromCard.setName(posName);
-            fromCard.setEndDate(posEndDate);
-            fromCard.setCardnumber(posCardNumber);
-            fromCard.setCvv(posCvv);
-            fromCard.setIssueNumber(posIssueNumber);
-        }
-        
         String result = null;
         String transactionReply = null;
+            
+        CardValidationResult luhnCheck = RegexCardValidator.isValid(inputCardNumber);
         
-        try {
-            
-            String bankUrl = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
-            Double dAmount = Double.parseDouble(amount);
-            BankRestClient client = new BankRestClientImpl(bankUrl);
-            TransactionReplyMessage reply = client.transferMoney(fromCard, toCard, dAmount);  
-            
-            if(reply.getCode() == 200){
-                result = "Approved";
-                transactionReply = "Transaction complete";
-            } else if (reply.getCode() == 400){
-                result = "Declined<br/><br/>" + reply.getMessage();
-                transactionReply =  "Transaction aborted";
-            }         
-            TRANSACTIONS_LOG.log(reply.toString());
-        } catch (Exception ex) {
-            LOG.error("cannot complete transaction:", ex);
-            result = "Error. Please try again.";
-        } 
+        if (luhnCheck.isValid()) {
+        
+            CreditCard toCard = new CreditCard();
+            CreditCard fromCard = new CreditCard();
+
+            if (transactionType.equals("1"))
+            {
+                toCard.setName(posName);
+                toCard.setEndDate(posEndDate);
+                toCard.setCardnumber(posCardNumber);
+                toCard.setCvv(posCvv);
+                toCard.setIssueNumber(posIssueNumber);
+
+                fromCard.setName(inputName);
+                fromCard.setEndDate(inputEndDate);
+                fromCard.setCardnumber(inputCardNumber);
+                fromCard.setCvv(inputCvv);
+                fromCard.setIssueNumber(inputIssueNumber);
+            } 
+            else if (transactionType.equals("2"))
+            {
+                toCard.setName(inputName);
+                toCard.setEndDate(inputEndDate);
+                toCard.setCardnumber(inputCardNumber);
+                toCard.setCvv(inputCvv);
+                toCard.setIssueNumber(inputIssueNumber);
+
+                fromCard.setName(posName);
+                fromCard.setEndDate(posEndDate);
+                fromCard.setCardnumber(posCardNumber);
+                fromCard.setCvv(posCvv);
+                fromCard.setIssueNumber(posIssueNumber);
+            }
+
+            try {
+
+                String bankUrl = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
+                Double dAmount = Double.parseDouble(amount);
+                BankRestClient client = new BankRestClientImpl(bankUrl);
+                TransactionReplyMessage reply = client.transferMoney(fromCard, toCard, dAmount);  
+
+                if(reply.getCode() == 200){
+                    result = "Approved";
+                    transactionReply = "Transaction complete";
+                } else if (reply.getCode() == 400){
+                    result = "Declined<br/><br/>" + reply.getMessage();
+                    transactionReply =  "Transaction aborted";
+                }         
+                TRANSACTIONS_LOG.log(reply.toString());
+            } catch (Exception ex) {
+                LOG.error("cannot complete transaction:", ex);
+                result = "Error. Please check your connection.";
+            } 
+        } else {
+            result = inputCardNumber + " is an invalid card number";
+            transactionReply = "Transaction aborted";
+        }
         
         model.addAttribute("result", result);
         model.addAttribute("transactionReply", transactionReply);
