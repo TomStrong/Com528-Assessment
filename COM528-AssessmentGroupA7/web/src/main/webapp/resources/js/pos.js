@@ -146,8 +146,8 @@ function ready() {
             case 7:
                 if (entry != "" && (isNaN(entry) || entry.includes("."))) {
                     showStatus("Please enter a number or nothing");
-                } else if (entry != "" && (entry.length != 3 && entry.length != 4)){
-                    showStatus("Issue Number should be 3 or 4 digits");
+                } else if (entry != "" && (entry.length != 1 && entry.length != 2)){
+                    showStatus("Issue Number should be 0-2 digits");
                 } else {
                     issueNo = entry;
                     emptyEntry();
