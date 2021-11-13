@@ -82,14 +82,23 @@ The following uses cases describe how users will use the application and outline
 
 | ID   | Actor    | Action     | System Behaviour |
 | :-------------: | :-------------:  | :------------- | :-------------  | 
-| UC1   | Admin  | Admin configures the PoS device   | The identity of the device is updated locally. | 
-| UC2   | Admin |  Admin configures the PoS device but misses a field  | The identity of the device is not updated, and an error message is displayed on page.    | 
-| UC3   | User  |    |     | 
-| UC4   | User  |    |     | 
-
-**To do**
+| UC1   | Admin  | Admin configures the PoS device.   | The identity of the device is updated locally. | 
+| UC2   | Admin |  Admin configures the PoS device but misses a field.  |  An error message is displayed and the identity of the device is not updated.    | 
+| UC3   | Admin  | Admin enters an incorrect credit card number   | The credit card number fails the Luhn check, an error message is displayed and the identity of the device is not updated. | 
+| UC4   | User  |  User enters option that is neither payment or refund.  |  The device displays an error message and they are prompted to input again.   |
+| UC5   | User  |  User enters option for a payment.   |  The device prompts the them to enter their credit card details.   | 
+| UC7   | User  |  User enters option for a refund.   |  The device prompts them to enter their credit card details.   | 
+| UC8   | User  |  User enters incorrectly formatted card data.   |  The device displays an error message, and prompts them to input again. | 
+| UC9   | User  |  User enters incorrect card number.   |  The application check validity of the card number using the Luhn check, and displays an error message | 
+| UC10   | User  |  User enters no card data.   | The device displays an error message and they are prompted to input again. | 
+| UC12   | User  |  User confirms transaction.   | The device displays an "Approved" message and the transaction is completed.<br/> The application transfers money between accounts and logs the transaction to the local log file (excluding cvv code). |
+| UC13   | User  |  User does not have sufficient balance in account to complete transaction.   | The device displays a "Declined" message and the transaction is aborted.<br/>The application logs the transaction to the local log file (excluding cvv code and with the amount as *null*). |  
 
 ## Test Plan
+
+| ID   | Use Case ID    | Preconditions     | Test Steps | Post Conditions |
+| :-------------: | :-------------:  | :------------- | :-------------  | :-------------  | 
+| TP1 | UC1 | Tomcat server running | 
 
 **To do**
 
