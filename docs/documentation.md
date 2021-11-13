@@ -135,13 +135,13 @@ The following uses cases describe how users will use the application and outline
 
 ![Use Case UML Diagram](UMLDiagrams/UseCaseDiagram.jpg)
 
-The draw.io file can be found ![here](UMLDiagrams/BankApplicationsUsecaseDiagram.drawio)
+The draw.io file can be found [here](UMLDiagrams/BankApplicationsUsecaseDiagram.drawio)
 
 **Robustness Analysis Diagram**
 
 ![Robustness Analysis Diagram](UMLDiagrams/RobustnessDiagram.jpg)
 
-The draw.io file can be found ![here](BankApplicationsRobustnessDiagram.drawio)
+The draw.io file can be found [here](BankApplicationsRobustnessDiagram.drawio)
 
 **Robustness UML Diagram**
 
