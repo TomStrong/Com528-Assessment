@@ -47,6 +47,14 @@ The application can now be opened in NetBeans. Once the web module has been run 
 
 The web app will open on the home page, where the user can navigate between Administrator and PoS device. If either button is clicked, a new web page will be opened.
 
+### **Local Files**
+
+For test transaction log, navigate to C: --> Users --> (username) --> AppDate --> Local --> Temp --> transactions.txt
+
+For transaction log when server is running, navigate to tomcat --> apache tomcat --> temp --> transactions.txt
+
+For local properties file (once PoS device has been configured), navigate to tomcat --> apache tomcat --> temp --> application.properties
+
 ### **Administrator**
 
 The first time the application is launched, the form within the administrator page will auto populate with the data from [default.properties](https://github.com/TomStrong/Com528-Assessment/blob/main/COM528-AssessmentGroupA7/web/src/main/resources/default.properties). This can be configured to update the PoS with the current user's details.

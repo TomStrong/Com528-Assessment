@@ -30,6 +30,8 @@ import org.solent.com504.oodd.bank.model.client.BankRestClient;
 import org.solent.com504.oodd.bank.client.impl.BankRestClientImpl;
 import org.solent.ood.assessmentgroupa7.service.TransactionLogger;
 import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
+import solent.ac.uk.ood.examples.cardcheck.CardValidationResult;
+import solent.ac.uk.ood.examples.cardcheck.RegexCardValidator;
 
 /**
  *
@@ -98,21 +100,26 @@ public class MVCController {
         
         String message;
         
-
+        CardValidationResult result = RegexCardValidator.isValid(cardNumber);
+        
         if (url.isEmpty() || username.isEmpty() || password.isEmpty() || name.isEmpty() || endDate.isEmpty() || cardNumber.isEmpty() || cvv.isEmpty()) {
             message = "Please complete all fields before updating properties";
         } else {
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.url", url);
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.username", username);
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.password", password);
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
-            
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
-            propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
+            if(result.isValid()) {
+                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.url", url);
+                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.username", username);
+                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.password", password);
+                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
+                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
+                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
 
-            message = "PoS now configured";
+                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
+                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
+
+                message = "PoS now configured";
+            } else {
+                message = "Invalid credit card number";
+            }
         } 
         
         model.addAttribute("url", url);
