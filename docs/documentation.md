@@ -106,7 +106,7 @@ The following uses cases describe how users will use the application and outline
 | TC2.4 | UC2 | Tomcat server is running and Tester is on *Administrator* page.| All steps as per TC1 except:<br/>4. *Name on Credit Card* field is left empty.| Page displays "Please complete all fields before updating properties" message. Local application.properties file has not updated.|
 | TC2.5 | UC2 | Tomcat server is running and Tester is on *Administrator* page.| All steps as per TC1 except:<br/>5. *Credit Card Number* field is left empty.| Page displays "Please complete all fields before updating properties" message. Local application.properties file has not updated.|
 | TC2.6 | UC2 | Tomcat server is running and Tester is on *Administrator* page.| All steps as per TC1 except:<br/>6. *CVV Number* field is left empty.| Page displays "Please complete all fields before updating properties" message. Local application.properties file has not updated.|   
-| TC3 | UC3 | Tomcat server is running and Tester is on *Administrator* page.| All steps as per TC1 except:<br/>5. "1234567891237894" is entered into *Credit Card Number* field.| Credit card number fails Luhn check within MVC Controller. Page displays "Invalid credit card number" message. Local application.properties file has not updated.|
+| TC3 | UC3 | Tomcat server is running and Tester is on *Administrator* page.| All steps as per TC1 except:<br/>5. "1234567891234567" is entered into *Credit Card Number* field.| Credit card number fails Luhn check within MVC Controller. Page displays "Invalid credit card number" message. Local application.properties file has not updated.|
 | TC4 | UC4 | Tomcat server is running. Tester is on "PoS" page and the PoS displays reads "Please select an option:<br/>1) Payment <br/>2) Refund" | 1. "8" is entered.<br/>2. *Accept* button is clicked.| "Not a valid entry" is displayed at the top of the screen and the user is prompted to input again.| 
 | TC5 | UC4 | Tomcat server is running. Tester is on "PoS" page and the PoS displays reads "Please select an option:<br/>1) Payment <br/>2) Refund" | 1. "1" is entered.<br/>2. *Accept* button is clicked.| The display of the PoS changes to "Please enter amount:"|
 | TC6 | UC5 | Tomcat server is running. Tester is on "PoS" page and the PoS displays reads "Please select an option:<br/>1) Payment <br/>2) Refund" | 1. "2" is entered.<br/>2. *Accept* button is clicked.| The display of the PoS changes to "Please enter amount:"|
@@ -115,16 +115,23 @@ The following uses cases describe how users will use the application and outline
 | TC7.3 | UC7 | Tomcat server is running. Tester is on "PoS" page and has inputted:<br/>*Transaction Option* = "1"<br/>*Amount* = "10.00"<br/>*Name* = "Bob"<br/>*Card Number* = "533180000000012"| 1. "1" is inputted for expiry date.<br/>2. *Accept* button is clicked.| "Date must be formatted as MM/YY" is displayed at the top of the screen and the user is prompted to input again. |
 | TC7.4 | UC7 | Tomcat server is running. Tester is on "PoS" page and has inputted:<br/>*Transaction Option* = "1"<br/>*Amount* = "10.00"<br/>*Name* = "Bob"<br/>*Card Number* = "533180000000012"<br/>*Expiry Date* = "11/21*| 1. "1" is inputted for cvv.<br/>2. *Accept* button is clicked.| "CVV should be 3 or 4 digits" is displayed at the top of the screen and the user is prompted to input again. |
 | TC7.5 | UC7 | Tomcat server is running. Tester is on "PoS" page and has inputted:<br/>*Transaction Option* = "1"<br/>*Amount* = "10.00"<br/>*Name* = "Bob"<br/>*Card Number* = "533180000000012"<br/>*Expiry Date* = "11/21* <br/>*CVV* = "123"| 1. "1234" is inputted for issue number.<br/>2. *Accept* button is clicked.| "Issue Number should be 0-2 digits" is displayed at the top of the screen and the user is prompted to input again. |
+| TC8 | UC8 | Tomcat server is running. Tester is on "PoS" page and has inputted:<br/>*Transaction Option* = "1"<br/>*Amount* = "10.00"<br/>*Name* = "Bob"| 1. "1234567891234567"  is inputted for issue number.<br/>2. *Accept* button is clicked.<br/>3. "11/24" is inputted for expiry date.<br/>5. *Accept* button is clicked.<br/>6. "123" is inputted for CVV.<br/>7. *Accept* button is clicked.<br/>8. Issue number is left black.<br/>9. *Accept* button is clicked.<br/> 10. *Accept* button is clicked to confirm the transaction.| "1234567891234567 is an invalid card number" is displayed at the top of the screen and the transaction is aborted. The log file is not updated. |
 
 
 
 ## UML Diagrams
 
-**Use Case UML Diagram**
+**Class UML Diagram**
 
+**To do**
+
+**Use Case UML Diagram**
 
 ![Use Case UML Diagram](UMLDiagrams/UseCaseDiagram.jpg)
 
+**Robustness Analysis Diagram**
+
+![Robustness Analysis Diagram](UMLDiagrams/RobustnessAnalysisDiagram.jpg)
 
 **Robustness UML Diagram**
 
