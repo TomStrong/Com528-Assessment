@@ -2,7 +2,7 @@
 
 The students who developed this project (in alphabetical order) are:
 
-| Name & Github        | Student ID    | 
+| Name & GitHub        | Student ID    | 
 | :------------- | :----------: | 
 | [Jo Randall](http://github.com/jorandall)  | 15191117  | 
 | [Jake Roblett](https://github.com/JakeRoblettUni)   | 15002543 |
@@ -19,11 +19,11 @@ This project is a simple Point of Sale web application, which allows configurati
 
 The application then logs the response and displays on the PoS device whether the transaction has been approved or declined.
 
-The application uses Enterprise Java Technologies with Spring MVC framework and Java Server Page for the front-end. Javascript has been used to generate the UI and validate user inputs. 
+The application uses Enterprise Java Technologies with Spring MVC framework and Java Server Page for the front-end. JavaScript has been used to generate the UI and validate user inputs. 
 
 ## System Requirements
 
-This application has been designed and tested on the following, therefore it is recommended that these are used as a minimum:
+This application has been designed and tested using the following, therefore it is recommended that these are used as a minimum:
 
 - Windows 10 
 - Java JDK v8
@@ -31,7 +31,7 @@ This application has been designed and tested on the following, therefore it is 
 - Apache Tomcat 9.0
 - Web browsers: Google Chrome, Mozilla Firefox, Microsoft Edge, Opera
 
-Please note, Internet Explorer is not supported.
+Please note, Internet Explorer and Safari are not supported.
 
 ## User Instructions
 
@@ -40,7 +40,8 @@ Before the application is run, ensure the following command is run in the folder
 ```
 mvn clean install
 ```
-The application can now be opened in Netbeans. Once the web module has been run and the Tomcat server started, the web app will be launched on: 
+
+The application can now be opened in NetBeans. Once the web module has been run and the Tomcat server started, the web app will be launched on: 
 
 [http://localhost:8080/Com528-Assessment/](http://localhost:8080/Com528-Assessment/)
 
@@ -56,7 +57,7 @@ All fields are required, except for the issue number, and the form will not subm
 
 The PoS device prompts the user to select either a payment or refund. Each step thereafter is the same, with the device prompting the user for input along the way.
 
-The buttons on the device are updated depending on the field to input. For example, the amount, credit card number, cvv and issue number will only offer the user integer input, whereas the name will only offer characters. This has been automated in the Javascript and cannot be overridden.
+The buttons on the device are updated depending on the field to input. For example, the amount, credit card number, cvv and issue number will only offer the user integer input, whereas the name will only offer characters. This has been automated in the JavaScript and cannot be overridden.
 
 When prompted to enter a name, the keypad works similarly to a real-life keypad - using the below as an example, if the user wanted *b*, they would press the button twice in quick succession. If they then wanted *a*, they would wait for a couple of seconds before pressing the button again.
 
@@ -85,3 +86,6 @@ To generate these, navigate to the **Com528-AssessmentGroupA7** folder and enter
 mvn javadoc:javadoc
 ```
 
+## File Path Tree
+
+**To Do**

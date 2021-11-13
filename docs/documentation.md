@@ -1,9 +1,9 @@
 # Design documentation
 
-## Requirements
-For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale Application which allows the user to enter credit card details and a cash amount for a transaction. You should first present the user with a choice about what type of transaction they would like to make, either a payment or a refund option should be available. The user should then be asked to enter their account information. 
+## Requirement Brief
+For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale application which allows the user to enter credit card details and a cash amount for a transaction. You should first present the user with a choice about what type of transaction they would like to make, either a payment or a refund option should be available. The user should then be asked to enter their credit card information. 
 
-The application should communicate using a ReST interface to a mock banking service. The service will confirm or deny the transaction. A transaction will be unsuccessful if the credit card number is entered incorrectly, in which case the user should be prompted to enter their card details correctly. 
+The application should communicate using a ReST interface to a mock banking service supplied. The service will confirm or deny the transaction. A transaction will be unsuccessful if the credit card number is entered incorrectly, in which case the user should be prompted to enter their card details correctly. 
 
 Once a transaction has been completed the user account should be updated to show the new balance of their account.
 
@@ -19,32 +19,32 @@ The full application requirements can be viewed [here](https://learn.solent.ac.u
 
 ### **Goals**
 
-- The UI should be a user-friendly web interface
-- The identity of the device should be enterable by an administrator
-- The device should record all successful and unsuccessful transactions
-- Users should be able to enter their credit card details (name, credit card number, expiry date, cvv code)
-- Users should be able to make a payment
-- Users should be able to make a refund
-- The application should interact with the bank service using a ReST service
-- Money should be transferred between accounts correctly
-- Data input validation required throughout
-- Authentication required on administrator account
-- Authentication required on transaction request
-- All error messages should be user-friendly and informative
+- The UI will be a user-friendly web interface
+- The identity of the device will be enterable by an administrator
+- The device will record all successful and unsuccessful transactions
+- Users will be able to enter their credit card details (name, credit card number, expiry date, cvv code)
+- Users will be able to make a payment
+- Users will be able to make a refund
+- The application will interact with the bank service using a ReST service
+- Money will be transferred between accounts correctly
+- Data input validation will be implemented throughout
+- Authentication will be implemented on the administrator account
+- Authentication will be implemented on transaction request
+- All error messages will be user-friendly and informative
 
 ### **Non-Goals**
 
-- CVV codes should not be recorded
-- The PoS device should not validate the CVV code
+- CVV codes will not be recorded
+- The PoS device will not validate the CVV code
 
 ## Project Plan and Task Assignment
 
-We started planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on Github Projects and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
+We started planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on GitHub Projects and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
 
-We initially recorded these tasks as notes within the project, updating them to include the relevant name of the person doing the task when it was moved to *In Progress*. However, later we learned about creating Issues within Github so we converted all outstanding tasks to these.
+We initially recorded these tasks as notes within the project, updating them to include the relevant name of the person doing the task when it was moved to *In Progress*. However, later we learned about creating Issues within GitHub so we converted all outstanding tasks to these.
 
-![Github Project Screenshot](images/githubProject.PNG)
->Screenshot of Github Project in progress
+![GitHub Project Screenshot](images/githubProject.PNG)
+>Screenshot of GitHub Project in progress
 
 We decided on a top-down approach to this project, as how data was handled in the front-end would directly affect how it needed to be handled in the back-end. 
 
@@ -54,7 +54,7 @@ We also decided to use MVC for the project structure, as this separated back-end
 
 We assigned the first tasks, such as setting up the project in NetBeans, creating the UIs, etc, but task assignment thereafter was managed dynamically, depending on what had already been implemented and who was currently available to work on the project, with regular meetings online and in-person to discuss. As each task was assigned, the ticket on Github Projects was updated accordingly.
 
-All the following tasks are also available on [Github Projects](https://github.com/TomStrong/Com528-Assessment/projects/1):
+All the following tasks are also available on [GitHub Projects](https://github.com/TomStrong/Com528-Assessment/projects/1):
 
 | Assignee        | Task     | Description    |
 | :------------- | :----------: | :----------: | 
@@ -69,13 +69,13 @@ All the following tasks are also available on [Github Projects](https://github.c
 | Tom / Jo | ![Task 9](images/tasks/task9.PNG) | Basic functionality implemented with GET requests to access all JSP pages. |
 | Merlin | ![Task 10](images/tasks/task10.PNG) | Created use case UML diagram. |
 | Jo | ![Task 111](images/tasks/task11.PNG) | Implemented functionality of the admin page, with data retrieved and updated in the .properties file. Also implemented functionality for transactions, reading in PoS identity data and input data to make a ReST call to the bank service. |
-| Jo | ![Task 12](images/tasks/task12.PNG) | Implemented workflow through Github actions so all code is tested as soon as pushed to repo. |
+| Jo | ![Task 12](images/tasks/task12.PNG) | Implemented workflow through GitHub actions so all code is tested as soon as pushed to repo. |
 | Tom | ![Task 13](images/tasks/task13.PNG) | Ensured all error messages are user-friendly and informative. |
 | Tom | ![Task 14](images/tasks/task14.PNG) | Updated formatting on PoS to be more user-friendly and readable. |
 | Jo / Jake | ![Task 15](images/tasks/task15.PNG) | Jo updated Log4J to include transaction logs. However, this would not work so Jake created a bespoke logging class with corresponding unit test. |
 
 >>**_NOTE:_**  
-We included an index page for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
+An index page has been included for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
 
 ## Use Cases and Features
 
