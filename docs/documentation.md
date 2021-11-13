@@ -1,17 +1,21 @@
 # Design Documentation
 
 ## Requirement Brief
-For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale application which allows the user to enter credit card details and a cash amount for a transaction. You should first present the user with a choice about what type of transaction they would like to make, either a payment or a refund option should be available. The user should then be asked to enter their credit card information. 
+For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale application which allows the user to enter credit card details and a cash amount for a transaction. 
+
+When your program runs it should have a simple menu system that allows an administrator to configure the Point of Sale device. The menu should also have the option to use the Point of Sale device which will open the device interface for the user to input their information in order to make the transaction.
+
+The Point of Sale should allow an admin to log in and configure the Point of Sale identity data, which the transactions require to successfully transfer funds to or from the correct account. 
+
+The Point of Sale Device should first present the user with a choice about what type of transaction they would like to make, either a payment or a refund option should be available. The user should then be asked to enter their credit card information at which point the account details for the account the user is making a transaction with should be retrieved. 
 
 The application should communicate using a ReST interface to a mock banking service supplied. The service will confirm or deny the transaction. A transaction will be unsuccessful if the credit card number is entered incorrectly, in which case the user should be prompted to enter their card details correctly. 
 
-Once a transaction has been completed the user account should be updated to show the new balance of their account.
+Once a transaction has been completed the user account should be updated with the new balance of the account.
 
 The device should record all successful and unsuccessful transactions locally in a log file, cvv codes must not be recorded.
 
-The Point of Sale should also allow an admin to log in and configure the Point of Sale identity data, which the transactions require to successfully transfer funds to or from the correct account. 
 
-When your program runs it should have a simple menu system that allows you an administrator to configure the Point of Sale device. The menu should also have the option to use the Point of Sale device which will open the device interface for the user to input their information in order to make the transaction.
 
 The full application requirements can be viewed [here](https://learn.solent.ac.uk/pluginfile.php/2938474/mod_resource/content/1/Assessment%20Brief%20-%20COM528-504%20-%20AE1%20-%20GROUP%20%282021-2022%29%201.0.pdf).
 
@@ -135,9 +139,13 @@ The following uses cases describe how users will use the application and outline
 
 ![Use Case UML Diagram](UMLDiagrams/UseCaseDiagram.jpg)
 
+The draw.io file can be found [here](UMLDiagrams/UsecaseDiagram.drawio)
+
 **Robustness Analysis Diagram**
 
-![Robustness Analysis Diagram](UMLDiagrams/RobustnessAnalysisDiagram.jpg)
+![Robustness Analysis Diagram](UMLDiagrams/RobustnessDiagram.jpg)
+
+The draw.io file can be found [here](RobustnessDiagram.drawio)
 
 **Robustness UML Diagram**
 
