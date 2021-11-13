@@ -96,11 +96,17 @@ The following uses cases describe how users will use the application and outline
 
 ## Test Plan
 
-| ID   | Use Case ID    | Preconditions     | Test Steps | Post Conditions |
+| Test Case ID  | Use Case ID    | Preconditions     | Test Steps | Expected Post Conditions to Pass |
 | :-------------: | :-------------:  | :------------- | :-------------  | :-------------  | 
-| TP1 | UC1 | Tomcat server running | 
+| TC1 | UC1 | <ul><li>Tomcat server is running</li><li>Tester is on **Administrator** page</li></ul>| <ul><li> *http://com528bank.ukwest.cloudapp.azure.com:8080/rest* is entered into **Bank URL** field</li> <li>*testuser2* is entered into **Username** field</li> <li>*defaulttestpass* is entered into **Password** field</li> <li>*test* is entered into **Name on Credit Card** field</li><li>*11/21* is entered into **Credit Card End Date** field</li><li>*4285860000000021* is entered into **Credit Card Number** field</li><li>*123* is entered into **CVV Number** field</li><li>*01* is entered into **Issue Number** field</li></ul>| <ul><li>Page displays "PoS now configured" message</li><li>Local application.properties file updated accordingly</li></ul>| 
+| TC2.1 | UC2 | <ul><li>Tomcat server is running</li><li>Tester is on "Administrator" page</li></ul>| <ul><li>All steps as per TC1 _except_ **Bank URL** field is left empty.</li></ul>| <ul><li>Page displays "Please complete all fields before updating properties" message</li><li>Local application.properties file has not updated</li></ul>|
+| TC2.2 | UC2 | <ul><li>Tomcat server is running</li><li>Tester is on "Administrator" page</li></ul>| <ul><li>All steps as per TC1 _except_ **Username** field is left empty.</li></ul>| <ul><li>Page displays "Please complete all fields before updating properties" message</li><li>Local application.properties file has not updated</li></ul>|
+| TC2.3 | UC2 | <ul><li>Tomcat server is running</li><li>Tester is on "Administrator" page</li></ul>| <ul><li>All steps as per TC1 _except_ **Password** field is left empty.</li></ul>| <ul><li>Page displays "Please complete all fields before updating properties" message</li><li>Local application.properties file has not updated</li></ul>|  
+| TC2.4 | UC2 | <ul><li>Tomcat server is running</li><li>Tester is on "Administrator" page</li></ul>| <ul><li>All steps as per TC1 _except_ **Name on Credit Card** field is left empty.</li></ul>| <ul><li>Page displays "Please complete all fields before updating properties" message</li><li>Local application.properties file has not updated</li></ul>|
+| TC2.5 | UC2 | <ul><li>Tomcat server is running</li><li>Tester is on "Administrator" page</li></ul>| <ul><li>All steps as per TC1 _except_ **Credit Card Number** field is left empty.</li></ul>| <ul><li>Page displays "Please complete all fields before updating properties" message</li><li>Local application.properties file has not updated</li></ul>|
+| TC2.6 | UC2 | <ul><li>Tomcat server is running</li><li>Tester is on "Administrator" page</li></ul>| <ul><li>All steps as per TC1 _except_ **CVV Number** field is left empty.</li></ul>| <ul><li>Page displays "Please complete all fields before updating properties" message</li><li>Local application.properties file has not updated</li></ul>|   
+| TC3 | UC3 | <ul><li>Tomcat server is running</li><li>Tester is on "Administrator" page</li></ul>| <ul><li>All steps as per TC1 _except_ input for **Credit Card Number** field is left *1234567891237894*.</li></ul>| <ul><li>Credit card number fails Luhn check within MVC Controller.</li><li>Page displays "Invalid credit card number" message</li><li>Local application.properties file has not updated</li></ul>| 
 
-**To do**
 
 ## UML Diagrams
 

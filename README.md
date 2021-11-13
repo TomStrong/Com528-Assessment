@@ -19,7 +19,7 @@ This project is a simple Point of Sale web application, which allows configurati
 
 The application then logs the response and displays on the PoS device whether the transaction has been approved or declined.
 
-The application uses Enterprise Java Technologies with Spring MVC framework and Java Server Page for the front-end. JavaScript has been used to generate the UI and validate user inputs. 
+The application uses Enterprise Java Technologies with [Spring MVC framework](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html) and [JavaServer Pages](https://www.oracle.com/java/technologies/jspt.html) for the front-end. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) have been used to generate the UIs and validate user inputs. 
 
 ## System Requirements
 
@@ -46,29 +46,6 @@ The application can now be opened in NetBeans. Once the web module has been run 
 [http://localhost:8080/Com528-Assessment/](http://localhost:8080/Com528-Assessment/)
 
 The web app will open on the home page, where the user can navigate between Administrator and PoS device. If either button is clicked, a new web page will be opened.
-
-### **Local Files**
-
->>**_NOTE:_**  
-The below is for guidance only and may differ depending on each computer's configuration.
-
-For test transaction log, navigate to:
-
-```
-C: --> Users --> (username) --> AppDate --> Local --> Temp --> transactions.txt
-```
-
-For transaction log when server is running, navigate to: 
-
-```
-tomcat --> apache tomcat --> temp --> transactions.txt
-```
-
-For local properties file (once PoS device has been configured): navigate to: 
-
-```
-tomcat --> apache tomcat --> temp --> application.properties
-```
 
 ### **Administrator**
 
@@ -97,7 +74,30 @@ The action buttons on the device are as follows:
 | ![Back Button](docs/images/backButton.PNG)   | Back (input only) |
 | ![Cancel Button](docs/images/cancelButton.PNG)  | Cancel transaction |
 
-All fields are required, except for Issue Number, and will display an appropriate error message if no or invalid entry is made. 
+All fields are required, except for Issue Number, and will display an appropriate error message if no or invalid entry is made.
+
+## Local Files
+
+>>**_NOTE:_**  
+The below is for guidance only and may differ depending on each computer's configuration.
+
+For test transaction log, navigate to:
+
+```
+C: --> Users --> (username) --> AppDate --> Local --> Temp --> transactions.txt
+```
+
+For transaction log when server is running, navigate to: 
+
+```
+tomcat --> apache tomcat --> temp --> transactions.txt
+```
+
+For local properties file (once PoS device has been configured): navigate to: 
+
+```
+tomcat --> apache tomcat --> temp --> application.properties
+```
 
 ## Javadocs
 
