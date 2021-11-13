@@ -39,24 +39,22 @@ The full application requirements can be viewed [here](https://learn.solent.ac.u
 
 ## Project Plan and Task Assignment
 
-We started planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. We then recorded these on GitHub Projects and divided the tasks up into three *To Do* categories - front-end, back-end, and documentation. 
-
-We initially recorded these tasks as notes within the project, updating them to include the relevant name of the person doing the task when it was moved to *In Progress*. However, later we learned about creating Issues within GitHub so we converted all outstanding tasks to these.
+The team started planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. These were recorded on GitHub Projects and divided up into three *To Do* categories - front-end, back-end, and documentation. These were originally recorded as notes within the project, and were updated to include the relevant name of the person doing the task when it was moved to *In Progress*. However, Github Issues were later used for all outstanding tasks.
 
 ![GitHub Project Screenshot](images/githubProject.PNG)
 >Screenshot of GitHub Project in progress
 
-We decided on a top-down approach to this project, as how data was handled in the front-end would directly affect how it needed to be handled in the back-end. 
+The team decided on a top-down approach to this project, as how data was handled in the front-end would directly affect how it needed to be handled in the back-end. 
 
-We initially designed the project to be multi-module but, as the application only required simple functionality, we refactored this into a single WAR with packages for the layers instead.
+The project was initially designed to be multi-module but, as the application only required simple functionality, this was refactored into a single WAR with layers as packages.
 
-We also decided to use MVC for the project structure, as this separated back-end functionality from the front-end, and would therefore make the code a lot more readable and easier to debug.
+The team also decided to use MVC for the project structure, as this separated back-end functionality from the front-end, and would therefore make the code a lot more readable and easier to debug.
 
-We assigned the first tasks, such as setting up the project in NetBeans, creating the UIs, etc, but task assignment thereafter was managed dynamically, depending on what had already been implemented and who was currently available to work on the project, with regular meetings online and in-person to discuss. As each task was assigned, the ticket on Github Projects was updated accordingly.
+The team assigned the first tasks, such as setting up the project in NetBeans, creating the UIs, etc, but task assignment thereafter was managed dynamically, depending on what had already been implemented and who was currently available to work on the project, with regular meetings online and in-person to discuss. As each task was assigned, the ticket on Github Projects was updated accordingly.
 
 All the following tasks are also available on [GitHub Projects](https://github.com/TomStrong/Com528-Assessment/projects/1):
 
-| Assignee        | Task     | Description    |
+| Owner        | Task     | Description    |
 | :------------- | :----------: | :----------: | 
 | Jake / Jo | ![Task 1](images/tasks/task1.PNG) | Jake initially created a new project in NetBeans. This was then replaced by Jo to use a class excerise with all the client packages included. |
 | Jo | ![Task 2](images/tasks/task2.PNG) | All imported client packages needed to refactored into our group name. |
@@ -73,6 +71,7 @@ All the following tasks are also available on [GitHub Projects](https://github.c
 | Tom | ![Task 13](images/tasks/task13.PNG) | Ensured all error messages are user-friendly and informative. |
 | Tom | ![Task 14](images/tasks/task14.PNG) | Updated formatting on PoS to be more user-friendly and readable. |
 | Jo / Jake | ![Task 15](images/tasks/task15.PNG) | Jo updated Log4J to include transaction logs. However, this would not work so Jake created a bespoke logging class with corresponding unit test. |
+| Jo | ![Task 16](images/tasks/task15.PNG) | Jo updated MVC Controller to perform the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) on inputted credit card numbers within both Admin and PoS pages and ensured only credit card numbers that passed would be accepted. |
 
 >>**_NOTE:_**  
 An index page has been included for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.

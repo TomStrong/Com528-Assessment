@@ -49,11 +49,26 @@ The web app will open on the home page, where the user can navigate between Admi
 
 ### **Local Files**
 
-For test transaction log, navigate to C: --> Users --> (username) --> AppDate --> Local --> Temp --> transactions.txt
+>>**_NOTE:_**  
+The below is for guidance only and may differ depending on each computer's configuration.
 
-For transaction log when server is running, navigate to tomcat --> apache tomcat --> temp --> transactions.txt
+For test transaction log, navigate to:
 
-For local properties file (once PoS device has been configured), navigate to tomcat --> apache tomcat --> temp --> application.properties
+```
+C: --> Users --> (username) --> AppDate --> Local --> Temp --> transactions.txt
+```
+
+For transaction log when server is running, navigate to: 
+
+```
+tomcat --> apache tomcat --> temp --> transactions.txt
+```
+
+For local properties file (once PoS device has been configured): navigate to: 
+
+```
+tomcat --> apache tomcat --> temp --> application.properties
+```
 
 ### **Administrator**
 
