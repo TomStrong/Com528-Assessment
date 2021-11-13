@@ -1,7 +1,7 @@
 # Design Documentation
 
 ## Requirement Brief
-For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale application which allows the user to enter credit card details and a cash amount for a transaction. You should first present the user with a choice about what type of transaction they would like to make, either a payment or a refund option should be available. The user should then be asked to enter their credit card information. 
+For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale application which allows the user to enter credit card details and a cash amount for a transaction. You should first present the user with a choice about what type of transaction they would like to make, either a payment or a refund option should be available. The user should then be asked to enter their credit card information at which point the account details for the account the user is making a transaction with will be retrieved. 
 
 The application should communicate using a ReST interface to a mock banking service supplied. The service will confirm or deny the transaction. A transaction will be unsuccessful if the credit card number is entered incorrectly, in which case the user should be prompted to enter their card details correctly. 
 
@@ -135,9 +135,13 @@ The following uses cases describe how users will use the application and outline
 
 ![Use Case UML Diagram](UMLDiagrams/UseCaseDiagram.jpg)
 
+The draw.io file can be found ![here](UMLDiagrams/BankApplicationsUsecaseDiagram.drawio)
+
 **Robustness Analysis Diagram**
 
-![Robustness Analysis Diagram](UMLDiagrams/RobustnessAnalysisDiagram.jpg)
+![Robustness Analysis Diagram](UMLDiagrams/RobustnessDiagram.jpg)
+
+The draw.io file can be found ![here](BankApplicationsRobustnessDiagram.drawio)
 
 **Robustness UML Diagram**
 
