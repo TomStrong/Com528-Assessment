@@ -19,7 +19,7 @@ This project is a simple Point of Sale web application, which allows configurati
 
 The application then logs the response and displays on the PoS device whether the transaction has been approved or declined.
 
-The application uses Enterprise Java Technologies with [Spring Web MVC framework](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html) and [JavaServer Pages](https://www.oracle.com/java/technologies/jspt.html) for the front-end. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) have been used to generate the UIs and validate user inputs. 
+The application uses Enterprise Java Technologies with [Spring MVC framework](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html) and [JavaServer Pages](https://www.oracle.com/java/technologies/jspt.html) for the front-end. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) have been used to generate the UIs and validate user inputs. 
 
 ## System Requirements
 
@@ -36,7 +36,7 @@ Please note, Internet Explorer is not supported and this application has not bee
 
 ## User Instructions
 
-Before the application is run, ensure the following command is run in the folder **Com528-AssessmentGroupA7**:
+Before the application is run, ensure the following command is run in the folder *COM528-AssessmentGroupA7*:
 
 ```
 mvn clean install
@@ -60,7 +60,7 @@ The PoS device prompts the user to select either a payment or refund. Each step 
 
 The buttons on the device are updated depending on the field to input. For example, the amount, credit card number, cvv and issue number will only offer the user integer input, whereas the name will only offer characters. This has been automated in the JavaScript and cannot be overridden.
 
-When prompted to enter a name, the keypad works similarly to a real-life keypad - using the below as an example, if the user wanted *b*, they would press the button twice in quick succession. If they then wanted *a*, they would wait for a couple of seconds before pressing the button again.
+When prompted to enter a name, the keypad works similarly to a real-life keypad - using the below as an example, if the user wanted "b", they would press the button twice in quick succession. If they then wanted "a", they would wait for a couple of seconds before pressing the button again.
 
 ![Keypad Example](docs/images/keypadExample.PNG)
 >Keypad example
@@ -104,7 +104,7 @@ tomcat --> apache tomcat --> temp --> application.properties
 
 All classes within this application have been documented using Javadocs, and have been written in accordance with Oracle guidelines. For further information, click [here](https://www.oracle.com/uk/technical-resources/articles/java/javadoc-tool.html).
 
-To generate these, navigate to the **Com528-AssessmentGroupA7** folder and enter the following into command prompt:
+To generate these, navigate to the *COM528-AssessmentGroupA7* folder and enter the following into command prompt:
 
 ```
 mvn javadoc:javadoc
