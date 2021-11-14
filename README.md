@@ -19,7 +19,7 @@ This project is a simple Point of Sale web application, which allows configurati
 
 The application then logs the response and displays on the PoS device whether the transaction has been approved or declined.
 
-The application uses Enterprise Java Technologies with [Spring MVC framework](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html) and [JavaServer Pages](https://www.oracle.com/java/technologies/jspt.html) for the front-end. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) have been used to generate the UIs and validate user inputs. 
+The application uses Enterprise Java Technologies with [Spring Web MVC framework](https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/mvc.html) and [JavaServer Pages](https://www.oracle.com/java/technologies/jspt.html) for the front-end. [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) have been used to generate the UIs and validate user inputs. 
 
 ## System Requirements
 

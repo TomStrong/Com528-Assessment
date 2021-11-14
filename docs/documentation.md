@@ -61,11 +61,11 @@ All the following tasks are also available on [GitHub Projects](https://github.c
 | Owner        | Task     | Description    |
 | :------------- | :----------: | :----------: | 
 | Jake / Jo | ![Task 1](images/tasks/task1.PNG) | Jake initially created a new project in NetBeans. This was then replaced by Jo to use a class excerise with all the client packages included. |
-| Jo | ![Task 2](images/tasks/task2.PNG) | All imported client packages needed to refactored into our group name. |
+| Jo | ![Task 2](images/tasks/task2.PNG) | All imported client packages needed to refactored to the team name. |
 | Jo | ![Task 3](images/tasks/task3.PNG) | A standalone bank client module became available so project was started again without multi-modules. |
-| Tom | ![Task 4](images/tasks/task4.PNG) | Design and implement a user-friendly UI that resembles a real PoS device, using JavaScript and CSS where appropriate. |
-| Jo | ![Task 5](images/tasks/task5.PNG) | Design and implement a basic administrator page that allows entry of the identity for the PoS device.  |
-| Jo | ![Task 6](images/tasks/task6.PNG) | Implement a basic index page which allows easy access to both admin and PoS pages. |
+| Tom | ![Task 4](images/tasks/task4.PNG) | Designed and implemented a user-friendly UI that resembles a real PoS device, using JavaScript and CSS where appropriate. |
+| Jo | ![Task 5](images/tasks/task5.PNG) | Designed and implemented a basic administrator page that allows entry of the identity for the PoS device.  |
+| Jo | ![Task 6](images/tasks/task6.PNG) | Implemented a basic index page which allows easy access to both admin and PoS pages. |
 | Jo | ![Task 7](images/tasks/task7.PNG) | Created default.properties file with valid data so the PoS would not need configuring every time it was tested. |
 | Jo | ![Task 8](images/tasks/task8.PNG) | Created the MVC Controller class. |
 | Tom / Jo | ![Task 9](images/tasks/task9.PNG) | Basic functionality implemented with GET requests to access all JSP pages. |
@@ -75,9 +75,9 @@ All the following tasks are also available on [GitHub Projects](https://github.c
 | Tom | ![Task 13](images/tasks/task13.PNG) | Ensured all error messages are user-friendly and informative. |
 | Tom | ![Task 14](images/tasks/task14.PNG) | Updated formatting on PoS to be more user-friendly and readable. |
 | Jo / Jake | ![Task 15](images/tasks/task15.PNG) | Jo updated Log4J to include transaction logs. However, this would not work so Jake created a bespoke logging class with corresponding unit test. |
-| Jo | ![Task 16](images/tasks/task16.PNG) | Jo updated MVC Controller to perform the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) on inputted credit card numbers within both Admin and PoS pages and ensured only credit card numbers that passed would be accepted. |
-| Jo | ![Task 17](images/tasks/task17.PNG) | Jo created use cases and included them within the design documentation. |
-| Jo | ![Task 18](images/tasks/task18.PNG) | Jo created test cases and included them within the design documentation. |
+| Jo | ![Task 16](images/tasks/task16.PNG) | Updated MVC Controller to perform the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) on inputted credit card numbers within both Admin and PoS pages and ensured only credit card numbers that passed would be accepted. |
+| Jo | ![Task 17](images/tasks/task17.PNG) | Created use cases and included them within the design documentation. |
+| Jo | ![Task 18](images/tasks/task18.PNG) | Created test cases and included them within the design documentation. |
 | Tom | ![Task 19](images/tasks/task19.PNG) | Updated Admin page to use JavaScript to validate form input. |
 | Jo | ![Task 20](images/tasks/task20.PNG) | Created all documentation required for project, including use and test cases. |
 | Merlin | ![Task 21](images/tasks/task21.PNG) | Created robustness UML diagram. |
