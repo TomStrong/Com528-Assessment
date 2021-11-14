@@ -37,13 +37,24 @@
 
             <br/>
             <div id="frontpageButtons">
-                <div style="display: flex; flex-direction: row; justify-content: space-around"> 
-                    <a href="./admin" target="_blank" >
-                        <button class="btn">Administrator</button>
-                    </a>
+                <p id="message">${message}</p>
+                <div style="display: flex; flex-direction: column; justify-content: space-around"> 
                     <a href="./pos" target="_blank" >
                         <button class="btn">PoS User</button>
                     </a>
+                    <div style="height: 2rem;"></div>
+                    <form action="./admin">
+                        <label>
+                            Username
+                            <input type="text" name="auth_username">
+                        </label>
+                        <label>
+                            Password
+                            <input type="password" name="auth_password">
+                        </label>
+                        <div style="height: 1rem;"></div>
+                        <button class="btn">Login as Admin</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -8,6 +8,7 @@ package org.solent.ood.assessmentgroupa7.dao;
 import java.io.File;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.solent.ood.assessmentgroupa7.service.Authenticator;
 
 /**
  *
@@ -18,6 +19,7 @@ public class WebObjectFactory {
     final static Logger LOG = LogManager.getLogger(WebObjectFactory.class);
 
     private static PropertiesDao propertiesDao = null;
+    private static Authenticator authenticator = null;
 
     public static PropertiesDao getPropertiesDao() {
         if (propertiesDao == null) {
@@ -33,6 +35,14 @@ public class WebObjectFactory {
             }
         }
         return propertiesDao;
+    }
+
+    public static Authenticator getAuthenticator() {
+        if(authenticator == null) {
+            authenticator = new Authenticator(getPropertiesDao());
+        }
+        
+        return authenticator;
     }
 
 }

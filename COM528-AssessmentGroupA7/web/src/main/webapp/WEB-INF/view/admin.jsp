@@ -53,7 +53,7 @@
                                 Password<scope class="required">*</scope>
                             </td>
                             <td>
-                                <input type="text" name="password" value="${password}">
+                                <input type="password" name="password" value="${password}">
                             </td>
                         </tr>
                         <tr>
@@ -100,6 +100,23 @@
                 </div>
                 
                 <br/>
+                <span>
+                    Re-enter the admin username and password to confirm changes.
+                </span>
+                <br/>
+                <label>
+                    Username
+                    <input type="text" name="auth_username" value="${authUsername}">
+                </label>
+                <br/>
+                <label>
+                    Password
+                    <input type="password" name="auth_password">
+                </label>
+                
+                <br/>
+                <br/>
+                
                 <button class="btn" type="submit">Submit Configuration</button>
             </form> 
         

@@ -30,6 +30,7 @@ import org.solent.com504.oodd.bank.model.client.BankRestClient;
 import org.solent.com504.oodd.bank.client.impl.BankRestClientImpl;
 import org.solent.ood.assessmentgroupa7.service.TransactionLogger;
 import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
+import org.solent.ood.assessmentgroupa7.service.Authenticator;
 import solent.ac.uk.ood.examples.cardcheck.CardValidationResult;
 import solent.ac.uk.ood.examples.cardcheck.RegexCardValidator;
 
@@ -60,12 +61,20 @@ public class MVCController {
 
     @RequestMapping(value = "/admin", method = {RequestMethod.GET})
     public String admin(
+            @RequestParam(name = "auth_username", required = true) String authUsername,
+            @RequestParam(name = "auth_password", required = true) String authPassword,
             Model model,
             HttpSession session) {
         
+        Authenticator auth = WebObjectFactory.getAuthenticator();
+        
+        if(!auth.verifyAdmin(authUsername, authPassword)) {
+            model.addAttribute("message", "Invalid username or password");
+            return "index";
+        }
+        
         String url = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.url");
         String username = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.username");
-        String password = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.password");
         String name = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.name");
         String endDate = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.enddate");
         String cardNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cardno");
@@ -74,7 +83,7 @@ public class MVCController {
 
         model.addAttribute("url", url);
         model.addAttribute("username", username);
-        model.addAttribute("password", password);
+        model.addAttribute("password", "");
         model.addAttribute("name", name);
         model.addAttribute("endDate", endDate);
         model.addAttribute("cardNumber", cardNumber);
@@ -87,9 +96,11 @@ public class MVCController {
 
     @RequestMapping(value = "/admin", method = {RequestMethod.POST})
     public String admin(
+            @RequestParam(name = "auth_username", required = true) String authUsername,
+            @RequestParam(name = "auth_password", required = true) String authPassword,
             @RequestParam(name = "url", required = true) String url,
             @RequestParam(name = "username", required = true) String username,
-            @RequestParam(name = "password", required = true) String password,
+            @RequestParam(name = "password", required = false) String password,
             @RequestParam(name = "name", required = true) String name,
             @RequestParam(name = "endDate", required = true) String endDate,
             @RequestParam(name = "cardNumber", required = true) String cardNumber,
@@ -98,30 +109,43 @@ public class MVCController {
             Model model,
             HttpSession session) {
         
+        Authenticator auth = WebObjectFactory.getAuthenticator();
+        
         String message;
         
         CardValidationResult luhnCheck = RegexCardValidator.isValid(cardNumber);
         
-        if (url.isEmpty() || username.isEmpty() || password.isEmpty() || name.isEmpty() || endDate.isEmpty() || cardNumber.isEmpty() || cvv.isEmpty()) {
-            message = "Please complete all fields before updating properties";
-        } else {
-            if(luhnCheck.isValid()) {
-                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.url", url);
-                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.username", username);
-                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.password", password);
-                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
-                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
-                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
-
-                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
-                propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
-
-                message = "PoS now configured";
+        if(auth.verifyAdmin(authUsername, authPassword)) {
+            if (url.isEmpty() || username.isEmpty() || name.isEmpty() || endDate.isEmpty() || cardNumber.isEmpty() || cvv.isEmpty()) {
+                message = "Please complete all fields before updating properties";
             } else {
-                message = "Invalid credit card number";
-            }
-        } 
+                if(luhnCheck.isValid()) {
+                    propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.url", url);
+                    propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.username", username);
+                    propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.name", name);
+                    propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.enddate", endDate);
+                    propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cardno", cardNumber);
+
+                    propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
+                    propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
+
+                    if(password != null && !password.isEmpty() && !password.isBlank()) {
+                        // Update admin password
+                        auth.setAdminCredentials(username, password);
+
+                        LOG.info("Updated admin credentials from web PoS Configuration");
+                    }
+                    
+                    message = "PoS now configured";
+                } else {
+                    message = "Invalid credit card number";
+                }
+            } 
+        } else {
+            message = "Invalid username or password";
+        }
         
+        model.addAttribute("authUsername", authUsername);
         model.addAttribute("url", url);
         model.addAttribute("username", username);
         model.addAttribute("password", password);

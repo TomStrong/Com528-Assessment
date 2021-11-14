@@ -11,7 +11,7 @@ function ready() {
     function validateForm(event) {
         var formOkay = true;
         
-        if (form.querySelector('input[name="url"]').value.length == 0 || form.querySelector('input[name="username"]').value.length == 0 || form.querySelector('input[name="password"]').value.length == 0 || form.querySelector('input[name="name"]').value.length == 0 || form.querySelector('input[name="endDate"]').value.length == 0 || form.querySelector('input[name="cardNumber"]').value.length == 0 || form.querySelector('input[name="cvv"]').value.length == 0) {
+        if (form.querySelector('input[name="url"]').value.length == 0 || form.querySelector('input[name="username"]').value.length == 0 || form.querySelector('input[name="name"]').value.length == 0 || form.querySelector('input[name="endDate"]').value.length == 0 || form.querySelector('input[name="cardNumber"]').value.length == 0 || form.querySelector('input[name="cvv"]').value.length == 0) {
             formOkay = false;
             document.getElementById("message").innerHTML = "Please fill all required fields";
         } else if (!/^(0[1-9]|1[0-2])\/?([0-9]{2})$/.test(form.querySelector('input[name="endDate"]').value)) {
