@@ -141,12 +141,14 @@ The following uses cases describe how users will use the application and outline
 
 The draw.io file can be found [here](UMLDiagrams/UsecaseDiagram.drawio)
 
-**Robustness Analysis Diagram**
+**Robustness UML Diagram**
 
 ![Robustness Analysis Diagram](UMLDiagrams/RobustnessDiagram.jpg)
 
 The draw.io file can be found [here](RobustnessDiagram.drawio)
 
-**Robustness UML Diagram**
+**Sequence Diagram**
 
-**To do**
+![Sequence Diagram](UMLDiagrams/SequenceDiagram.jpg)
+
+The draw.io file can be found [here](SequenceDiagram.drawio)
