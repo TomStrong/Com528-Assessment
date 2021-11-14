@@ -42,7 +42,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Username<scope class="required">*</scope>
+                                Admin Username<scope class="required">*</scope>
                             </td>
                             <td>
                                 <input type="text" name="username" value="${username}">
@@ -50,7 +50,7 @@
                         </tr>
                         <tr>
                             <td>
-                                Password<scope class="required">*</scope>
+                                Admin Password<scope class="required">*</scope>
                             </td>
                             <td>
                                 <input type="password" name="password" value="${password}">
