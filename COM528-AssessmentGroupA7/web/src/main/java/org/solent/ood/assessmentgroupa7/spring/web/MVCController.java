@@ -222,6 +222,9 @@ public class MVCController {
         return "pos";
     }
     
-   
-    
+    @ExceptionHandler(Exception.class)
+    public String defaultExceptionHandler(final Exception e, Model model, HttpServletRequest request) {
+        model.addAttribute("exception", e);
+        return "error";
+    }
 }

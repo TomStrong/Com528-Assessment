@@ -23,7 +23,7 @@ function ready() {
         } else if (isNaN(form.querySelector('input[name="cardNumber"]').value) || form.querySelector('input[name="cardNumber"]').value.includes(".")) {
             formOkay = false;
             document.getElementById("message").innerHTML = "Card number must only contain numbers";
-        } else if (!(3 <= form.querySelector('input[name="cvv"]').value.length >= 4)) {
+        } else if (!(form.querySelector('input[name="cvv"]').value.length == 3 || form.querySelector('input[name="cvv"]').value.length == 4)) {
             formOkay = false;
             document.getElementById("message").innerHTML = "CVV must be 3 or 4 digits";
         } else if (isNaN(form.querySelector('input[name="cvv"]').value) || form.querySelector('input[name="cvv"]').value.includes(".")) {

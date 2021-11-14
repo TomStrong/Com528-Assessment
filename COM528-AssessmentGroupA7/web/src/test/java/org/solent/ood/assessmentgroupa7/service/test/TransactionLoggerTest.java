@@ -5,6 +5,9 @@
  */
 package org.solent.ood.assessmentgroupa7.service.test;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 import java.io.IOException;
 import java.util.logging.Level;
 import org.apache.logging.log4j.LogManager;
@@ -29,6 +32,21 @@ public class TransactionLoggerTest {
     @Test
     public void LogTransactionTest() throws IOException {
         TRANSACTIONS_LOG.log("Test");
+        
+        try {
+            String TEMP_DIR = System.getProperty("java.io.tmpdir");
+            File log = new File(TEMP_DIR + "/transactions.txt");
+            
+            Scanner reader = new Scanner(log);
+            String line = "";
+            // goes through each line, line is finally assigned to the last line
+            while (reader.hasNextLine()) {
+                line = reader.nextLine();
+            }
+            assertEquals("Test", line);
+        } catch(FileNotFoundException e) {
+            assertEquals("Test", "File not found");
+        }
     }
 
 }

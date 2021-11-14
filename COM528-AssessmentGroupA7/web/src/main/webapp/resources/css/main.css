@@ -46,3 +46,12 @@ body{
 .required{
     color: red;
 }
+
+#error {
+    height: 100vh;
+}
+
+.center {
+    height: 100%;
+    margin-top: 35vh;
+}
