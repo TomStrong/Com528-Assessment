@@ -78,6 +78,10 @@ All the following tasks are also available on [GitHub Projects](https://github.c
 | Jo | ![Task 16](images/tasks/task16.PNG) | Jo updated MVC Controller to perform the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) on inputted credit card numbers within both Admin and PoS pages and ensured only credit card numbers that passed would be accepted. |
 | Jo | ![Task 17](images/tasks/task17.PNG) | Jo created use cases and included them within the design documentation. |
 | Jo | ![Task 18](images/tasks/task18.PNG) | Jo created test cases and included them within the design documentation. |
+| Tom | ![Task 19](images/tasks/task19.PNG) | Updated Admin page to use JavaScript to validate form input. |
+| Jo | ![Task 20](images/tasks/task20.PNG) | Created all documentation required for project, including use and test cases. |
+| Merlin | ![Task 21](images/tasks/task21.PNG) | Created robustness UML diagram. |
+| Merlin | ![Task 22](images/tasks/task22.PNG) | Created sequence diagram. |
 
 >>**_NOTE:_**  
 An index page has been included for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
