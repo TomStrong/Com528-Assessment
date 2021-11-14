@@ -11,7 +11,7 @@ function ready() {
     function validateForm(event) {
         var formOkay = true;
         
-        if (form.querySelector('input[name="url"]').value.length == 0 || form.querySelector('input[name="username"]').value.length == 0 || form.querySelector('input[name="password"]').value.length == 0 || form.querySelector('input[name="name"]').value.length == 0 || form.querySelector('input[name="endDate"]').value.length == 0 || form.querySelector('input[name="cardNumber"]').value.length == 0 || form.querySelector('input[name="cvv"]').value.length == 0) {
+        if (form.querySelector('input[name="url"]').value.length == 0 || form.querySelector('input[name="username"]').value.length == 0 || form.querySelector('input[name="name"]').value.length == 0 || form.querySelector('input[name="endDate"]').value.length == 0 || form.querySelector('input[name="cardNumber"]').value.length == 0 || form.querySelector('input[name="cvv"]').value.length == 0) {
             formOkay = false;
             document.getElementById("message").innerHTML = "Please fill all required fields";
         } else if (!/^(0[1-9]|1[0-2])\/?([0-9]{2})$/.test(form.querySelector('input[name="endDate"]').value)) {
@@ -23,7 +23,7 @@ function ready() {
         } else if (isNaN(form.querySelector('input[name="cardNumber"]').value) || form.querySelector('input[name="cardNumber"]').value.includes(".")) {
             formOkay = false;
             document.getElementById("message").innerHTML = "Card number must only contain numbers";
-        } else if (!(3 <= form.querySelector('input[name="cvv"]').value.length >= 4)) {
+        } else if (!(form.querySelector('input[name="cvv"]').value.length == 3 || form.querySelector('input[name="cvv"]').value.length == 4)) {
             formOkay = false;
             document.getElementById("message").innerHTML = "CVV must be 3 or 4 digits";
         } else if (isNaN(form.querySelector('input[name="cvv"]').value) || form.querySelector('input[name="cvv"]').value.includes(".")) {
