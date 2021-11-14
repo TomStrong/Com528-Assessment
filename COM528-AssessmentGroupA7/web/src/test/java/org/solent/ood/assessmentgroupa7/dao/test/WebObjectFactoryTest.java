@@ -14,6 +14,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.solent.ood.assessmentgroupa7.dao.PropertiesDao;
 import org.solent.ood.assessmentgroupa7.dao.WebObjectFactory;
+import org.solent.ood.assessmentgroupa7.service.Authenticator;
 
 /**
  *
@@ -25,6 +26,14 @@ public class WebObjectFactoryTest {
     public void testGetPropertiesDao() {
         PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
 
+        assertNotNull(propertiesDao);
+    }
+    
+    @Test
+    public void testGetAuthenticator() {
+        Authenticator auth = WebObjectFactory.getAuthenticator();
+
+        assertNotNull(auth);
     }
 
     @After
