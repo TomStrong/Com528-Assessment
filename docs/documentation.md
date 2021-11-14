@@ -83,6 +83,7 @@ All the following tasks are also available on [GitHub Projects](https://github.c
 | Merlin | ![Task 21](images/tasks/task21.PNG) | Created robustness UML diagram. |
 | Merlin | ![Task 22](images/tasks/task22.PNG) | Created sequence diagram. |
 | Tom | ![Task 23](images/tasks/task23.PNG) | Created error JSP for in case exception is thrown. |
+| Jake | ![Task 24](images/tasks/task23.PNG) | Implemented authentication on admin page, utilising the Password class to encrypt the password. |
 
 >>**_NOTE:_**  
 An index page has been included for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
@@ -104,7 +105,8 @@ The following uses cases describe how users will use the application and outline
 | UC9   | User  |  User enters no card data.   | The device displays an error message and they are prompted to input again. | 
 | UC10   | User  |  User confirms transaction.   | The device displays an "Approved" message and the transaction is completed.<br/> The application transfers money between accounts and logs the transaction to the local log file (excluding cvv code). |
 | UC11   | User  |  User does not have sufficient balance in account to complete transaction.   | The device displays a "Declined" message and the transaction is aborted.<br/>The application logs the transaction to the local log file (excluding cvv code and with the amount as *null*). |
-| UC12   | User  |  User cancels a transaction before it is completed.  | The device returns to main menu. No monies are transferred and nothing is logged. |  
+| UC12   | User  |  User cancels a transaction before it is completed.  | The device returns to main menu. No monies are transferred and nothing is logged. |
+| UC13   | User  |  User enters an incorrect path in the URL.  | An error page is displayed and they are prompted to return to the home page. |   
 
 ## Test Plan
 
@@ -126,6 +128,7 @@ The following uses cases describe how users will use the application and outline
 | TC10 | UC10 | Tomcat server is running.<br/> Device identity card number is "4285860000000021". Tester is on "PoS" page and has inputted:<br/>*Option* = "1" | 1. "10.00" is inputted for amount<br/>2. *Accept* button is clicked.<br/> 3. "bob" is inputted for name.<br/>4. *Accept* button is clicked.<br/>5. "5133880000000012" is inputted for card number.<br/>6. *Accept* button is clicked.<br/>7. "11/21" is inputted for expiry date.<br/>8. *Accept* button is clicked.<br/>9. "01" is inputted for issue number.<br/>10. *Accept* button is clicked.<br/>11. *Accept* button is clicked to complete transaction.| "Approved" is displayed at the top of the screen. £10.00 is transfered from card 5133880000000012 to card 4285860000000021, which can be seen [here](http://com528bank.ukwest.cloudapp.azure.com:8080/banktransactions). Transaction log records transaction excluding cvv code.|
 | TC11 | UC11 | Tomcat server is running.<br/> Device identity card number is "4285860000000021". Tester is on "PoS" page and has inputted:<br/>*Option* = "2" | 1. "500.00" is inputted for amount<br/>2. *Accept* button is clicked.<br/> 3. "bob" is inputted for name.<br/>4. *Accept* button is clicked.<br/>5. "5133880000000012" is inputted for card number.<br/>6. *Accept* button is clicked.<br/>7. "11/21" is inputted for expiry date.<br/>8. *Accept* button is clicked.<br/>9. "01" is inputted for issue number.<br/>10. *Accept* button is clicked.<br/>11. *Accept* button is clicked to complete transaction.| "Declined. Insufficient balance in account 428586 000000002" is displayed at the top of the screen. No monies have been transferred. Transaction log records transaction with amount="null" and excluding cvv code.|
 | TC12 | UC12 | Tomcat server is running.<br/> Tester is on "PoS" page and has inputted:<br/>*Option* = "2" | 1. *Cancel* button is clicked. | The device returns to the front screen.|
+| TC13 | UC13 | Tomcat server is running.| 1. "http://localhost:8080/Com528-Assessment/badpage" is entered into URL. | Error page displayed with link to the home page. |
 
 
 

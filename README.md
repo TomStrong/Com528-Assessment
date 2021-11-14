@@ -31,7 +31,8 @@ This application has been designed and tested using the following, therefore it 
 - Apache Tomcat 9.0
 - Web browsers: Google Chrome, Mozilla Firefox, Microsoft Edge, Opera
 
-Please note, Internet Explorer and Safari are not supported.
+>>**_NOTE:_**  
+Please note, Internet Explorer is not supported and this application has not been tested in Safari, as the team does not have the facilities to do so.
 
 ## User Instructions
 
