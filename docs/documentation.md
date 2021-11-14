@@ -82,6 +82,7 @@ All the following tasks are also available on [GitHub Projects](https://github.c
 | Jo | ![Task 20](images/tasks/task20.PNG) | Created all documentation required for project, including use and test cases. |
 | Merlin | ![Task 21](images/tasks/task21.PNG) | Created robustness UML diagram. |
 | Merlin | ![Task 22](images/tasks/task22.PNG) | Created sequence diagram. |
+| Tom | ![Task 23](images/tasks/task23.PNG) | Created error JSP for in case exception is thrown. |
 
 >>**_NOTE:_**  
 An index page has been included for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
