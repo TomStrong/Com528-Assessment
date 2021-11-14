@@ -83,6 +83,7 @@ All the following tasks are also available on [GitHub Projects](https://github.c
 | Merlin | ![Task 21](images/tasks/task21.PNG) | Created robustness UML diagram. |
 | Merlin | ![Task 22](images/tasks/task22.PNG) | Created sequence diagram. |
 | Tom | ![Task 23](images/tasks/task23.PNG) | Created error JSP for in case exception is thrown. |
+| Jake | ![Task 24](images/tasks/task23.PNG) | Implemented authentication on admin page, utilising the Password class to encrypt the password. |
 
 >>**_NOTE:_**  
 An index page has been included for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
