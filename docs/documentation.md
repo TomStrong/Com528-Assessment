@@ -95,7 +95,7 @@ The following uses cases describe how users will use the application and outline
 | ID   | Actor    | Action     | System Behaviour |
 | :------------- | :-------------  | :------------- | :-------------  |
 | UC1   | Admin  | Admin enters the correct password and username.   | The admin page is opened. |
-| UC2   | Admin  | Admin enters the incorrect password and username, or leaves a field blank.  | An error message is displayed and access to admin page denied. |   
+| UC2   | Admin  | Admin enters the incorrect password and username, or leaves a field blank.  | An error message is displayed and access to the admin page is denied. |   
 | UC3   | Admin  | Admin configures the PoS device.   | The identity of the device is updated locally. | 
 | UC4   | Admin |  Admin configures the PoS device but misses a field.  |  An error message is displayed and the identity of the device is not updated.    | 
 | UC5   | Admin  | Admin enters an incorrect credit card number   | The credit card number fails the Luhn check, an error message is displayed and the identity of the device is not updated. | 
