@@ -83,7 +83,7 @@ public class MVCController {
      * @param session Spring framework HTTP session
      * @return View to be rendered
      */
-    @RequestMapping(value = "/admin", method = {RequestMethod.GET})
+    @RequestMapping(value = "/admin", method = {RequestMethod.POST})
     public String admin(
             @RequestParam(name = "auth_username", required = true) String authUsername,
             @RequestParam(name = "auth_password", required = true) String authPassword,
@@ -143,7 +143,7 @@ public class MVCController {
      * @param session Spring framework HTTP session
      * @return View to be rendered
      */
-    @RequestMapping(value = "/admin", method = {RequestMethod.POST})
+    @RequestMapping(value = "/configurepos", method = {RequestMethod.POST})
     public String admin(
             @RequestParam(name = "auth_username", required = true) String authUsername,
             @RequestParam(name = "auth_password", required = true) String authPassword,

@@ -23,23 +23,23 @@ The full application requirements can be viewed [here](https://learn.solent.ac.u
 
 ### **Goals**
 
-- The UI will be a user-friendly web interface
-- The identity of the device will be enterable by an administrator
-- The device will record all successful and unsuccessful transactions
-- Users will be able to enter their credit card details (name, credit card number, expiry date, cvv code)
-- Users will be able to make a payment
-- Users will be able to make a refund
-- The application will interact with the bank service using a ReST service
-- Money will be transferred between accounts correctly
-- Data input validation will be implemented throughout
-- Authentication will be implemented on the administrator account
-- Authentication will be implemented on transaction request
-- All error messages will be user-friendly and informative
+- The UI will be a user-friendly web interface.
+- The identity of the device will be enterable by an administrator.
+- The device will record all successful and unsuccessful transactions.
+- Users will be able to enter their credit card details (name, credit card number, expiry date, cvv code).
+- Users will be able to make a payment.
+- Users will be able to make a refund.
+- The application will interact with the bank service using a ReST service.
+- Money will be transferred between accounts correctly.
+- Data input validation will be implemented throughout.
+- Authentication will be implemented on the administrator account.
+- Authentication will be implemented on transaction request.
+- All error messages will be user-friendly and informative.
 
 ### **Non-Goals**
 
-- CVV codes will not be recorded
-- The PoS device will not validate the CVV code
+- CVV codes will not be recorded.
+- The PoS device will not validate the CVV code.
 
 ## Project Plan and Task Assignment
 
@@ -98,7 +98,7 @@ The following uses cases describe how users will use the application and outline
 | UC2   | Admin  | Admin enters the incorrect password and username, or leaves a field blank.  | An error message is displayed and access to the admin page is denied. |   
 | UC3   | Admin  | Admin configures the PoS device.   | The identity of the device is updated locally. | 
 | UC4   | Admin |  Admin configures the PoS device but misses a field.  |  An error message is displayed and the identity of the device is not updated.    | 
-| UC5   | Admin  | Admin enters an incorrect credit card number   | The credit card number fails the Luhn check, an error message is displayed and the identity of the device is not updated. | 
+| UC5   | Admin  | Admin enters an incorrect credit card number.   | The credit card number fails the Luhn check, an error message is displayed and the identity of the device is not updated. | 
 | UC6   | User  |  User enters option that is neither payment or refund.  |  The device displays an error message and they are prompted to input again.   |
 | UC7   | User  |  User enters option for a payment.   |  The device prompts them to enter their credit card details.   | 
 | UC8   | User  |  User enters option for a refund.   |  The device prompts them to enter their credit card details.   | 
@@ -114,10 +114,10 @@ The following uses cases describe how users will use the application and outline
 
 | Test Case ID  | Use Case ID    | Preconditions     | Test Steps | Expected Post Conditions to Pass |
 | :------------- | :-------------  | :------------- | :-------------  | :-------------  | 
-| TC1 | UC1 | Tomcat server is running and Tester is on *index* page. | All steps as per TC1 except: <br/>1. "admin" is entered in the username field.<br/>2. "admin" is entered in the password field.<br/>3. *Configure PoS* button is clicked.| *admin.JSP* page is opened.|
-| TC2 | UC2 | Tomcat server is running and Tester is on *index* page. | All steps as per TC1 except: <br/>1. "test" is entered in the username field.<br/>2. Nothing is entered in the password field.<br/>3. *Configure PoS* button is clicked.| "Invalid username or password" error message is displayed and *admin.JSP* page is not opened.|
-| TC3 | UC3 | Tomcat server is running and Tester is on *admin* page. | 1. "http://com528bank.ukwest.cloudapp.azure.com:8080/rest" is entered into *Bank URL* field.<br/>2. "testuser2" is entered into *Username* field.<br/>3. "defaulttestpass" is entered into *Password* field.<br/>4."test" is entered into *Name on Credit Card* field.<br/>5."11/21" is entered into *Credit Card End Date* field.<br/>6."4285860000000021" is entered into *Credit Card Number* field.<br/>7."123" is entered into *CVV Number* field.<br/>8. "01" is entered into *Issue Number* field.<br/> 9. *Submit Configuration* button is clicked. | Page displays "PoS now configured" message. Local application.properties file updated to match inputted data. | 
-| TC4 | UC4 | Tomcat server is running and Tester is on *admin* page. | All steps as per TC1 except: <br/>1. Any required field is left empty.| Page displays "Please complete all fields before updating properties" message. Local application.properties file is not updated.|
+| TC1 | UC1 | Tomcat server is running and Tester is on *index* page. | All steps as per TC1 except: <br/>1. "admin" is entered in the username field.<br/>2. "admin" is entered in the password field.<br/>3. *Login as Admin* button is clicked.| Admin page is opened. |
+| TC2 | UC2 | Tomcat server is running and Tester is on *index* page. | All steps as per TC1 except: <br/>1. "test" is entered in the username field.<br/>2. Nothing is entered in the password field.<br/>3. *Login as Admin* button is clicked.| "Invalid username or password" error message is displayed and admin page is not opened.|
+| TC3 | UC3 | Tomcat server is running and Tester is on *admin* page. | 1. "http://com528bank.ukwest.cloudapp.azure.com:8080/rest" is entered into *Bank URL* field.<br/>2. "admin" is entered into *Admin Username* field.<br/>3. "admin" is entered into *Admin Password* field.<br/>4."test" is entered into *Name on Credit Card* field.<br/>5."11/21" is entered into *Credit Card End Date* field.<br/>6."4285860000000021" is entered into *Credit Card Number* field.<br/>7."123" is entered into *CVV Number* field.<br/>8. "01" is entered into *Issue Number* field.<br/>10. "admin" is entered into username.<br/>11. "admin" is entered into password.<br/> 12. *Submit Configuration* button is clicked. | Page displays "PoS now configured" message. Local application.properties file updated to match inputted data. | 
+| TC4 | UC4 | Tomcat server is running and Tester is on *admin* page. | All steps as per TC1 except: <br/>1. Any required field is left empty.| Page displays "Please fill all required fields" message. Local application.properties file is not updated.|
 | TC5 | UC5 | Tomcat server is running and Tester is on *admin* page.| All steps as per TC1 except:<br/>5. "1234567891234567" is entered into *Credit Card Number* field.| Credit card number fails Luhn check within MVC Controller. Page displays "Invalid credit card number" message. Local application.properties file is not updated.|
 | TC6 | UC6 | Tomcat server is running.<br/> Tester is on *PoS* page and the PoS displays reads "Please select an option:<br/>1) Payment <br/>2) Refund" | 1. "8" is entered.<br/>2. *Accept* button is clicked.| "Not a valid entry" is displayed at the top of the screen and the user is prompted to input again.| 
 | TC7 | UC7 | Tomcat server is running.<br/> Tester is on *PoS* page and the PoS displays reads "Please select an option:<br/>1) Payment <br/>2) Refund" | 1. "1" is entered.<br/>2. *Accept* button is clicked.| The display of the PoS changes to "Please enter amount:"|
