@@ -137,6 +137,16 @@ The following uses cases describe how users will use the application and outline
 | TC14 | UC14 | Tomcat server is running.<br/> Tester is on *PoS* page and has inputted:<br/>*Option* = "2" | 1. *Cancel* button is clicked. | The device returns to the front screen.|
 | TC15 | UC15 | Tomcat server is running.| 1. "http://localhost:8080/Com528-Assessment/badpage" is entered into URL. | Error page displayed with link to the home page. |
 
+## Development Design Structure ##
+
+This project uses Agile ICONIX processes to detail and map out the application. The reason for using the ICONIX process is that it allows developers move from use cases to coding the application quickly and reliably. As this is only a small project Proper agile methodologies have not been implemented, however if in the future the application were to be developed into a large scale program, the use of agile would be effective in ensuring fast and reliable development.
+
+It is important to note that the ICONIX process does not completely follow agile methodology. contrasting agile, the philosophy behind ICONIX is that UML diagrams are vital in keeping the code structured correctly and therefore as close to the customer requirements as possible.
+
+A key principle of agile methodology is improving collaboration and communication within the team, something that the development team for this project upheld throughout, with daily meetings expressing concerns and talking about what has and needs to be done to complete the task.
+
+In ICONIX process it is important that the requirements are correct from the beginning, this was acheived by creating and analysing UML diagrams as shown below. The analysis of UML creates a robust definition of the requirements of the application by removing all ambiguity. To sustain the robustness of the application design, the code and UML diagrams were compared and analysed throughout the development process, keeping the code as accurate as possible to the requirements.
+
 
 
 ## UML Diagrams
