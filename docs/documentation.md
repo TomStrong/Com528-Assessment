@@ -153,6 +153,8 @@ In ICONIX process it is important that the requirements are correct from the beg
 
 **Client Class UML Diagram**
 
+Class diagrams were created using easyUML, more information can be found [here](https://github.com/ossdcfos/easyuml)
+
 ![Client Class Diagram](ClassDiagram/ClientClassDiagram.png)
 
 **TO DO**
