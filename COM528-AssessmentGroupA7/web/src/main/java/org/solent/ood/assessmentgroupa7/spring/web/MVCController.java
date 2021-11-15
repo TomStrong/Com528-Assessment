@@ -41,7 +41,8 @@ import solent.ac.uk.ood.examples.cardcheck.RegexCardValidator;
  * This class is managed by the Spring Framework and as such should not 
  * be accessed directly.
  * 
- * @author jrandall, tstrong
+ * @author Jo Randall
+ * @author Tom Strong
  */
 
 @Controller
@@ -239,19 +240,19 @@ public class MVCController {
             Model model,
             HttpSession session) {
         
-        String posName = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.name");
-        String posEndDate = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.enddate");
-        String posCardNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cardno");
-        String posCvv = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cvv");
-        String posIssueNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.issueno");
-        
         String result = null;
         String transactionReply = null;
             
         CardValidationResult luhnCheck = RegexCardValidator.isValid(inputCardNumber);
         
         if (luhnCheck.isValid()) {
-        
+            
+            String posName = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.name");
+            String posEndDate = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.enddate");
+            String posCardNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cardno");
+            String posCvv = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.cvv");
+            String posIssueNumber = propertiesDao.getProperty("org.solent.ood.assessmentgroupa7.issueno");
+
             CreditCard toCard = new CreditCard();
             CreditCard fromCard = new CreditCard();
 

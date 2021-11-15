@@ -28,7 +28,7 @@ public class RegexCardValidator {
     
     /**
      * Checks if the field is a valid credit card number.
-     * @param card The card number to validate.
+     * @param cardIn The card number to validate.
      * @return CardValidationResult provides information on the card if the card is valid.
      */
     public static CardValidationResult isValid(final String cardIn) {

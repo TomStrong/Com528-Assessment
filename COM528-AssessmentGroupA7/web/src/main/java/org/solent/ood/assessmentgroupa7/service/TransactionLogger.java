@@ -38,7 +38,7 @@ public class TransactionLogger {
     /**
      * Logs a bank transaction to the log file.
      * @param message Transaction string to log
-     * @throws IOException 
+     * @throws IOException Thrown when writing to file failed 
      */
     public void log(String message) throws IOException {
         if(!outputFile.exists()) {
