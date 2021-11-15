@@ -86,6 +86,7 @@ All the following tasks are also available on [GitHub Projects](https://github.c
 | Jake | ![Task 24](images/tasks/task24.PNG) | Implemented authentication on admin page, utilising the Password class to encrypt the password. |
 | Jake | ![Task 25](images/tasks/task25.PNG) | Created all javadocs within code. |
 | Jake / Tom | ![Task 26](images/tasks/task26.PNG) | Ensured exception handling used throughout. |
+| Merlin | ![Task 27](images/tasks/task27.PNG) | Created class UML diagrams. |
 
 >>**_NOTE:_**  
 An index page has been included for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
