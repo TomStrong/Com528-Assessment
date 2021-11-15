@@ -13,7 +13,7 @@ import org.springframework.boot.web.servlet.support.SpringBootServletInitializer
 /**
  * Entry point for the Spring Boot application and instructs Spring as to where
  * it should search for controllers.
- * @author jrandall
+ * @author Jo Randall
  */
 @SpringBootApplication(scanBasePackages = "org.solent.ood.assessmentgroupa7.spring.web")
 public class SpringBootJspApplication extends SpringBootServletInitializer {

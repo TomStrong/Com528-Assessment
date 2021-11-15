@@ -14,6 +14,7 @@ import org.solent.ood.assessmentgroupa7.service.Authenticator;
  * Handles the creation and access of singleton instances used throughout the
  * application.
  * @author cgallen
+ * @author Jake Roblett
  */
 public class WebObjectFactory {
 
