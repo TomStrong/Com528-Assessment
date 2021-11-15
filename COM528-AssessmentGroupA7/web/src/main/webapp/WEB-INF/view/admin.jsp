@@ -118,7 +118,10 @@
                 <br/>
                 
                 <button class="btn" type="submit">Submit Configuration</button>
-            </form> 
-        
+            </form>
+                <br/>
+                <a href="./" >
+                        <button class="btn">Return Home</button>
+                    </a>
     </body>
 </html>
