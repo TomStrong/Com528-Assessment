@@ -43,7 +43,7 @@
                         <button class="btn">PoS User</button>
                     </a>
                     <div style="height: 2rem;"></div>
-                    <form action="./admin">
+                    <form action="./admin" method="POST">
                         <label>
                             Username
                             <input type="text" name="auth_username">
@@ -53,7 +53,7 @@
                             <input type="password" name="auth_password">
                         </label>
                         <div style="height: 1rem;"></div>
-                        <button class="btn">Login as Admin</button>
+                        <button class="btn" type="submit">Login as Admin</button>
                     </form>
                 </div>
             </div>
