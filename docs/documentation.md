@@ -156,9 +156,11 @@ The draw.io file can be found [here](UMLDiagrams/UsecaseDiagram.drawio)
 
 ![Robustness Analysis Diagram](UMLDiagrams/RobustnessDiagram.jpg)
 
+The draw.io file can be found [here](RobustnessDiagram.drawio)
+
 **Sequence Diagram**
 
 ![Sequence Diagram](UMLDiagrams/SequenceDiagram.jpg)
 
-
+The draw.io file can be found [here](SequenceDiagram.drawio)
 
