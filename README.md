@@ -50,6 +50,12 @@ The web app will open on the home page, where the user can navigate between Admi
 
 ### **Administrator**
 
+To access the administrator page, use the following credentials:
+
+Username: admin
+
+Password: admin
+
 The first time the application is launched, the form within the administrator page will auto populate with the data from [default.properties](https://github.com/TomStrong/Com528-Assessment/blob/main/COM528-AssessmentGroupA7/web/src/main/resources/default.properties). This can be configured to update the PoS with the current user's details.
 
 All fields are required, except for the issue number, and the form will not submit without these. If this is attempted, an error message will be displayed.
