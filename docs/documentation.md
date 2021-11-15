@@ -145,31 +145,36 @@ The following uses cases describe how users will use the application and outline
 
 ![Client Class Diagram](ClassDiagram/ClientClassDiagram.png)
 
-
+**TO DO**
+explain
 
 **Web Class UML Diagram**
 
 ![Web Class Diagram](ClassDiagram/WebClassDiagram.png)
 
-
+**TO DO**
+explain
 
 **Use Case UML Diagram**
 
 ![Use Case UML Diagram](UMLDiagrams/UseCaseDiagram.jpg)
 
-
+**TO DO**
+explain
 
 
 **Robustness UML Diagram**
 
 ![Robustness Analysis Diagram](UMLDiagrams/RobustnessDiagram.jpg)
 
-
+**TO DO**
+explain
 
 
 **Sequence Diagram**
 
 ![Sequence Diagram](UMLDiagrams/SequenceDiagram.jpg)
 
-
+**TO DO**
+explain
 
