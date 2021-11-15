@@ -2,7 +2,9 @@ package org.solent.com504.oodd.bank.model.dto;
 
 import java.util.Date;
 
-
+/**
+ * @author cgallen
+ */
 public class TransactionReplyMessage {
 
     private Integer code;

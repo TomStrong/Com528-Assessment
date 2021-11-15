@@ -4,6 +4,9 @@ import javax.persistence.Embeddable;
 import javax.persistence.Transient;
 import org.solent.com504.oodd.password.PasswordUtils;
 
+/**
+ * @author cgallen
+ */
 @Embeddable
 public class User {
 

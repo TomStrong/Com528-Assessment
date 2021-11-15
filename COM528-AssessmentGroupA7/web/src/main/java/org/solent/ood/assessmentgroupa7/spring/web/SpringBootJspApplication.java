@@ -5,16 +5,16 @@
  */
 package org.solent.ood.assessmentgroupa7.spring.web;
 
-/**
- *
- * @author jrandall
- */
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
+/**
+ * Entry point for the Spring Boot application and instructs Spring as to where
+ * it should search for controllers.
+ * @author jrandall
+ */
 @SpringBootApplication(scanBasePackages = "org.solent.ood.assessmentgroupa7.spring.web")
 public class SpringBootJspApplication extends SpringBootServletInitializer {
 
@@ -26,4 +26,5 @@ public class SpringBootJspApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
         SpringApplication.run(SpringBootJspApplication.class);
     }
+    
 }

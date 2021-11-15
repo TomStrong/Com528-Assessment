@@ -8,8 +8,7 @@ package org.solent.com504.oodd.password;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
- *
- * @author gallenc
+ * @author cgallen
  */
 public class PasswordUtils {
     

@@ -28,7 +28,6 @@ import org.solent.com504.oodd.bank.model.dto.TransactionReplyMessage;
 import org.solent.com504.oodd.bank.model.dto.TransactionRequestMessage;
 
 /**
- *
  * @author cgallen
  */
 public class BankRestClientImpl implements BankRestClient {

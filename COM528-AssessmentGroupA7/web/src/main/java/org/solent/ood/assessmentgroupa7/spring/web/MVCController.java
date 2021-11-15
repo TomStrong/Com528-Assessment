@@ -35,7 +35,12 @@ import solent.ac.uk.ood.examples.cardcheck.CardValidationResult;
 import solent.ac.uk.ood.examples.cardcheck.RegexCardValidator;
 
 /**
- *
+ * Handles HTTP requests for the front-end of the application, including views
+ * and create, update, and delete operations. 
+ * 
+ * This class is managed by the Spring Framework and as such should not 
+ * be accessed directly.
+ * 
  * @author jrandall, tstrong
  */
 
@@ -48,17 +53,36 @@ public class MVCController {
     
     private final PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
     
+    /**
+     * Handles the view for the homepage.
+     * @param model Spring framework model
+     * @return View to be rendered
+     */
     @RequestMapping(value="/", method={RequestMethod.GET})
     public String index(Model model) {
         return "index";
     }
     
+    /**
+     * Handles the view for the PoS terminal.
+     * @param model Spring framework model
+     * @return View to be rendered
+     */
     @RequestMapping(value="/pos", method={RequestMethod.GET})
     public String pos(Model model) {
         return "pos";
     }
     
-
+    /**
+     * Handles the view for the admin configuration page. Access to this page
+     * requires valid admin credentials, which should be supplied as parameters
+     * with the request.
+     * @param authUsername Username for authentication checking
+     * @param authPassword Plain text password for authentication checking
+     * @param model Spring framework model
+     * @param session Spring framework HTTP session
+     * @return View to be rendered
+     */
     @RequestMapping(value = "/admin", method = {RequestMethod.GET})
     public String admin(
             @RequestParam(name = "auth_username", required = true) String authUsername,
@@ -93,7 +117,32 @@ public class MVCController {
         return "admin";
     }
     
-
+    /**
+     * Updates the properties from the admin configuration page with new values
+     * as supplied in the body of the POST request. 
+     * 
+     * This endpoint requires valid
+     * admin credentials, which should be included within the request.
+     * 
+     * Unchanged values must still be provided for the request to be valid, with
+     * the exception of the `password` field, which should be null if it is not
+     * being changed.
+     * 
+     * @param authUsername Username for authentication checking
+     * @param authPassword Plain text password for authentication checking
+     * @param url URL for the banking application's API
+     * @param username Username for the admin account
+     * @param password (Optional) New password for the admin account. Set to
+     *                 null if this should not be changed.
+     * @param name Name on the PoS system's credit card
+     * @param endDate End date on the PoS system's credit card
+     * @param cardNumber Card number for the PoS system to use
+     * @param cvv CVV number on the PoS system's credit card
+     * @param issueNumber (Optional) Issue number on the PoS system's credit card
+     * @param model Spring framework model
+     * @param session Spring framework HTTP session
+     * @return View to be rendered
+     */
     @RequestMapping(value = "/admin", method = {RequestMethod.POST})
     public String admin(
             @RequestParam(name = "auth_username", required = true) String authUsername,
@@ -159,6 +208,25 @@ public class MVCController {
         return "admin";
     }
     
+    /**
+     * Performs a transaction between the card held by the PoS system and the
+     * card provided as parameters in the request. 
+     * 
+     * The transactionType parameter must be one of the following values:
+     *    "1": Charge
+     *    "2": Refund
+     * 
+     * @param transactionType Type of transaction to perform
+     * @param amount Amount to charge or refund
+     * @param inputName Name on the credit card
+     * @param inputEndDate Expiry date of the credit card
+     * @param inputCardNumber Card number to perform the transaction on
+     * @param inputCvv CVV number of the credit card
+     * @param inputIssueNumber (Optional) Issue number of the credit card
+     * @param model Spring framework model
+     * @param session Spring framework HTTP session
+     * @return View to be rendered
+     */
     @RequestMapping(value = "/transaction", method = {RequestMethod.POST})
     public String transaction(
             @RequestParam(name = "transactionType", required = true) String transactionType,
@@ -246,6 +314,14 @@ public class MVCController {
         return "pos";
     }
     
+    /**
+     * Default handler for uncaught exceptions, which renders the error page
+     * in the event that an unexpected error occurs.
+     * @param e Exception thrown
+     * @param model Spring framework model
+     * @param request HTTP request
+     * @return View to be rendered
+     */
     @ExceptionHandler(Exception.class)
     public String defaultExceptionHandler(final Exception e, Model model, HttpServletRequest request) {
         model.addAttribute("exception", e);

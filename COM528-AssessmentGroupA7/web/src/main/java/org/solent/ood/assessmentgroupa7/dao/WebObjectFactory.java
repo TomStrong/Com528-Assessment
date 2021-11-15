@@ -11,7 +11,8 @@ import org.apache.logging.log4j.Logger;
 import org.solent.ood.assessmentgroupa7.service.Authenticator;
 
 /**
- *
+ * Handles the creation and access of singleton instances used throughout the
+ * application.
  * @author cgallen
  */
 public class WebObjectFactory {
@@ -21,6 +22,12 @@ public class WebObjectFactory {
     private static PropertiesDao propertiesDao = null;
     private static Authenticator authenticator = null;
 
+    /**
+     * Returns the instance of the properties data access object, or creates it
+     * if it has not yet been initialised.
+     * @return The properties data access object
+     * @see PropertiesDao
+     */
     public static PropertiesDao getPropertiesDao() {
         if (propertiesDao == null) {
             synchronized (WebObjectFactory.class) {
@@ -37,6 +44,12 @@ public class WebObjectFactory {
         return propertiesDao;
     }
 
+    /**
+     * Returns the instance of the authenticator object, or creates it if it 
+     * has not yet been initialised.
+     * @return The authenticator instance
+     * @see Authenticator
+     */
     public static Authenticator getAuthenticator() {
         if(authenticator == null) {
             authenticator = new Authenticator(getPropertiesDao());

@@ -17,7 +17,8 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 /**
- *
+ * Data access object for the application properties file. This class is
+ * responsible for loading the properties and writing changes to the file.
  * @author cgallen
  */
 public class PropertiesDao {
@@ -28,6 +29,10 @@ public class PropertiesDao {
 
     private Properties properties = new Properties();
 
+    /**
+     * Creates a new data access object for a properties file.
+     * @param propertiesFileLocation File path of the target properties file
+     */
     public PropertiesDao(String propertiesFileLocation) {
         try {
             propertiesFile = new File(propertiesFileLocation);
@@ -47,16 +52,31 @@ public class PropertiesDao {
         }
     }
 
+    /**
+     * Returns the value of a property from its name in the file, or null if the
+     * property does not exist.
+     * @param propertyName Name of the property to get
+     * @return Value of the property, or null if the property does not exist
+     */
     // synchronized ensures changes are not made by another thread while reading
     public synchronized String getProperty(String propertyName) {
         return properties.getProperty(propertyName);
     }
 
+    /**
+     * Sets a new value for the given property and saves the change to the
+     * properties file.
+     * @param propertyKey Name of the property to update
+     * @param propertyValue New value for the property
+     */
     public synchronized void setProperty(String propertyKey, String propertyValue) {
         properties.setProperty(propertyKey, propertyValue);
         saveProperties();
     }
 
+    /**
+     * Saves all property values into the properties file.
+     */
     private void saveProperties() {
         OutputStream output = null;
         try {
@@ -78,6 +98,9 @@ public class PropertiesDao {
         }
     }
 
+    /**
+     * Reads the properties file and loads the values into memory.
+     */
     private void loadProperties() {
         InputStream input = null;
         try {

@@ -23,7 +23,7 @@ public class TransactionLogger {
     private final File outputFile;
     
     /**
-     * 
+     * Creates a new transaction logger
      */
     private TransactionLogger() {
         String TEMP_DIR = System.getProperty("java.io.tmpdir");

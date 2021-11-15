@@ -1,5 +1,8 @@
 package org.solent.com504.oodd.bank.model.dto;
 
+/**
+ * @author cgallen
+ */
 public class TransactionRequestMessage {
 
     private CreditCard fromCard;
