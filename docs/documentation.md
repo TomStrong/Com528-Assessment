@@ -138,12 +138,13 @@ The following uses cases describe how users will use the application and outline
 
 ## UML Diagrams
 
-**Class UML Diagram**
+**Client Class UML Diagram**
 
-![Sequence Diagram](ClassDiagram/WebClassDiagram.png)
+![Client Class Diagram](ClassDiagram/ClientClassDiagram.png)
 
-![Sequence Diagram](ClassDiagram/ClientClassDiagram.png)
+**Web Class UML Diagram**
 
+![Web Class Diagram](ClassDiagram/WebClassDiagram.png)
 
 **Use Case UML Diagram**
 
