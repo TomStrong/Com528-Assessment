@@ -29,7 +29,7 @@
         <br/>
         <p id="message">${message}</p>
         <br/>
-            <form action="./admin" method="POST" id="adminForm">
+            <form action="./configurepos" method="POST" id="adminForm">
                 <div id="admin">
                     <table style="width:100%;" >
                         <tr>

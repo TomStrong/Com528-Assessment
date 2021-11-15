@@ -59,7 +59,7 @@ public class MVCController {
     }
     
 
-    @RequestMapping(value = "/admin", method = {RequestMethod.GET})
+    @RequestMapping(value = "/admin", method = {RequestMethod.POST})
     public String admin(
             @RequestParam(name = "auth_username", required = true) String authUsername,
             @RequestParam(name = "auth_password", required = true) String authPassword,
@@ -94,7 +94,7 @@ public class MVCController {
     }
     
 
-    @RequestMapping(value = "/admin", method = {RequestMethod.POST})
+    @RequestMapping(value = "/configurepos", method = {RequestMethod.POST})
     public String admin(
             @RequestParam(name = "auth_username", required = true) String authUsername,
             @RequestParam(name = "auth_password", required = true) String authPassword,
