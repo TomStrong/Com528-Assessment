@@ -116,6 +116,3 @@ To generate these, navigate to the *COM528-AssessmentGroupA7* folder and enter t
 mvn javadoc:javadoc
 ```
 
-## File Path Tree
-
-**To Do**
