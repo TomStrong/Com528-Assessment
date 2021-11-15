@@ -2,14 +2,18 @@
 
 The team for this project (in alphabetical order) are:
 
-| Name & GitHub        | Student ID    | 
+| Name         | Student ID    | 
 | :------------- | :----------: | 
-| [Jo Randall](http://github.com/jorandall)  | 15191117  | 
-| [Jake Roblett](https://github.com/JakeRoblettUni)   | 15002543 |
-| [Merlin Smith](https://github.com/MerlinSmith) | 14803194 |
-| [Tom Strong](https://github.com/TomStrong) | 15071278 |
+| Jo Randall | 15191117  | 
+| Jake Roblett  | 15002543 |
+| Merlin Smith | 14803194 |
+| Tom Strong | 15071278 |
 
-For design documentation, click [here](https://github.com/TomStrong/Com528-Assessment/blob/main/docs/documentation.md).
+**Important Links**
+
+- [GitHub Repo](https://github.com/TomStrong/Com528-Assessment)
+
+- [Design Documentation](https://github.com/TomStrong/Com528-Assessment/blob/main/docs/documentation.md)
 
 ## Point of Sale Application
 
