@@ -136,7 +136,10 @@ The following uses cases describe how users will use the application and outline
 
 **Class UML Diagram**
 
-**To do**
+![Sequence Diagram](ClassDiagram/WebClassDiagram.jpg)
+
+![Sequence Diagram](ClassDiagram/ClientClassDiagram.jpg)
+
 
 **Use Case UML Diagram**
 
@@ -155,3 +158,4 @@ The draw.io file can be found [here](RobustnessDiagram.drawio)
 ![Sequence Diagram](UMLDiagrams/SequenceDiagram.jpg)
 
 The draw.io file can be found [here](SequenceDiagram.drawio)
+
