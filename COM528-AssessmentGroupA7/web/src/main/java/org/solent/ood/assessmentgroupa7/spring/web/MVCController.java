@@ -50,6 +50,7 @@ import solent.ac.uk.ood.examples.cardcheck.RegexCardValidator;
 public class MVCController {
     
     final static Logger LOG = LogManager.getLogger(MVCController.class);
+    final static Logger TRANSACTIONS_LOG_LOG4J = LogManager.getLogger("TRANSACTIONS_LOG_LOG4J");
     final static TransactionLogger TRANSACTIONS_LOG = TransactionLogger.INSTANCE;
     
     private final PropertiesDao propertiesDao = WebObjectFactory.getPropertiesDao();
@@ -300,8 +301,9 @@ public class MVCController {
                     transactionReply =  "Transaction aborted";
                 }         
                 TRANSACTIONS_LOG.log(reply.toString());
+                TRANSACTIONS_LOG_LOG4J.info(reply);
             } catch (Exception ex) {
-                LOG.error("cannot complete transaction:", ex);
+                LOG.debug("cannot complete transaction:", ex);
                 result = "Error. Please check your connection.";
             } 
         } else {

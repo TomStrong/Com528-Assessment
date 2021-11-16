@@ -32,7 +32,7 @@
     <Loggers>
         
         <!-- Logs all transactions -->
-         <Logger name="TRANSACTIONS_LOG" level="INFO">
+         <Logger name="TRANSACTIONS_LOG_LOG4J" level="INFO">
             <AppenderRef ref="transactionLog"/>
         </Logger>
         
