@@ -32,18 +32,6 @@
         </li>
     </ol>
 
-
-
-## Development Design Structure ##
-
-
-## Use case text ##
-
-
-
-## UML Diagrams
-
-
 ## Requirement Brief
 For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale application which allows the user to enter credit card details and a cash amount for a transaction. 
 
