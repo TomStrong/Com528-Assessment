@@ -119,7 +119,7 @@ tomcat --> apache tomcat --> temp --> application.properties
 
 ## Javadocs
 
-All classes within this application have been documented using Javadocs, and have been written in accordance with Oracle guidelines. For further information, click [here](https://www.oracle.com/uk/technical-resources/articles/java/javadoc-tool.html).
+All classes written by the team within this application have been documented using Javadocs, and have been written in accordance with Oracle guidelines. For further information, click [here](https://www.oracle.com/uk/technical-resources/articles/java/javadoc-tool.html).
 
 To generate these, navigate to the *COM528-AssessmentGroupA7* folder and enter the following into command prompt:
 
@@ -127,3 +127,5 @@ To generate these, navigate to the *COM528-AssessmentGroupA7* folder and enter t
 mvn javadoc:javadoc
 ```
 
+>>**_NOTE:_**  
+Javadocs for *client* and *card-checker* modules supplied by Craig Gallen have not been changed.

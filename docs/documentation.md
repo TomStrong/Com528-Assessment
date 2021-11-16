@@ -1,7 +1,5 @@
 # Design Documentation
 
-<summary> 
-
 ## Contents
 
 - [Requirement Brief](#Requirement-Brief)
@@ -13,11 +11,9 @@
 - [Test Plan](#Test-Plan)
 - [UML Diagrams](#UML-Diagrams)
     - [Class UML Diagrams](#Class-UML-Diagrams)
-    - [Use Case UML Diagram](Use-Case-UML-Diagram)
-    - [Robustness UML Diagram](Robustness-UML-Diagram)
+    - [Use Case UML Diagram](#Use-Case-UML-Diagram)
+    - [Robustness UML Diagram](#Robustness-UML-Diagram)
     - [Sequence Diagram](#Sequence-Diagram)
-
-</summary>
 
 ## Requirement Brief
 For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale application which allows the user to enter credit card details and a cash amount for a transaction. 
@@ -33,7 +29,6 @@ The application should communicate using a ReST interface to a mock banking serv
 Once a transaction has been completed the user account should be updated with the new balance of the account.
 
 The device should record all successful and unsuccessful transactions locally in a log file, cvv codes must not be recorded.
-
 
 
 The full application requirements can be viewed [here](https://learn.solent.ac.uk/pluginfile.php/2938474/mod_resource/content/1/Assessment%20Brief%20-%20COM528-504%20-%20AE1%20-%20GROUP%20%282021-2022%29%201.0.pdf).
@@ -62,50 +57,55 @@ The full application requirements can be viewed [here](https://learn.solent.ac.u
 
 ## Project Plan and Task Assignment
 
-The team started planning this project by splitting it down into smaller, manageable tasks that only addressed one requirement at a time. These were recorded on GitHub Projects and divided up into three *To Do* categories - front-end, back-end, and documentation. These were originally recorded as notes within the project, and were updated to include the relevant name of the person doing the task when it was moved to *In Progress*. However, Github Issues were later used for all outstanding tasks.
+The team decided to use ICONIX processes to detail and map out the application, as it allowed them to move from use cases to coding the application quickly and reliably. As this is only a small project, proper agile methodologies have not been implemented. However, if in the future the application were to be developed into a large scale program, the use of agile would be effective in ensuring fast and reliable development.
+
+It is important to note that the ICONIX process does not completely follow agile methodology. Contrasting Agile, the philosophy behind ICONIX is that UML diagrams are vital in keeping the code structured correctly and therefore as close to the customer requirements as possible.
+
+A key principle of agile methodology is improving collaboration and communication within the team, something that the development team for this project upheld throughout, with daily meetings expressing concerns and talking about what has and needs to be done to complete the task.
+
+In the ICONIX process, it is important that the requirements are correct from the beginning. This was achieved by creating and analysing UML diagrams as recorded later in this document. The analysis of the UML created a robust definition of the application requirements by removing all ambiguity. To sustain the robustness of the application design, the code and UML diagrams were compared and analysed throughout the development process, keeping the code as accurate as possible to the requirements.
+
+Once the UML diagrams were initially drafted, the project was broken down into smaller, manageable tasks that only addressed one requirement at a time and recorded on [GitHub Projects](https://github.com/TomStrong/Com528-Assessment/projects/1). These divided up into three *To Do* categories - front-end, back-end, and documentation. Tasks were originally recorded as notes within the project, and were updated to include the relevant name of the person doing the task when it was moved to *In Progress*. However, [GitHub Issues](https://github.com/TomStrong/Com528-Assessment/issues) were later used for all outstanding tasks.
 
 ![GitHub Project Screenshot](images/githubProject.PNG)
 >Screenshot of GitHub Project in progress
 
-The team decided on a top-down approach to this project, as how data was handled in the front-end would directly affect how it needed to be handled in the back-end. 
-
-The project was initially designed to be multi-module but, as the application only required simple functionality, this was refactored into a single WAR with layers as packages.
-
-The team also decided to use MVC for the project structure, as this separated back-end functionality from the front-end, and would therefore make the code a lot more readable and easier to debug.
-
-The team assigned the first tasks, such as setting up the project in NetBeans, creating the UIs, etc, but task assignment thereafter was managed dynamically, depending on what had already been implemented and who was currently available to work on the project, with regular meetings online and in-person to discuss. As each task was assigned, the ticket on Github Projects was updated accordingly.
+The team then decided to use Spring MVC for the project structure, as this separated back-end code from the front-end, making it easier to read and maintain and also future-proofing the application. It also meant that work could be done on the UI and on the MVC Controller simultaneously, with less concern of merge conflicts.
 
 All the following tasks are also available on [GitHub Projects](https://github.com/TomStrong/Com528-Assessment/projects/1):
 
 | Owner        | Task     | Description    |
 | :------------- | :----------: | :----------: | 
-| Jake / Jo | ![Task 1](images/tasks/task1.PNG) | Jake initially created a new project in NetBeans. This was then replaced by Jo to use a class excerise with all the client packages included. |
-| Jo | ![Task 2](images/tasks/task2.PNG) | All imported client packages needed to refactored to the team name. |
-| Jo | ![Task 3](images/tasks/task3.PNG) | A standalone bank client module became available so project was started again without multi-modules. |
-| Tom | ![Task 4](images/tasks/task4.PNG) | Designed and implemented a user-friendly UI that resembles a real PoS device, using JavaScript and CSS where appropriate. |
-| Jo | ![Task 5](images/tasks/task5.PNG) | Designed and implemented a basic administrator page that allows entry of the identity for the PoS device.  |
-| Jo | ![Task 6](images/tasks/task6.PNG) | Implemented a basic index page which allows easy access to both admin and PoS pages. |
-| Jo | ![Task 7](images/tasks/task7.PNG) | Created default.properties file with valid data so the PoS would not need configuring every time it was tested. |
-| Jo | ![Task 8](images/tasks/task8.PNG) | Created the MVC Controller class. |
-| Tom / Jo | ![Task 9](images/tasks/task9.PNG) | Basic functionality implemented with GET requests to access all JSP pages. |
-| Merlin | ![Task 10](images/tasks/task10.PNG) | Created use case UML diagram. |
-| Jo | ![Task 111](images/tasks/task11.PNG) | Implemented functionality of the admin page, with data retrieved and updated in the .properties file. Also implemented functionality for transactions, reading in PoS identity data and input data to make a ReST call to the bank service. |
-| Jo | ![Task 12](images/tasks/task12.PNG) | Implemented workflow through GitHub actions so all code is tested as soon as pushed to repo. |
-| Tom | ![Task 13](images/tasks/task13.PNG) | Ensured all error messages are user-friendly and informative. |
-| Tom | ![Task 14](images/tasks/task14.PNG) | Updated formatting on PoS to be more user-friendly and readable. |
-| Jo / Jake | ![Task 15](images/tasks/task15.PNG) | Jo updated Log4J to include transaction logs. However, this would not work so Jake created a bespoke logging class with corresponding unit test. |
-| Jo | ![Task 16](images/tasks/task16.PNG) | Updated MVC Controller to perform the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) on inputted credit card numbers within both Admin and PoS pages and ensured only credit card numbers that passed would be accepted. |
-| Jo | ![Task 17](images/tasks/task17.PNG) | Created use cases and included them within the design documentation. |
-| Jo | ![Task 18](images/tasks/task18.PNG) | Created test cases and included them within the design documentation. |
-| Tom | ![Task 19](images/tasks/task19.PNG) | Updated Admin page to use JavaScript to validate form input. |
-| Jo | ![Task 20](images/tasks/task20.PNG) | Created all documentation required for project, including use and test cases. |
-| Merlin | ![Task 21](images/tasks/task21.PNG) | Created robustness UML diagram. |
-| Merlin | ![Task 22](images/tasks/task22.PNG) | Created sequence diagram. |
-| Tom | ![Task 23](images/tasks/task23.PNG) | Created error JSP for in case exception is thrown. |
-| Jake | ![Task 24](images/tasks/task24.PNG) | Implemented authentication on admin page, utilising the Password class to encrypt the password. |
-| Jake | ![Task 25](images/tasks/task25.PNG) | Created all javadocs within code. |
-| Jake / Tom | ![Task 26](images/tasks/task26.PNG) | Ensured exception handling used throughout. |
-| Merlin | ![Task 27](images/tasks/task27.PNG) | Created class UML diagrams. |
+| Merlin | ![Task](images/tasks/task10.PNG) | Created use case UML diagram. |
+| Jake / Jo | ![Task](images/tasks/task1.PNG) | Jake initially created a new project in NetBeans. This was then replaced by Jo to use a class exercise with all the client packages included. |
+| Jo | ![Task](images/tasks/task2.PNG) | All imported client packages needed to refactored to the team name. |
+| Jo | ![Task](images/tasks/task3.PNG) | A standalone bank client module became available so project was started again without multi-modules. |
+| Merlin | ![Task](images/tasks/task21.PNG) | Created robustness UML diagram. |
+| Tom | ![Task](images/tasks/task4.PNG) | Designed and implemented a user-friendly UI that resembles a real PoS device, using JavaScript and CSS where appropriate. |
+| Jo | ![Task](images/tasks/task5.PNG) | Designed and implemented a basic administrator page that allows entry of the identity for the PoS device.  |
+| Jo | ![Task](images/tasks/task6.PNG) | Implemented a basic index page which allows easy access to both admin and PoS pages. |
+| Jo | ![Task](images/tasks/task7.PNG) | Created default.properties file with valid data so the PoS would not need configuring every time it was tested. |
+| Jo | ![Task](images/tasks/task8.PNG) | Created the MVC Controller class. |
+| Tom / Jo | ![Task](images/tasks/task9.PNG) | Basic functionality implemented with GET requests to access all JSP pages. |
+| Jo | ![Task](images/tasks/task11.PNG) | Implemented functionality of the admin page, with data retrieved and updated in the .properties file. Also implemented functionality for transactions, reading in PoS identity data and input data to make a ReST call to the bank service. |
+| Jo | ![Task](images/tasks/task12.PNG) | Implemented workflow through GitHub actions so all code is tested as soon as pushed to repo. |
+| Tom | ![Task](images/tasks/task13.PNG) | Ensured all error messages are user-friendly and informative. |
+| Tom | ![Task](images/tasks/task14.PNG) | Updated formatting on PoS to be more user-friendly and readable. |
+| Jo / Jake | ![Task](images/tasks/task15.PNG) | Jo updated Log4J to include transaction logs. However, this would not work so Jake created a bespoke logging class with corresponding unit test. |
+| Jo | ![Task](images/tasks/task16.PNG) | Updated MVC Controller to perform the [Luhn Algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) on inputted credit card numbers within both Admin and PoS pages and ensured only credit card numbers that passed would be accepted. |
+| Jo | ![Task](images/tasks/task17.PNG) | Created use cases and included them within the design documentation. |
+| Jo | ![Task](images/tasks/task18.PNG) | Created test cases and included them within the design documentation. |
+| Tom | ![Task](images/tasks/task19.PNG) | Updated Admin page to use JavaScript to validate form input. |
+| Jo | ![Task](images/tasks/task20.PNG) | Created all documentation required for project, including use and test cases. |
+| Merlin | ![Task](images/tasks/task22.PNG) | Created sequence diagram. |
+| Tom | ![Task](images/tasks/task23.PNG) | Created error JSP for in case exception is thrown. |
+| Jake | ![Task](images/tasks/task24.PNG) | Implemented authentication on admin page, utilising the Password class to encrypt the password. |
+| Jake | ![Task](images/tasks/task25.PNG) | Created all javadocs within code. |
+| Jake / Tom | ![Task](images/tasks/task26.PNG) | Ensured exception handling used throughout. |
+| Merlin | ![Task](images/tasks/task27.PNG) | Created class UML diagrams. |
+| Tom | ![Task](images/tasks/task28.PNG) | Implemented unit tests. |
+| Merlin | ![Task](images/tasks/task29.PNG) | Added explanation of all UML diagrams to design documentation. |
+| Merlin | ![Task](images/tasks/task30.PNG) | Added key to UML diagrams. |
 
 >>**_NOTE:_**  
 An index page has been included for ease of the assessor for this assessment only. In a real-life situation, the user would only have access to the PoS device itself.
@@ -156,74 +156,49 @@ The following uses cases describe how users will use the application and outline
 | TC14 | UC14 | Tomcat server is running.<br/> Tester is on *PoS* page and has inputted:<br/>*Option* = "2" | 1. *Cancel* button is clicked. | The device returns to the front screen.|
 | TC15 | UC15 | Tomcat server is running.| 1. "http://localhost:8080/Com528-Assessment/badpage" is entered into URL. | Error page displayed with link to the home page. |
 
-## Development Design Structure ##
-
-This project uses Agile ICONIX processes to detail and map out the application. The reason for using the ICONIX process is that it allows developers move from use cases to coding the application quickly and reliably. As this is only a small project Proper agile methodologies have not been implemented, however if in the future the application were to be developed into a large scale program, the use of agile would be effective in ensuring fast and reliable development.
-
-It is important to note that the ICONIX process does not completely follow agile methodology. contrasting agile, the philosophy behind ICONIX is that UML diagrams are vital in keeping the code structured correctly and therefore as close to the customer requirements as possible.
-
-A key principle of agile methodology is improving collaboration and communication within the team, something that the development team for this project upheld throughout, with daily meetings expressing concerns and talking about what has and needs to be done to complete the task.
-
-In ICONIX process it is important that the requirements are correct from the beginning, this was acheived by creating and analysing UML diagrams as shown below. The analysis of UML creates a robust definition of the requirements of the application by removing all ambiguity. To sustain the robustness of the application design, the code and UML diagrams were compared and analysed throughout the development process, keeping the code as accurate as possible to the requirements.
-
-## Use case text ##
-
-Use case text defines the requirements of the application, these are stated at the <a href="#Requirement-Brief">top of the page</a>.
-
 ## UML Diagrams
 
 ### **Class UML Diagrams**
 
-Class diagrams were created using easyUML, more information can be found [here](https://github.com/ossdcfos/easyuml)
+The projects class diagrams were created using easyUML. More information can be found [here](https://github.com/ossdcfos/easyuml)
 
 **Client Class UML Diagram**
 
+**TO DO** explain
 
 ![Client Class Diagram](ClassDiagram/ClientClassDiagram.png)
 
-**TO DO**
-explain
-
 **Web Class UML Diagram**
+
+**TO DO** explain
 
 ![Web Class Diagram](ClassDiagram/WebClassDiagram.png)
 
-**TO DO**
-explain
-
 ### **Use Case UML Diagram**
 
-Use cases are actions that perform tasks, they are the functions of the app. 
+Use cases are actions that perform tasks, and therefore functions of the app. 
 
-The use case diagram outlines the objects; such as people, systems and organisations; required for the application to function properly and their relationships. Realtionships are split into categories:
+The use case diagram outlines the objects, such as people, systems and organisations, required for the application to function properly along with their relationships. 
 
-- Association Relationships are shown with lines, these are specified in the key of the image below.
+Realtionships are split into categories:
 
-- Include - Base use case requires included use case in order to complete the task.
-
-- Extend -  Base use case can require extension use cases to complete the task, however extensions are not always necessary for task completion.
-
-- Generalisation - Parent use case has children, parent is essentially a generalisation of the child use cases.
-
-
+- Association Relationships - shown with lines. These are specified in the key of the diagram below.
+- &lt;&lt;include&gt;&gt; - base use case requires included use case in order to complete the task.
+- &lt;&lt;extend&gt;&gt; -  base use case can require extension use cases to complete the task, however extensions are not always necessary for task completion.
+- Generalisation - a parent use case has children. The parent is essentially a generalisation of the child use cases.
 
 ![Use Case UML Diagram](UMLDiagrams/UseCaseDiagram.jpg)
 
-
-
-
 ### **Robustness UML Diagram**
+
+**TO DO** explain
 
 ![Robustness Analysis Diagram](UMLDiagrams/RobustnessDiagram.jpg)
 
-**TO DO**
-explain
-
-
 ### **Sequence Diagram**
+
+**TO DO** explain
 
 ![Sequence Diagram](UMLDiagrams/SequenceDiagram.jpg)
 
-**TO DO**
-explain
 
