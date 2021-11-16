@@ -39,7 +39,7 @@
                 <li><a href="#Robustness-UML-Diagram">Robustness UML Diagram</a></li>
             </ul>
             <ul>
-                <li><a href="#Sequence-Diagram">Sequence Diagram</a></li>
+                <li><a href="#**Sequence-Diagram**">Sequence Diagram</a></li>
             </ul>
         </li>
     </ol>
@@ -193,7 +193,7 @@ In ICONIX process it is important that the requirements are correct from the beg
 
 ## Use case text ##
 
-Use case text defines the requirements of the application, these are stated at the top of the page <a href="#Requirement-Brief">[Here]</a>.
+Use case text defines the requirements of the application, these are stated at the <a href="#Requirement-Brief">top of the page</a>.
 
 ## UML Diagrams
 
