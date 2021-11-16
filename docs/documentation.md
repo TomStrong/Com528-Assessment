@@ -13,7 +13,7 @@
             </ul>
         </li>
         <li>
-            <a href="#Project Plan and Task Assignment">Project Plan and Task Assignment</a>
+            <a href="#Project Plan and Task Assignment ">Project Plan and Task Assignment</a>
         </li>
         <li>
             <a href="#Use Cases and Features">Use Cases and Features</a>
@@ -33,15 +33,6 @@
     </ol>
 
 
-
-
-
-
-
-
-
-
- |
 
 ## Development Design Structure ##
 
