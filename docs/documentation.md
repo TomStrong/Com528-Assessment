@@ -3,7 +3,7 @@
 <summary> <h2>Table of Contents</h2> </summary>
     <ol>
         <li>
-            <a href="# Requirement Brief">Requirement Brief</a>
+            <a href="#Requirement Brief">Requirement Brief</a>
         </li>
         <li>
             <a href="#Goals and Non-Goals">Goals and Non-Goals</a>
@@ -13,7 +13,7 @@
             </ul>
         </li>
         <li>
-            <a href="#Project Plan and Task Assignment"># Project Plan and Task Assignment</a>
+            <a href="#Project Plan and Task Assignment">Project Plan and Task Assignment</a>
         </li>
         <li>
             <a href="#Use Cases and Features">Use Cases and Features</a>
