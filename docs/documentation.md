@@ -3,31 +3,31 @@
 <summary> <h2>Table of Contents</h2> </summary>
     <ol>
         <li>
-            <a href="#Requirement Brief">Requirement Brief</a>
+            <a href="#Requirement-Brief">Requirement Brief</a>
         </li>
         <li>
-            <a href="#Goals and Non-Goals">Goals and Non-Goals</a>
+            <a href="#Goals-and-Non--Goals">Goals and Non-Goals</a>
             <ul>
                 <li><a href="#Goals">Goals</a></li>
                 <li><a href="#Non-Goals">Non-Goals</a></li>
             </ul>
         </li>
         <li>
-            <a href="#Project Plan and Task Assignment ">Project Plan and Task Assignment</a>
+            <a href="#Project-Plan-and-Task-Assignment ">Project Plan and Task Assignment</a>
         </li>
         <li>
-            <a href="#Use Cases and Features">Use Cases and Features</a>
+            <a href="#Use-Cases-and-Features">Use Cases and Features</a>
         </li>
         <li>
-            <a href="#Test Plan">Test Plan</a>
+            <a href="#Test-Plan">Test Plan</a>
         </li>
         <li>
-            <a href="#Development Design Structure">Agile Methodology</a>
+            <a href="#Development-Design-Structure">Agile Methodology</a>
             <ul>
-                <li><a href="#Use case text">Use case text</a></li>
+                <li><a href="#Use-case-text">Use case text</a></li>
             </ul>
             <ul>
-                <li><a href="#UML Diagrams">#UML Diagrams</a></li>
+                <li><a href="#UML-Diagrams">#UML Diagrams</a></li>
             </ul>
         </li>
     </ol>
@@ -51,7 +51,7 @@ The device should record all successful and unsuccessful transactions locally in
 
 The full application requirements can be viewed [here](https://learn.solent.ac.uk/pluginfile.php/2938474/mod_resource/content/1/Assessment%20Brief%20-%20COM528-504%20-%20AE1%20-%20GROUP%20%282021-2022%29%201.0.pdf).
 
-## **Goals and Non-Goals**
+## Goals and Non-Goals
 
 ### **Goals**
 
