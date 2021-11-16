@@ -6,7 +6,7 @@
             <a href="#Requirement-Brief">Requirement Brief</a>
         </li>
         <li>
-            <a href="#Goals-and-Non--Goals">Goals and Non-Goals</a>
+            <a href="#Goals-and-Non-Goals">Goals and Non-Goals</a>
             <ul>
                 <li><a href="#Goals">Goals</a></li>
                 <li><a href="#Non-Goals">Non-Goals</a></li>
@@ -22,12 +22,24 @@
             <a href="#Test-Plan">Test Plan</a>
         </li>
         <li>
-            <a href="#Development-Design-Structure">Agile Methodology</a>
+            <a href="#Development-Design-Structure">Development Design Structure</a>
             <ul>
                 <li><a href="#Use-case-text">Use case text</a></li>
             </ul>
             <ul>
-                <li><a href="#UML-Diagrams">#UML Diagrams</a></li>
+                <li><a href="#UML-Diagrams">UML Diagrams</a></li>
+            </ul>
+            <ul>
+                <li><a href="#Class-Diagrams">Class Diagrams</a></li>
+            </ul>
+            <ul>
+                <li><a href="#Use-Case-UML-Diagram">Use Case UML Diagram</a></li>
+            </ul>
+            <ul>
+                <li><a href="#Robustness-UML-Diagram">Robustness UML Diagram</a></li>
+            </ul>
+            <ul>
+                <li><a href="#Sequence-Diagram">Sequence Diagram</a></li>
             </ul>
         </li>
     </ol>
@@ -181,7 +193,7 @@ In ICONIX process it is important that the requirements are correct from the beg
 
 ## Use case text ##
 
-Use case text defines the requirements of the application, these are stated at the top of the page.
+Use case text defines the requirements of the application, these are stated at the top of the page <a href="#Requirement-Brief">[Here]</a>.
 
 ## UML Diagrams
 
