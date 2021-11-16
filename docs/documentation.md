@@ -56,7 +56,7 @@ The full assessment brief can be viewed [here](https://learn.solent.ac.uk/plugin
 
 ## Project Plan and Task Assignment
 
-The team decided to use [ICONIX](https://en.wikipedia.org/wiki/ICONIX) processes to detail and map out the application, as it allowed them to move from use cases to coding the application quickly and reliably. As this is only a small project, proper agile methodologies have not been implemented. However, if in the future the application were to be developed into a large scale program, the use of agile would be effective in ensuring fast and reliable development.
+The team decided to use the [ICONIX](https://en.wikipedia.org/wiki/ICONIX) Process to detail and map out the application, as it allowed them to move from use cases to coding the application quickly and reliably. As this is only a small project, proper agile methodologies have not been implemented. However, if in the future the application were to be developed into a large scale program, the use of agile would be effective in ensuring fast and reliable development.
 
 It is important to note that the ICONIX process does not completely follow agile methodology. Contrasting Agile, the philosophy behind ICONIX is that UML diagrams are vital in keeping the code structured correctly and therefore as close to the customer requirements as possible.
 
