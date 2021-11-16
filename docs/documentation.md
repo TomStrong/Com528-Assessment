@@ -147,13 +147,18 @@ A key principle of agile methodology is improving collaboration and communicatio
 
 In ICONIX process it is important that the requirements are correct from the beginning, this was acheived by creating and analysing UML diagrams as shown below. The analysis of UML creates a robust definition of the requirements of the application by removing all ambiguity. To sustain the robustness of the application design, the code and UML diagrams were compared and analysed throughout the development process, keeping the code as accurate as possible to the requirements.
 
+## Use case text ##
 
+Use case text defines the requirements of the application, these are stated at the top of the page.
 
 ## UML Diagrams
 
-**Client Class UML Diagram**
+**Class Diagrams**
 
 Class diagrams were created using easyUML, more information can be found [here](https://github.com/ossdcfos/easyuml)
+
+**Client Class UML Diagram**
+
 
 ![Client Class Diagram](ClassDiagram/ClientClassDiagram.png)
 
@@ -169,10 +174,23 @@ explain
 
 **Use Case UML Diagram**
 
+Use cases are actions that perform tasks, they are the functions of the app. 
+
+The use case diagram outlines the objects; such as people, systems and organisations; required for the application to function properly and their relationships. Realtionships are split into categories:
+
+- Association Relationships are shown with lines, these are specified in the key of the image below.
+
+- Include - Base use case requires included use case in order to complete the task.
+
+- Extend -  Base use case can require extension use cases to complete the task, however extensions are not always necessary for task completion.
+
+- Generalisation - Parent use case has children, parent is essentially a generalisation of the child use cases.
+
+
+
 ![Use Case UML Diagram](UMLDiagrams/UseCaseDiagram.jpg)
 
-**TO DO**
-explain
+
 
 
 **Robustness UML Diagram**
