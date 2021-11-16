@@ -30,8 +30,7 @@ Once a transaction has been completed the user account should be updated with th
 
 The device should record all successful and unsuccessful transactions locally in a log file, cvv codes must not be recorded.
 
-
-The full application requirements can be viewed [here](https://learn.solent.ac.uk/pluginfile.php/2938474/mod_resource/content/1/Assessment%20Brief%20-%20COM528-504%20-%20AE1%20-%20GROUP%20%282021-2022%29%201.0.pdf).
+The full assessment brief can be viewed [here](https://learn.solent.ac.uk/pluginfile.php/2938474/mod_resource/content/1/Assessment%20Brief%20-%20COM528-504%20-%20AE1%20-%20GROUP%20%282021-2022%29%201.0.pdf).
 
 ## Goals and Non-Goals
 
@@ -164,13 +163,13 @@ The projects class diagrams were created using easyUML. More information can be 
 
 **Client Class UML Diagram**
 
-**TO DO** explain
+This diagram shows the implementation and supporting classes provided by the client module, supplied by Craig Gallen.
 
 ![Client Class Diagram](ClassDiagram/ClientClassDiagram.png)
 
 **Web Class UML Diagram**
 
-**TO DO** explain
+This diagram shows the implementation classes and the supporting classes provided by the web container.
 
 ![Web Class Diagram](ClassDiagram/WebClassDiagram.png)
 
