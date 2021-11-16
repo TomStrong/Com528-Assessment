@@ -1,48 +1,23 @@
 # Design Documentation
 
-<summary> <h2>Table of Contents</h2> </summary>
-    <ol>
-        <li>
-            <a href="#Requirement-Brief">Requirement Brief</a>
-        </li>
-        <li>
-            <a href="#Goals-and-Non-Goals">Goals and Non-Goals</a>
-            <ul>
-                <li><a href="#Goals">Goals</a></li>
-                <li><a href="#Non-Goals">Non-Goals</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#Project-Plan-and-Task-Assignment ">Project Plan and Task Assignment</a>
-        </li>
-        <li>
-            <a href="#Use-Cases-and-Features">Use Cases and Features</a>
-        </li>
-        <li>
-            <a href="#Test-Plan">Test Plan</a>
-        </li>
-        <li>
-            <a href="#Development-Design-Structure">Development Design Structure</a>
-            <ul>
-                <li><a href="#Use-case-text">Use case text</a></li>
-            </ul>
-            <ul>
-                <li><a href="#UML-Diagrams">UML Diagrams</a></li>
-            </ul>
-            <ul>
-                <li><a href="#Class-Diagrams">Class Diagrams</a></li>
-            </ul>
-            <ul>
-                <li><a href="#Use-Case-UML-Diagram">Use Case UML Diagram</a></li>
-            </ul>
-            <ul>
-                <li><a href="#Robustness-UML-Diagram">Robustness UML Diagram</a></li>
-            </ul>
-            <ul>
-                <li><a href="#Sequence-Diagram">Sequence Diagram</a></li>
-            </ul>
-        </li>
-    </ol>
+<summary> 
+
+## Contents
+
+- [Requirement Brief](#Requirement-Brief)
+- [Goals and Non-Goals](#Goals-and-Non-Goals)
+    - [Goals](#Goals)
+    - [Non-Goals](#Non-Goals)
+- [Project Plan and Task Assignment](#Project-Plan-and-Task-Assignment)
+- [Use Cases and Features](#Use-Cases-and-Features)
+- [Test Plan](#Test-Plan)
+- [UML Diagrams](#UML-Diagrams)
+    - [Class UML Diagrams](#Class-UML-Diagrams)
+    - [Use Case UML Diagram](Use-Case-UML-Diagram)
+    - [Robustness UML Diagram](Robustness-UML-Diagram)
+    - [Sequence Diagram](#Sequence-Diagram)
+
+</summary>
 
 ## Requirement Brief
 For this project you are required to use inheritance to develop a simple web based, Java Object Orientated, Point of Sale application which allows the user to enter credit card details and a cash amount for a transaction. 
@@ -197,7 +172,7 @@ Use case text defines the requirements of the application, these are stated at t
 
 ## UML Diagrams
 
-### **Class Diagrams**
+### **Class UML Diagrams**
 
 Class diagrams were created using easyUML, more information can be found [here](https://github.com/ossdcfos/easyuml)
 
@@ -209,7 +184,7 @@ Class diagrams were created using easyUML, more information can be found [here](
 **TO DO**
 explain
 
-### **Web Class UML Diagram**
+**Web Class UML Diagram**
 
 ![Web Class Diagram](ClassDiagram/WebClassDiagram.png)
 
