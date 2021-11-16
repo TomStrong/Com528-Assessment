@@ -39,7 +39,7 @@
                 <li><a href="#Robustness-UML-Diagram">Robustness UML Diagram</a></li>
             </ul>
             <ul>
-                <li><a href="#**Sequence-Diagram**">Sequence Diagram</a></li>
+                <li><a href="#Sequence-Diagram">Sequence Diagram</a></li>
             </ul>
         </li>
     </ol>
@@ -197,7 +197,7 @@ Use case text defines the requirements of the application, these are stated at t
 
 ## UML Diagrams
 
-**Class Diagrams**
+### **Class Diagrams**
 
 Class diagrams were created using easyUML, more information can be found [here](https://github.com/ossdcfos/easyuml)
 
@@ -209,14 +209,14 @@ Class diagrams were created using easyUML, more information can be found [here](
 **TO DO**
 explain
 
-**Web Class UML Diagram**
+### **Web Class UML Diagram**
 
 ![Web Class Diagram](ClassDiagram/WebClassDiagram.png)
 
 **TO DO**
 explain
 
-**Use Case UML Diagram**
+### **Use Case UML Diagram**
 
 Use cases are actions that perform tasks, they are the functions of the app. 
 
@@ -237,7 +237,7 @@ The use case diagram outlines the objects; such as people, systems and organisat
 
 
 
-**Robustness UML Diagram**
+### **Robustness UML Diagram**
 
 ![Robustness Analysis Diagram](UMLDiagrams/RobustnessDiagram.jpg)
 
@@ -245,7 +245,7 @@ The use case diagram outlines the objects; such as people, systems and organisat
 explain
 
 
-**Sequence Diagram**
+### **Sequence Diagram**
 
 ![Sequence Diagram](UMLDiagrams/SequenceDiagram.jpg)
 
