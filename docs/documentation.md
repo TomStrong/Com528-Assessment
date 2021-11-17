@@ -190,13 +190,13 @@ Realtionships are split into categories:
 
 ### **Robustness UML Diagram**
 
-**TO DO** explain
+The robustness diagram is a more detailed representation of how objects of the application interact. Actors use  Boundary Objects to communicate with the system and Control Objects facilitate communication between the boundary Objects and the Entity Objects. The arrows represent the flow of relationships between each component.
 
 ![Robustness Analysis Diagram](UMLDiagrams/RobustnessDiagram.jpg)
 
 ### **Sequence Diagram**
 
-**TO DO** explain
+The sequence Diagram provides a clear view of the sequence of events throughout the application.
 
 ![Sequence Diagram](UMLDiagrams/SequenceDiagram.jpg)
 
