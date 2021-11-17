@@ -40,7 +40,7 @@ public class TransactionLogger {
         String TEMP_DIR = System.getProperty("java.io.tmpdir");
         this.outputFile = new File(TEMP_DIR + "/transactions.txt");
         
-        LOG.info("Transaction log path: " + outputFile.getAbsolutePath());
+        System.out.println("Transaction log path: " + outputFile.getAbsolutePath());
     }
     
     /**
