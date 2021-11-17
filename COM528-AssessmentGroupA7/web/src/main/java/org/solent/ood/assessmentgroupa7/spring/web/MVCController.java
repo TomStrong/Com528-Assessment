@@ -297,10 +297,10 @@ public class MVCController {
 
                 if(reply.getCode() == 200){
                     result = "Approved";
-                    transactionReply = "Transaction complete";
+                    transactionReply = "Transaction successful";
                 } else if (reply.getCode() == 400){
                     result = "Declined<br/><br/>" + reply.getMessage();
-                    transactionReply =  "Transaction aborted";
+                    transactionReply =  "Transaction unsuccessful";
                 }         
                 TRANSACTIONS_LOG.log(reply.toString());
                 TRANSACTIONS_LOG_LOG4J.info(reply);
