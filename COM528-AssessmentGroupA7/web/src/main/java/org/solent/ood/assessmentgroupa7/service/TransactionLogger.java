@@ -40,10 +40,7 @@ public class TransactionLogger {
         String TEMP_DIR = System.getProperty("java.io.tmpdir");
         this.outputFile = new File(TEMP_DIR + "/transactions.txt");
         
-        // TODO: Log4j logger is returned as null and throws NullPointerException
-        //       during tests. Sysout used for now as it works  -Jake
-        System.out.println("Transaction log path: " + outputFile.getAbsolutePath());
-//        LOG.info("Transaction log path: " + outputFile.getAbsolutePath());
+        LOG.info("Transaction log path: " + outputFile.getAbsolutePath());
     }
     
     /**
