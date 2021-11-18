@@ -11,7 +11,8 @@ var letterIndex = 0; // letter currently selected on numpad
 
 var entry = ""; // user input
 var transactionType = null; // refund or payment
-var inputStage = 1;
+var inputStage = 1; // used for keeping track of which part of the data entry process the user is at
+// data entry vars
 var amount;
 var name;
 var cardNo;
@@ -19,6 +20,7 @@ var expiryDate;
 var cvv;
 var issueNo;
 
+// function run once all page elements have loaded
 function ready() {
     // sets click function for all character buttons
     let charBtns = document.querySelectorAll(".char");
@@ -74,7 +76,7 @@ function ready() {
     
     
 
-    // sets click function for confirm button
+    // sets click function for confirm button, this advances the data entry process if data entered is valid
     document.getElementById("confirm").addEventListener("click", async function() {
         switch (inputStage) {
             case 1:
@@ -122,7 +124,7 @@ function ready() {
             case 5:
                 if (entry.length == 0){
                     showStatus("Required");
-                } else if (!/^(0[1-9]|1[0-2])\/?([0-9]{2})$/.test(entry)) {
+                } else if (!/^(0[1-9]|1[0-2])\/?([0-9]{2})$/.test(entry)) { // regex validation for a MM/YY format
                     showStatus("Date must be formatted as MM/YY");
                 } else {
                     expiryDate = entry;
@@ -155,6 +157,7 @@ function ready() {
                 }
                 return;
             case 8:
+                // puts entered data into hidden form and submits it
                 var form = document.querySelector("#transactionForm");
                 form.querySelector('input[name="transactionType"]').value = transactionType;
                 form.querySelector('input[name="amount"]').value = amount;
@@ -168,10 +171,7 @@ function ready() {
         }
     });
     
-    // ----------
-    // Starts transaction input cycle
-    // ----------
-    
+    // styles result message if present on load or starts the data entry process
     if (document.getElementById("result").value != "") {
         if (document.getElementById("result").value.includes("Approved")) {
             showStatus(document.getElementById("result").value, "success");
@@ -187,6 +187,7 @@ function ready() {
     }
 }
 
+// changes the buttons form inserting numbers to letters and vice versa
 function changeInput() {
     if (chars) {
         chars = false;
@@ -195,12 +196,14 @@ function changeInput() {
     }
 }
 
+// resets vars for number inputs
 function resetLetterInputVars() {
     charTimer = null;
     curButton = null;
     letterIndex = 0;
 }
 
+// empties the entry var and resets the display for next stage
 function emptyEntry() {
     entry = "";
     document.getElementById("entry").innerHTML = "";
@@ -208,6 +211,7 @@ function emptyEntry() {
     document.getElementById("status").style.display = "none";
 }
 
+// displays status message
 function showStatus(message, type="error") {
     document.getElementById("status").innerHTML = message;
     if (type == "error") {
@@ -218,6 +222,7 @@ function showStatus(message, type="error") {
     document.getElementById("status").style.display = "block";
 }
 
+// functions for the data entry prompts
 function getTransactionType() {
     chars = false;
     document.getElementById("prompt").innerHTML = "Please select an option:<br>1) Payment<br>2) Refund";
@@ -255,10 +260,12 @@ function getIssueNo() {
     inputStage += 1;
 }
 
+// final display message before confiming transaction
 function displayEnteredDetails() {
     message = "Amount: " + amount + "<br>Name: " + name + "<br>Card Number: " + cardNo + "<br>Expiry Date: " + expiryDate + "<br>CVV: " + cvv + "<br>Issue Number: " + issueNo + "<br>Confirm details...";
     document.getElementById("prompt").innerHTML = message;
     inputStage += 1;
 }
 
+// when the page is loaded runs the ready() function
 document.addEventListener("DOMContentLoaded", ready);
