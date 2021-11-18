@@ -60,7 +60,7 @@ public class TransactionLogger {
         }
         
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile, true));
-        writer.write(message.strip());
+        writer.write(message);
         writer.write("\n");
         writer.close();
     }

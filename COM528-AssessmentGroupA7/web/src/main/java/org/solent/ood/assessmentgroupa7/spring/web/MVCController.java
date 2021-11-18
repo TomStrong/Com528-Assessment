@@ -182,7 +182,7 @@ public class MVCController {
                     propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.cvv", cvv);
                     propertiesDao.setProperty("org.solent.ood.assessmentgroupa7.issueno", issueNumber);
 
-                    if(password != null && !password.isEmpty() && !password.isBlank()) {
+                    if(password != null && !password.isEmpty()) {
                         // Update admin password
                         auth.setAdminCredentials(username, password);
 
