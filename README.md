@@ -1,6 +1,6 @@
 # COM528 AE1 Assessment Group A7
 
-The team for this project (in alphabetical order) are:
+The team who developed this project (in alphabetical order) are:
 
 | Name         | Student ID    | 
 | :------------- | :----------: | 
